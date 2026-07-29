@@ -36,6 +36,14 @@
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — SYSTEM MAP"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/ecosystem.svg"/><img src="assets/ecosystem.svg" alt="System Ecosystem Map"/></picture>
 
+<div align="center">
+  <br/>
+  <!-- LIVE ECOSYSTEM CONSTELLATION -->
+  <picture>
+    <img src="assets/dynamic/constellation.svg" width="97%" alt="Live Ecosystem Constellation"/>
+  </picture>
+</div>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/s03.svg" alt="03 — PROJECTS"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="Featured Projects Grid"/></picture>
 
@@ -66,10 +74,24 @@
 
 <br/><br/>
 
+<!-- LIVE-TYPING IDE TERMINAL -->
+<picture>
+  <img src="assets/dynamic/terminal.svg" width="97%" alt="Live Terminal"/>
+</picture>
+
+<br/><br/>
+
 <!-- REAL-TIME GITHUB CONTRIBUTION ACTIVITY GRAPH -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=ffffff&line=ffffff&point=ffffff&area_color=ffffff&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY"/>
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=000000&line=000000&point=000000&area_color=000000&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="GitHub contribution activity"/>
+</picture>
+
+<br/><br/>
+
+<!-- COMMIT HOVER MAZE GAME -->
+<picture>
+  <img src="assets/dynamic/maze.svg" width="97%" alt="Commit Hover Maze Game"/>
 </picture>
 
 </div>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live Terminal">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+    .bg { fill: #0D1117; }
+    .card { fill: #161B22; stroke: #30363D; stroke-width: 1.5; }
+    .prompt { fill: #39D353; font-weight: bold; }
+    .text { fill: #C9D1D9; }
+    
+    /* Typing Animation */
+    .line1, .line2, .line3 { opacity: 0; }
+    .line1 { animation: type1 12s infinite; }
+    .line2 { animation: type2 12s infinite; }
+    .line3 { animation: type3 12s infinite; }
+    .cursor { fill: #C9D1D9; animation: blink 1s step-end infinite; }
+    
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes type1 {
+      0%, 10% { opacity: 0; }
+      11%, 30% { opacity: 1; }
+      31%, 100% { opacity: 0; }
+    }
+    @keyframes type2 {
+      0%, 33% { opacity: 0; }
+      34%, 60% { opacity: 1; }
+      61%, 100% { opacity: 0; }
+    }
+    @keyframes type3 {
+      0%, 63% { opacity: 0; }
+      64%, 90% { opacity: 1; }
+      91%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <rect width="1000" height="240" rx="8" class="bg"/>
+  <rect x="48" y="10" width="904" height="220" rx="8" class="card"/>
+  
+  <!-- Terminal Header -->
+  <circle cx="70" cy="28" r="5" fill="#FF5F56"/>
+  <circle cx="90" cy="28" r="5" fill="#FFBD2E"/>
+  <circle cx="110" cy="28" r="5" fill="#27C93F"/>
+  <text fill="#8B949E" class="mono" x="500" y="32" font-size="12" text-anchor="middle">Garvnanda@system: ~/workspace</text>
+  <line x1="48" y1="45" x2="952" y2="45" stroke="#30363D" stroke-width="1.5"/>
+
+  <g font-size="16" class="mono">
+    <!-- Line 1 -->
+    <g class="line1">
+      <text x="70" y="85" class="prompt">➜</text>
+      <text x="95" y="85" class="text" font-weight="bold" fill="#58A6FF">git log --oneline -n 1</text>
+      <text x="70" y="115" class="text">feat(ai): upgraded neural safety thresholds in SANN</text>
+      <rect x="70" y="125" width="10" height="18" class="cursor"/>
+    </g>
+    <!-- Line 2 -->
+    <g class="line2">
+      <text x="70" y="85" class="prompt">➜</text>
+      <text x="95" y="85" class="text" font-weight="bold" fill="#58A6FF">git log --oneline -n 1</text>
+      <text x="70" y="115" class="text">fix(backend): optimized FastAPI latency for Galla-Sathi</text>
+      <rect x="70" y="125" width="10" height="18" class="cursor"/>
+    </g>
+    <!-- Line 3 -->
+    <g class="line3">
+      <text x="70" y="85" class="prompt">➜</text>
+      <text x="95" y="85" class="text" font-weight="bold" fill="#58A6FF">git log --oneline -n 1</text>
+      <text x="70" y="115" class="text">chore(web3): deployed Creator_X smart contracts</text>
+      <rect x="70" y="125" width="10" height="18" class="cursor"/>
+    </g>
+  </g>
+</svg>
