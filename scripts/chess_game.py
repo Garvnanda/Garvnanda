@@ -198,9 +198,11 @@ def update_readme(board, state):
     left_html = "<br/><br/>".join(left_badges) if left_badges else "<i>No moves</i>"
     right_html = "<br/><br/>".join(right_badges) if right_badges else "<i>No moves</i>"
 
-    # Cache buster query string to force GitHub camo proxy to instantly refresh image
-    v = state.get("turn_count", 1)
-
+    # Absolute raw URLs with timestamp cache-buster to completely bypass GitHub camo caching
+    import time
+    v = int(time.time())
+    raw_base = "https://raw.githubusercontent.com/Garvnanda/Garvnanda/main"
+    
     chess_section = f'''<!-- CHESS_START -->
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07.svg"/><img src="assets/s07.svg" alt="07 — CHESS ARENA"/></picture>
 
@@ -218,8 +220,8 @@ def update_readme(board, state):
 </td>
 <td align="center" valign="middle" width="520">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg?v={v}"/>
-    <img src="assets/chess_board.svg?v={v}" alt="GitHub Profile Chess Game" width="480"/>
+    <source media="(prefers-color-scheme: dark)" srcset="{raw_base}/assets/dark/chess_board.svg?v={v}"/>
+    <img src="{raw_base}/assets/chess_board.svg?v={v}" alt="GitHub Profile Chess Game" width="480"/>
   </picture>
 </td>
 <td align="center" valign="middle">

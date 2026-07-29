@@ -103,8 +103,8 @@
 </td>
 <td align="center" valign="middle" width="520">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg?v=1"/>
-    <img src="assets/chess_board.svg?v=1" alt="GitHub Profile Chess Game" width="480"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Garvnanda/Garvnanda/main/assets/dark/chess_board.svg?v=1785354905"/>
+    <img src="https://raw.githubusercontent.com/Garvnanda/Garvnanda/main/assets/chess_board.svg?v=1785354905" alt="GitHub Profile Chess Game" width="480"/>
   </picture>
 </td>
 <td align="center" valign="middle">
