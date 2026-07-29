@@ -89,32 +89,29 @@
 <!-- CHESS_START -->
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07.svg"/><img src="assets/s07.svg" alt="07 — CHESS ARENA"/></picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
-  <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game"/>
-</picture>
-
-<br/><br/>
-
 <div align="center">
 
-### ♟️ AVAILABLE LEGAL MOVES (CLICK TO PLAY)
+<p align="center">
+  <b>Click any move badge below to play against Garv's AI Bot</b><br/>
+  <font color="#8B949E">AI responds automatically in ~10s • Board resets automatically on new repository creation</font>
+</p>
 
-| Move | Click to Play | Move | Click to Play |
-| --- | --- | --- | --- |
-| **g1h3** | [ ▶ Play g1 ➔ h3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg1h3&body=Click+Submit+new+issue+to+play+move+g1h3) | **g1f3** | [ ▶ Play g1 ➔ f3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg1f3&body=Click+Submit+new+issue+to+play+move+g1f3) |
-| **b1c3** | [ ▶ Play b1 ➔ c3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb1c3&body=Click+Submit+new+issue+to+play+move+b1c3) | **b1a3** | [ ▶ Play b1 ➔ a3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb1a3&body=Click+Submit+new+issue+to+play+move+b1a3) |
-| **h2h3** | [ ▶ Play h2 ➔ h3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ch2h3&body=Click+Submit+new+issue+to+play+move+h2h3) | **g2g3** | [ ▶ Play g2 ➔ g3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg2g3&body=Click+Submit+new+issue+to+play+move+g2g3) |
-| **f2f3** | [ ▶ Play f2 ➔ f3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cf2f3&body=Click+Submit+new+issue+to+play+move+f2f3) | **e2e3** | [ ▶ Play e2 ➔ e3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ce2e3&body=Click+Submit+new+issue+to+play+move+e2e3) |
-| **d2d3** | [ ▶ Play d2 ➔ d3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cd2d3&body=Click+Submit+new+issue+to+play+move+d2d3) | **c2c3** | [ ▶ Play c2 ➔ c3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cc2c3&body=Click+Submit+new+issue+to+play+move+c2c3) |
-| **b2b3** | [ ▶ Play b2 ➔ b3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb2b3&body=Click+Submit+new+issue+to+play+move+b2b3) | **a2a3** | [ ▶ Play a2 ➔ a3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ca2a3&body=Click+Submit+new+issue+to+play+move+a2a3) |
-| **h2h4** | [ ▶ Play h2 ➔ h4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ch2h4&body=Click+Submit+new+issue+to+play+move+h2h4) | **g2g4** | [ ▶ Play g2 ➔ g4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg2g4&body=Click+Submit+new+issue+to+play+move+g2g4) |
-| **f2f4** | [ ▶ Play f2 ➔ f4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cf2f4&body=Click+Submit+new+issue+to+play+move+f2f4) | **e2e4** | [ ▶ Play e2 ➔ e4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ce2e4&body=Click+Submit+new+issue+to+play+move+e2e4) |
-| **d2d4** | [ ▶ Play d2 ➔ d4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cd2d4&body=Click+Submit+new+issue+to+play+move+d2d4) | **c2c4** | [ ▶ Play c2 ➔ c4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cc2c4&body=Click+Submit+new+issue+to+play+move+c2c4) |
-| **b2b4** | [ ▶ Play b2 ➔ b4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb2b4&body=Click+Submit+new+issue+to+play+move+b2b4) | **a2a4** | [ ▶ Play a2 ➔ a4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ca2a4&body=Click+Submit+new+issue+to+play+move+a2a4) |
-
-[ **🔄 Reset Chess Game** ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Creset&body=Click+Submit+New+Issue+to+reset+the+board)
-
+<table border="0">
+<tr>
+<td align="center" valign="middle">
+<a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg1h3&amp;body=Click+Submit+new+issue+to+play+move+g1h3"><img src="https://img.shields.io/badge/PLAY-g1--h3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play g1 ➔ h3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb1c3&amp;body=Click+Submit+new+issue+to+play+move+b1c3"><img src="https://img.shields.io/badge/PLAY-b1--c3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play b1 ➔ c3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ch2h3&amp;body=Click+Submit+new+issue+to+play+move+h2h3"><img src="https://img.shields.io/badge/PLAY-h2--h3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play h2 ➔ h3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cf2f3&amp;body=Click+Submit+new+issue+to+play+move+f2f3"><img src="https://img.shields.io/badge/PLAY-f2--f3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play f2 ➔ f3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cd2d3&amp;body=Click+Submit+new+issue+to+play+move+d2d3"><img src="https://img.shields.io/badge/PLAY-d2--d3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play d2 ➔ d3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb2b3&amp;body=Click+Submit+new+issue+to+play+move+b2b3"><img src="https://img.shields.io/badge/PLAY-b2--b3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play b2 ➔ b3"/></a>
+</td>
+<td align="center" valign="middle" width="520">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
+    <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game" width="480"/>
+  </picture>
+</td>
+<td align="center" valign="middle">
+<a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg1f3&amp;body=Click+Submit+new+issue+to+play+move+g1f3"><img src="https://img.shields.io/badge/PLAY-g1--f3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play g1 ➔ f3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb1a3&amp;body=Click+Submit+new+issue+to+play+move+b1a3"><img src="https://img.shields.io/badge/PLAY-b1--a3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play b1 ➔ a3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg2g3&amp;body=Click+Submit+new+issue+to+play+move+g2g3"><img src="https://img.shields.io/badge/PLAY-g2--g3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play g2 ➔ g3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ce2e3&amp;body=Click+Submit+new+issue+to+play+move+e2e3"><img src="https://img.shields.io/badge/PLAY-e2--e3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play e2 ➔ e3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cc2c3&amp;body=Click+Submit+new+issue+to+play+move+c2c3"><img src="https://img.shields.io/badge/PLAY-c2--c3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play c2 ➔ c3"/></a><br/><br/><a href="https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ca2a3&amp;body=Click+Submit+new+issue+to+play+move+a2a3"><img src="https://img.shields.io/badge/PLAY-a2--a3-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353" alt="Play a2 ➔ a3"/></a>
+</td>
+</tr>
+</table>
 
 </div>
 <!-- CHESS_END -->

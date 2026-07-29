@@ -41,7 +41,8 @@ def load_state():
         "last_move": None,
         "last_player": "System",
         "turn_count": 1,
-        "winner": None
+        "winner": None,
+        "repo_count": 6
     }
 
 def save_state(state):
@@ -93,22 +94,21 @@ def create_svg(path, content):
         raise e
     with open(path, "w", encoding="utf-8") as f:
         f.write(clean_content)
-    print(f"Generated valid Chess SVG: {path}")
+    print(f"Generated valid Minimalist Chess SVG: {path}")
 
 def gen_board_svg(board, last_move_uci=None, last_player="System"):
-    # 8x8 Board geometry
+    # Clean 8x8 Board geometry
     sq_size = 50
-    board_x, board_y = 72, 70
+    board_x, board_y = 50, 60
     
     board_rects = ""
     pieces_svg = ""
-    highlights = ""
     
     last_from = None
     last_to = None
     if last_move_uci and len(last_move_uci) >= 4:
         try:
-            m = chess.Move.from_uci(last_move_uci)
+            m = chess.Move.from_uci(last_move_uci.split(' ')[0])
             last_from = m.from_square
             last_to = m.to_square
         except:
@@ -122,7 +122,7 @@ def gen_board_svg(board, last_move_uci=None, last_player="System"):
             py = board_y + (7 - rank) * sq_size
             
             is_light = (rank + file) % 2 != 0
-            color = "#252B33" if is_light else "#111418"
+            color = "#21262D" if is_light else "#111418"
             
             # Highlight last move
             if sq in (last_from, last_to):
@@ -145,80 +145,35 @@ def gen_board_svg(board, last_move_uci=None, last_player="System"):
                 p_color = "#FFFFFF" if piece.color == chess.WHITE else "#58A6FF"
                 pieces_svg += f'<text x="{px + sq_size/2}" y="{py + sq_size/2 + 13}" fill="{p_color}" font-size="34" text-anchor="middle">{sym}</text>'
 
-    # Game Status Message
-    status_msg = "YOUR TURN (WHITE)"
-    status_color = "#39D353"
+    # Status Line
+    status_str = "YOUR TURN (WHITE)"
+    status_col = "#39D353"
     if board.is_checkmate():
-        status_msg = "CHECKMATE!"
-        status_color = "#FF5F56"
+        status_str = "CHECKMATE!"
+        status_col = "#FF5F56"
     elif board.is_check():
-        status_msg = "CHECK!"
-        status_color = "#FFBD2E"
-    elif board.is_stalemate():
-        status_msg = "STALEMATE"
-        status_color = "#8B949E"
+        status_str = "CHECK!"
+        status_col = "#FFBD2E"
 
-    eval_score = evaluate_board(board)
-    eval_str = f"+{eval_score/10:.1f}" if eval_score >= 0 else f"{eval_score/10:.1f}"
-
-    return f'''<svg viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Profile Chess Arena">
+    return f'''<svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Profile Chess Board">
   <style>
     .mono {{ font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }}
     .bg {{ fill: #000000; }}
     .card {{ fill: #111111; stroke: #30363D; stroke-width: 1.5; }}
-    
-    .cyan {{ fill: #58A6FF; }}
-    .green {{ fill: #39D353; }}
-    .purple {{ fill: #BC8CFF; }}
-    .yellow {{ fill: #E3B341; }}
-    .gray {{ fill: #8B949E; }}
-    .white {{ fill: #FFFFFF; }}
   </style>
 
-  <rect width="1000" height="520" class="bg"/>
-  <rect x="48" y="20" width="904" height="480" rx="8" class="card"/>
+  <rect width="500" height="500" class="bg"/>
+  <rect x="20" y="20" width="460" height="460" rx="8" class="card"/>
 
-  <!-- Header -->
-  <text fill="#FFFFFF" class="mono" x="72" y="52" font-size="16" font-weight="800" letter-spacing="1">CHESS ARENA: PLAYER (WHITE) VS GARV AI (BLACK) ♟️</text>
-  <text fill="#8B949E" class="mono" x="928" y="52" font-size="12" font-weight="600" text-anchor="end">TURN-BASED GITHUB ACTION</text>
-  <line x1="72" y1="62" x2="928" y2="62" stroke="#30363D" stroke-width="1"/>
+  <!-- Minimal Header -->
+  <text fill="#FFFFFF" class="mono" x="50" y="45" font-size="13" font-weight="800">Garv AI (Black) ♟  vs  You (White) ♙</text>
+  <text fill="{status_col}" class="mono" x="450" y="45" font-size="12" font-weight="800" text-anchor="end">{status_str}</text>
 
   <!-- 8x8 Chess Board -->
   <g>
     <rect x="{board_x - 2}" y="{board_y - 2}" width="404" height="404" fill="#161B22" stroke="#30363D" stroke-width="2" rx="4"/>
     {board_rects}
     {pieces_svg}
-  </g>
-
-  <!-- Right Telemetry Panel (x=500) -->
-  <g class="mono">
-    <!-- Status Box -->
-    <rect x="500" y="80" width="428" height="70" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-    <text x="520" y="105" fill="#8B949E" font-size="12" font-weight="600">GAME STATUS</text>
-    <text x="520" y="132" fill="{status_color}" font-size="20" font-weight="900">{status_msg}</text>
-    
-    <!-- Evaluator -->
-    <rect x="810" y="95" width="100" height="40" rx="4" fill="#0D1117" stroke="#30363D"/>
-    <text x="860" y="112" fill="#8B949E" font-size="10" text-anchor="middle">EVAL SCORE</text>
-    <text x="860" y="128" fill="#58A6FF" font-size="14" font-weight="800" text-anchor="middle">{eval_str}</text>
-
-    <!-- Telemetry Box -->
-    <rect x="500" y="165" width="428" height="155" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-    <text x="520" y="192" class="purple" font-size="13" font-weight="800">LAST ACTIVITY:</text>
-    <text x="520" y="215" class="white" font-size="13" font-weight="600">Player: @{last_player}</text>
-    <text x="520" y="238" class="yellow" font-size="13" font-weight="600">Last Move: {last_move_uci if last_move_uci else "Game Initialized"}</text>
-
-    <text x="520" y="275" class="cyan" font-size="13" font-weight="800">PIECE LEGEND:</text>
-    <text x="520" y="298" fill="#FFFFFF" font-size="16"> White (You): ♙ ♘ ♗ ♖ ♕ ♔</text>
-    <text x="730" y="298" fill="#58A6FF" font-size="16"> Black (AI): ♟ ♞ ♝ ♜ ♛ ♚</text>
-
-    <!-- Instructions -->
-    <rect x="500" y="335" width="428" height="135" rx="6" fill="#0D1117" stroke="#238636" stroke-width="1.5"/>
-    <text x="520" y="362" fill="#39D353" font-size="14" font-weight="800">HOW TO PLAY:</text>
-    <text x="520" y="388" fill="#C9D1D9" font-size="12">1. Scroll down to the LEGAL MOVES grid below.</text>
-    <text x="520" y="410" fill="#C9D1D9" font-size="12">2. Click any move link (e.g. ▶ Play e2➔e4).</text>
-    <text x="520" y="432" fill="#C9D1D9" font-size="12">3. Click "Submit new issue" on GitHub.</text>
-    <text x="520" y="454" fill="#39D353" font-size="12" font-weight="bold">Garv's AI Bot will execute White &amp; Black counter in ~10s!</text>
   </g>
 </svg>'''
 
@@ -229,50 +184,54 @@ def update_readme(board, state):
     with open(README_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Generate Legal Moves Table
     legal_moves = list(board.legal_moves)
-    moves_html = ""
     
-    if board.is_game_over():
-        reason = "Checkmate!" if board.is_checkmate() else "Draw!"
-        moves_html = f"### 🏆 GAME OVER — {reason}\n\n[ **🔄 Click Here to Reset & Play Again** ]({REPO_URL}/issues/new?title=chess%7Creset&body=Click+Submit+New+Issue+to+reset+the+board)\n"
-    else:
-        moves_html = "### ♟️ AVAILABLE LEGAL MOVES (CLICK TO PLAY)\n\n"
-        moves_html += "| Move | Click to Play | Move | Click to Play |\n"
-        moves_html += "| --- | --- | --- | --- |\n"
-        
-        # Display top legal moves in 2 columns
-        move_pairs = []
-        for i in range(0, min(24, len(legal_moves)), 2):
-            m1 = legal_moves[i]
-            m2 = legal_moves[i+1] if i+1 < len(legal_moves) else None
+    left_badges = []
+    right_badges = []
+
+    if not board.is_game_over():
+        # Split legal moves evenly to left and right columns
+        for i, m in enumerate(legal_moves[:12]):
+            uci = m.uci()
+            move_fmt = f"{uci[:2]} ➔ {uci[2:]}"
+            badge_url = f"https://img.shields.io/badge/PLAY-{uci[:2]}--{uci[2:]}-0d1117?style=for-the-badge&amp;logo=github&amp;logoColor=39D353"
+            issue_url = f"{REPO_URL}/issues/new?title=chess%7C{uci}&amp;body=Click+Submit+new+issue+to+play+move+{uci}"
+            badge_link = f'<a href="{issue_url}"><img src="{badge_url}" alt="Play {move_fmt}"/></a>'
             
-            u1 = m1.uci()
-            l1 = f"[ ▶ Play {u1[:2]} ➔ {u1[2:]} ]({REPO_URL}/issues/new?title=chess%7C{u1}&body=Click+Submit+new+issue+to+play+move+{u1})"
-            
-            if m2:
-                u2 = m2.uci()
-                l2 = f"[ ▶ Play {u2[:2]} ➔ {u2[2:]} ]({REPO_URL}/issues/new?title=chess%7C{u2}&body=Click+Submit+new+issue+to+play+move+{u2})"
-                move_pairs.append(f"| **{u1}** | {l1} | **{u2}** | {l2} |")
+            if i % 2 == 0:
+                left_badges.append(badge_link)
             else:
-                move_pairs.append(f"| **{u1}** | {l1} | - | - |")
-                
-        moves_html += "\n".join(move_pairs) + "\n\n"
-        moves_html += f"[ **🔄 Reset Chess Game** ]({REPO_URL}/issues/new?title=chess%7Creset&body=Click+Submit+New+Issue+to+reset+the+board)\n"
+                right_badges.append(badge_link)
+
+    left_html = "<br/><br/>".join(left_badges) if left_badges else "<i>No moves</i>"
+    right_html = "<br/><br/>".join(right_badges) if right_badges else "<i>No moves</i>"
 
     chess_section = f'''<!-- CHESS_START -->
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07.svg"/><img src="assets/s07.svg" alt="07 — CHESS ARENA"/></picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
-  <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game"/>
-</picture>
-
-<br/><br/>
-
 <div align="center">
 
-{moves_html}
+<p align="center">
+  <b>Click any move badge below to play against Garv's AI Bot</b><br/>
+  <font color="#8B949E">AI responds automatically in ~10s • Board resets automatically on new repository creation</font>
+</p>
+
+<table border="0">
+<tr>
+<td align="center" valign="middle">
+{left_html}
+</td>
+<td align="center" valign="middle" width="520">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
+    <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game" width="480"/>
+  </picture>
+</td>
+<td align="center" valign="middle">
+{right_html}
+</td>
+</tr>
+</table>
 
 </div>
 <!-- CHESS_END -->'''
@@ -283,19 +242,18 @@ def update_readme(board, state):
         end_idx = content.find("<!-- CHESS_END -->") + len("<!-- CHESS_END -->")
         new_content = content[:start_idx] + chess_section + content[end_idx:]
     else:
-        # Insert before section 05 — THE ROUTE or footer
         if "<picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/dark/s05.svg\"/>" in content:
             pos = content.find("<picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/dark/s05.svg\"/>")
             new_content = content[:pos] + chess_section + "\n\n<br/>\n\n" + content[pos:]
         else:
             new_content = content + "\n\n" + chess_section
 
-    # Remove old hover maze section if present
+    # Remove any stale hover maze section
     new_content = new_content.replace('<!-- COMMIT HOVER MAZE GAME -->\n<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/dynamic/maze.svg"/><img src="assets/dynamic/maze.svg" alt="Commit Hover Maze Game"/></picture>', '')
 
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
-    print("Updated README.md with live Chess game arena!")
+    print("Updated README.md with clean side-by-side Chess layout!")
 
 def main():
     state = load_state()
@@ -314,7 +272,8 @@ def main():
                 "last_move": "Reset Game",
                 "last_player": player_name,
                 "turn_count": 1,
-                "winner": None
+                "winner": None,
+                "repo_count": state.get("repo_count", 6)
             }
             board = chess.Board()
         else:
@@ -341,7 +300,7 @@ def main():
             except Exception as e:
                 print(f"Error processing move {move_input}: {e}")
 
-    # Generate Board SVG
+    # Generate Minimal Board SVG
     svg_content = gen_board_svg(board, state.get("last_move"), state.get("last_player"))
     create_svg(os.path.join(ASSETS_DIR, "chess_board.svg"), svg_content)
     create_svg(os.path.join(DARK_ASSETS_DIR, "chess_board.svg"), svg_content)
