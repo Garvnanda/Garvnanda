@@ -1,26 +1,30 @@
-<svg viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Technical Stack">
+<svg viewBox="0 0 1000 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Technical Stack">
   <style>
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
   </style>
-  <rect width="1000" height="320" fill="#000000"/>
+  <rect width="1000" height="480" fill="#000000"/>
   
-  <rect x="48" y="10" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
-  <text fill="#FFFFFF" class="mono" x="72" y="40" font-size="13" font-weight="700" letter-spacing="1">PROGRAMMING LANGUAGES</text>
-  <line x1="72" y1="50" x2="460" y2="50" stroke="#30363D" stroke-width="1"/>
-  <text fill="#888888" class="mono" x="72" y="78" font-size="12">Python · C++ · SQL · JavaScript · TypeScript · Solidity</text>
+  <!-- Row 1: Languages -->
+  <rect x="48" y="10" width="904" height="100" rx="8" fill="#111111" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#FFFFFF" class="mono" x="76" y="42" font-size="16" font-weight="800" letter-spacing="1">PROGRAMMING LANGUAGES</text>
+  <line x1="76" y1="52" x2="924" y2="52" stroke="#30363D" stroke-width="1"/>
+  <text fill="#BBBBBB" class="mono" x="76" y="80" font-size="14.5" font-weight="600">Python  ·  C++  ·  SQL  ·  JavaScript  ·  TypeScript  ·  Solidity</text>
 
-  <rect x="516" y="10" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
-  <text fill="#FFFFFF" class="mono" x="540" y="40" font-size="13" font-weight="700" letter-spacing="1">MACHINE LEARNING &amp; AI</text>
-  <line x1="540" y1="50" x2="928" y2="50" stroke="#30363D" stroke-width="1"/>
-  <text fill="#888888" class="mono" x="540" y="78" font-size="12">PyTorch · Gemma 4 · Hugging Face · Scikit-Learn · Pandas · NetworkX</text>
+  <!-- Row 2: ML & AI -->
+  <rect x="48" y="125" width="904" height="100" rx="8" fill="#111111" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#FFFFFF" class="mono" x="76" y="157" font-size="16" font-weight="800" letter-spacing="1">MACHINE LEARNING &amp; AI</text>
+  <line x1="76" y1="167" x2="924" y2="167" stroke="#30363D" stroke-width="1"/>
+  <text fill="#BBBBBB" class="mono" x="76" y="195" font-size="14.5" font-weight="600">PyTorch  ·  Gemma 4  ·  Hugging Face  ·  Scikit-Learn  ·  Pandas  ·  NetworkX  ·  OpenCV</text>
 
-  <rect x="48" y="165" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
-  <text fill="#FFFFFF" class="mono" x="72" y="195" font-size="13" font-weight="700" letter-spacing="1">BACKEND &amp; CLOUD INFRASTRUCTURE</text>
-  <line x1="72" y1="205" x2="460" y2="205" stroke="#30363D" stroke-width="1"/>
-  <text fill="#888888" class="mono" x="72" y="233" font-size="12">FastAPI · Supabase / PostgreSQL · Redis · Docker · Uvicorn · Catalyst</text>
+  <!-- Row 3: Backend & Infrastructure -->
+  <rect x="48" y="240" width="904" height="100" rx="8" fill="#111111" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#FFFFFF" class="mono" x="76" y="272" font-size="16" font-weight="800" letter-spacing="1">BACKEND &amp; CLOUD INFRASTRUCTURE</text>
+  <line x1="76" y1="282" x2="924" y2="282" stroke="#30363D" stroke-width="1"/>
+  <text fill="#BBBBBB" class="mono" x="76" y="310" font-size="14.5" font-weight="600">FastAPI  ·  Supabase / PostgreSQL  ·  Redis  ·  Docker  ·  Uvicorn  ·  Zoho Catalyst</text>
 
-  <rect x="516" y="165" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
-  <text fill="#FFFFFF" class="mono" x="540" y="195" font-size="13" font-weight="700" letter-spacing="1">DEVELOPER TOOLS &amp; WORKFLOWS</text>
-  <line x1="540" y1="205" x2="928" y2="205" stroke="#30363D" stroke-width="1"/>
-  <text fill="#888888" class="mono" x="540" y="233" font-size="12">Git · GitHub Actions · Linux · Jupyter · Streamlit · Vercel · VS Code</text>
+  <!-- Row 4: Tools -->
+  <rect x="48" y="355" width="904" height="100" rx="8" fill="#111111" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#FFFFFF" class="mono" x="76" y="387" font-size="16" font-weight="800" letter-spacing="1">DEVELOPER TOOLS &amp; WORKFLOWS</text>
+  <line x1="76" y1="397" x2="924" y2="397" stroke="#30363D" stroke-width="1"/>
+  <text fill="#BBBBBB" class="mono" x="76" y="425" font-size="14.5" font-weight="600">Git  ·  GitHub Actions  ·  Linux  ·  Jupyter  ·  Streamlit  ·  Vercel  ·  VS Code</text>
 </svg>

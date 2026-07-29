@@ -1,27 +1,27 @@
-<svg viewBox="0 0 1000 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Nanda Header">
+<svg viewBox="0 0 1000 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Nanda Header">
   <style>
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
-    .title { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-weight: 800; }
+    .title { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-weight: 900; }
   </style>
-  <rect width="1000" height="380" fill="#000000"/>
-  <line x1="48" y1="48" x2="952" y2="48" stroke="#30363D" stroke-width="1"/>
-  <text class="mono" fill="#888888" x="48" y="36" font-size="11" letter-spacing="3.5">PORTFOLIO — INDEX Nº 001</text>
-  <text class="mono" fill="#888888" x="952" y="36" font-size="11" letter-spacing="3.5" text-anchor="end">DELHI, IN — 28.61° N</text>
+  <rect width="1000" height="420" fill="#000000"/>
+  <line x1="48" y1="50" x2="952" y2="50" stroke="#30363D" stroke-width="1.5"/>
+  <text class="mono" fill="#999999" x="48" y="38" font-size="13" font-weight="700" letter-spacing="3.5">PORTFOLIO — INDEX Nº 001</text>
+  <text class="mono" fill="#999999" x="952" y="38" font-size="13" font-weight="700" letter-spacing="3.5" text-anchor="end">DELHI, IN — 28.61° N</text>
 
-  <text fill="#FFFFFF" class="title" x="46" y="150" font-size="64" letter-spacing="-2">Garv Nanda</text>
-  <text fill="#888888" class="mono" x="48" y="190" font-size="18" font-weight="600">ML &amp; Backend Engineer — Training models while my CPU screams for mercy.</text>
+  <text fill="#FFFFFF" class="title" x="46" y="160" font-size="72" letter-spacing="-2">Garv Nanda</text>
+  <text fill="#999999" class="mono" x="48" y="206" font-size="22" font-weight="700">ML &amp; Backend Engineer — Training models while my CPU screams for mercy.</text>
 
-  <text fill="#666666" class="mono" x="48" y="246" font-size="13" letter-spacing="1">focus  ▸</text>
-  <text fill="#AAAAAA" class="mono" x="128" y="246" font-size="13" letter-spacing="1">machine learning · high-throughput backends · AI safety · Web3 systems</text>
+  <text fill="#777777" class="mono" x="48" y="268" font-size="15" font-weight="700" letter-spacing="1">focus  ▸</text>
+  <text fill="#BBBBBB" class="mono" x="140" y="268" font-size="15" font-weight="600" letter-spacing="0.5">machine learning · high-throughput backends · AI safety · Web3 systems</text>
   
-  <text fill="#666666" class="mono" x="48" y="274" font-size="13" letter-spacing="1">status ▸</text>
-  <text fill="#AAAAAA" class="mono" x="128" y="274" font-size="13" letter-spacing="1">open for internships · freelance · research collaboration</text>
+  <text fill="#777777" class="mono" x="48" y="300" font-size="15" font-weight="700" letter-spacing="1">status ▸</text>
+  <text fill="#BBBBBB" class="mono" x="140" y="300" font-size="15" font-weight="600" letter-spacing="0.5">open for internships · freelance · research collaboration</text>
 
-  <line x1="48" y1="318" x2="952" y2="318" stroke="#30363D" stroke-width="1"/>
-  <text fill="#888888" class="mono" x="48" y="350" font-size="11.5" letter-spacing="2.5">PYTHON &amp; PYTORCH</text>
-  <text fill="#AAAAAA" class="mono" x="225" y="350" font-size="11.5">·</text>
-  <text fill="#888888" class="mono" x="245" y="350" font-size="11.5" letter-spacing="2.5">FASTAPI &amp; BACKENDS</text>
-  <text fill="#AAAAAA" class="mono" x="455" y="350" font-size="11.5">·</text>
-  <text fill="#888888" class="mono" x="475" y="350" font-size="11.5" letter-spacing="2.5">AI SAFETY &amp; LLMS</text>
-  <text fill="#888888" class="mono" x="952" y="350" font-size="11.5" letter-spacing="2.5" text-anchor="end">3RD YEAR CSE @ GGSIPU</text>
+  <line x1="48" y1="350" x2="952" y2="350" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#999999" class="mono" x="48" y="386" font-size="13" font-weight="700" letter-spacing="2.5">PYTHON &amp; PYTORCH</text>
+  <text fill="#BBBBBB" class="mono" x="240" y="386" font-size="14">·</text>
+  <text fill="#999999" class="mono" x="260" y="386" font-size="13" font-weight="700" letter-spacing="2.5">FASTAPI &amp; BACKENDS</text>
+  <text fill="#BBBBBB" class="mono" x="490" y="386" font-size="14">·</text>
+  <text fill="#999999" class="mono" x="510" y="386" font-size="13" font-weight="700" letter-spacing="2.5">AI SAFETY &amp; LLMS</text>
+  <text fill="#999999" class="mono" x="952" y="386" font-size="13" font-weight="700" letter-spacing="2.5" text-anchor="end">3RD YEAR CSE @ GGSIPU</text>
 </svg>

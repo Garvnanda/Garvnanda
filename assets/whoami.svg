@@ -1,19 +1,19 @@
-<svg viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Who Am I">
+<svg viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Who Am I">
   <style>
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
   </style>
-  <rect width="1000" height="300" fill="#FFFFFF"/>
-  <rect x="48" y="16" width="904" height="268" rx="6" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1"/>
+  <rect width="1000" height="320" fill="#FFFFFF"/>
+  <rect x="48" y="16" width="904" height="288" rx="8" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1.5"/>
   
-  <text fill="#000000" class="mono" x="80" y="56" font-size="16" font-weight="700" letter-spacing="2">ABOUT / DIAGNOSTICS</text>
-  <line x1="80" y1="72" x2="920" y2="72" stroke="#E1E4E8" stroke-width="1"/>
+  <text fill="#000000" class="mono" x="80" y="60" font-size="18" font-weight="800" letter-spacing="2">ABOUT / SYSTEM DIAGNOSTICS</text>
+  <line x1="80" y1="76" x2="920" y2="76" stroke="#E1E4E8" stroke-width="1"/>
   
-  <text fill="#444444" class="mono" x="80" y="108" font-size="13.5">▸ 3rd-year B.Tech CSE undergrad at GGSIPU specializing in Machine Learning engineering,</text>
-  <text fill="#444444" class="mono" x="98" y="132" font-size="13.5">high-throughput backend architecture, and AI safety framework design.</text>
+  <text fill="#333333" class="mono" x="80" y="116" font-size="15" font-weight="500">▸ 3rd-year B.Tech CSE undergrad at GGSIPU specializing in Machine Learning engineering,</text>
+  <text fill="#333333" class="mono" x="100" y="142" font-size="15" font-weight="500">high-throughput backend architecture, and AI safety framework design.</text>
   
-  <text fill="#444444" class="mono" x="80" y="168" font-size="13.5">▸ Passionate about building resilient, production-ready AI systems — from voice-first LLM copilots</text>
-  <text fill="#444444" class="mono" x="98" y="192" font-size="13.5">(GallaSaathi) and intelligent conversational crime DBs (Datathon-2026) to neural network auditing (SANN).</text>
+  <text fill="#333333" class="mono" x="80" y="182" font-size="15" font-weight="500">▸ Building resilient, production AI systems — from voice-first LLM copilots (GallaSaathi)</text>
+  <text fill="#333333" class="mono" x="100" y="208" font-size="15" font-weight="500">and conversational crime AI (Datathon 2026) to neural network auditing suites (SANN).</text>
 
-  <text fill="#444444" class="mono" x="80" y="228" font-size="13.5">▸ Core focus: PyTorch model fine-tuning (LoRA/PEFT), neural safety &amp; shortcut detection,</text>
-  <text fill="#444444" class="mono" x="98" y="252" font-size="13.5">distributed FastAPI microservices, and decentralized Web3 application backends.</text>
+  <text fill="#333333" class="mono" x="80" y="248" font-size="15" font-weight="500">▸ Core expertise: PyTorch model fine-tuning (LoRA/PEFT), neural safety &amp; shortcut detection,</text>
+  <text fill="#333333" class="mono" x="100" y="274" font-size="15" font-weight="500">distributed FastAPI microservices, and decentralized Web3 application backends.</text>
 </svg>
