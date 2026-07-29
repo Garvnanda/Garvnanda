@@ -1,10 +1,13 @@
 {
-  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "fen": "rnbqkb1r/pppppppp/7n/8/8/2P5/PP1PPPPP/RNBQKBNR w KQkq - 1 2",
   "status": "in_progress",
-  "move_history": [],
-  "last_move": "Reset Game",
-  "last_player": "System",
-  "turn_count": 1,
+  "move_history": [
+    "c2c3",
+    "g8h6"
+  ],
+  "last_move": "c2c3 (You) \u2794 g8h6 (AI)",
+  "last_player": "sadhakshara",
+  "turn_count": 2,
   "winner": null,
   "repo_count": 6
 }
