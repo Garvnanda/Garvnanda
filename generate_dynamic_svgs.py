@@ -198,107 +198,129 @@ def gen_terminal_svg():
 def gen_constellation_svg():
     repos = get_top_repos()
     
-    # Center coordinates inside viewBox 0 0 1000 420
-    # Card is x=48 y=20 width=904 height=380
-    center_x, center_y = 500, 210
-    nodes = []
-    
-    # Inner Orbit (3 repos) - Radius 95px
-    r_inner = 95
-    for i in range(min(3, len(repos))):
-        angle = (i * (360/3) - 90) * (math.pi/180) # -90° starts at top
-        x = center_x + r_inner * math.cos(angle)
-        y = center_y + r_inner * math.sin(angle)
-        nodes.append((repos[i][0], x, y))
-
-    # Outer Orbit (3 repos) - Radius 150px
-    r_outer = 150
-    for i in range(3, len(repos)):
-        angle = ((i-3) * (360/3) + 30) * (math.pi/180) # Offset for constellation symmetry
-        x = center_x + r_outer * math.cos(angle)
-        y = center_y + r_outer * math.sin(angle)
-        nodes.append((repos[i][0], x, y))
-
-    lines_svg = ""
-    nodes_svg = ""
-    for idx, (name, x, y) in enumerate(nodes):
-        # Dashed constellation connection line to center
-        lines_svg += f'<line x1="{center_x}" y1="{center_y}" x2="{x}" y2="{y}" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>'
+    # 6 Top Repos mapped to Tree Fruit Nodes
+    repo_names = [r[0] for r in repos]
+    while len(repo_names) < 6:
+        repo_names.append(f"Repo_{len(repo_names)+1}")
         
-        delay = idx * 0.4
-        name_esc = name.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-        
-        # Calculate text badge offset (badge below node dot)
-        badge_w = len(name) * 8 + 24
-        badge_x = x - badge_w / 2
-        badge_y = y + 16
-        
-        nodes_svg += f'''
-        <g class="node-group" style="animation-delay: {delay}s; transform-origin: {x}px {y}px;">
-            <!-- Outer Glow Aura -->
-            <circle cx="{x}" cy="{y}" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
-            <circle cx="{x}" cy="{y}" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
-            <circle cx="{x}" cy="{y}" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
-            <rect x="{badge_x}" y="{badge_y}" width="{badge_w}" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-            <text x="{x}" y="{badge_y + 16}" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">{name_esc}</text>
-        </g>
-        '''
+    r1, r2, r3, r4, r5, r6 = [r.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;') for r in repo_names[:6]]
 
-    return f'''<svg viewBox="0 0 1000 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ecosystem Constellation">
+    return f'''<svg viewBox="0 0 1000 440" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ecosystem Tree">
   <style>
     .mono {{ font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }}
     .bg {{ fill: #000000; }}
     .card {{ fill: #111111; stroke: #30363D; stroke-width: 1.5; }}
     
-    .node-group {{ animation: float 4s ease-in-out infinite; transition: transform 0.3s; }}
-    .node-group:hover {{ transform: scale(1.12); cursor: pointer; }}
+    .trunk {{ stroke: #FFFFFF; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }}
+    .branch-y {{ stroke: #E3B341; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }}
+    
+    .fruit-pink {{ fill: #111111; stroke: #FF5F56; stroke-width: 3.5; }}
+    .fruit-green {{ fill: #111111; stroke: #39D353; stroke-width: 3.5; }}
+    .fruit-blue {{ fill: #111111; stroke: #58A6FF; stroke-width: 3.5; }}
+    
+    .fruit-group {{ animation: float 4s ease-in-out infinite; transition: transform 0.3s; }}
+    .fruit-group:hover {{ transform: scale(1.12); cursor: pointer; }}
     
     @keyframes float {{
       0%, 100% {{ transform: translateY(0px); }}
-      50% {{ transform: translateY(-6px); }}
-    }}
-    
-    .center-pulse {{ animation: pulse 3s infinite; transform-origin: {center_x}px {center_y}px; }}
-    @keyframes pulse {{
-      0% {{ transform: scale(1); opacity: 0.5; }}
-      50% {{ transform: scale(1.35); opacity: 0.15; }}
-      100% {{ transform: scale(1); opacity: 0.5; }}
+      50% {{ transform: translateY(-5px); }}
     }}
   </style>
   
-  <!-- Black canvas matching Garv design system -->
-  <rect width="1000" height="420" class="bg"/>
-  
-  <!-- Outer Card Frame aligned with x=48 width=904 -->
-  <rect x="48" y="20" width="904" height="380" rx="8" class="card"/>
+  <!-- Transparent / Black outer canvas -->
+  <rect width="1000" height="440" class="bg"/>
+  <rect x="48" y="20" width="904" height="400" rx="8" class="card"/>
   
   <!-- Header Title -->
-  <text fill="#FFFFFF" class="mono" x="72" y="56" font-size="16" font-weight="800" letter-spacing="1">LIVE ECOSYSTEM CONSTELLATION 🌌</text>
-  <text fill="#8B949E" class="mono" x="928" y="56" font-size="12" font-weight="600" text-anchor="end">REAL-TIME REPOSITORY GRAPH</text>
+  <text fill="#FFFFFF" class="mono" x="72" y="56" font-size="16" font-weight="800" letter-spacing="1">LIVE ECOSYSTEM TREE 🌳</text>
+  <text fill="#8B949E" class="mono" x="928" y="56" font-size="12" font-weight="600" text-anchor="end">REAL-TIME REPOSITORY BRANCHES</text>
   <line x1="72" y1="70" x2="928" y2="70" stroke="#30363D" stroke-width="1"/>
 
-  <!-- Orbits & Connections -->
   <g>
-    <!-- Orbit Guide Circles -->
-    <circle cx="{center_x}" cy="{center_y}" r="95" stroke="#21262D" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
-    <circle cx="{center_x}" cy="{center_y}" r="150" stroke="#21262D" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+    <!-- ROOT BASE LINE -->
+    <path d="M 360 380 Q 500 380 500 340 Q 500 380 640 380" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.4"/>
 
-    {lines_svg}
+    <!-- TRUNK LINES (PARALLEL CIRCUIT TRUNKS) -->
+    <line x1="492" y1="360" x2="492" y2="200" class="trunk"/>
+    <line x1="500" y1="360" x2="500" y2="160" class="trunk"/>
+    <line x1="508" y1="360" x2="508" y2="200" class="trunk"/>
 
-    <!-- Center Node (Garv Nanda) -->
-    <circle cx="{center_x}" cy="{center_y}" r="40" fill="#39D353" class="center-pulse"/>
-    <circle cx="{center_x}" cy="{center_y}" r="22" fill="#238636" stroke="#FFFFFF" stroke-width="2.5"/>
+    <!-- BRANCHES LEFT -->
+    <!-- Low Left Branch -->
+    <path d="M 492 310 L 380 310 L 300 260 L 230 260" class="branch-y"/>
     
-    <!-- Center Label Badge -->
-    <rect x="{center_x - 65}" y="{center_y + 30}" width="130" height="26" rx="4" fill="#0D1117" stroke="#238636" stroke-width="1.5"/>
-    <text x="{center_x}" y="{center_y + 47}" fill="#39D353" class="mono" font-size="13" text-anchor="middle" font-weight="800">@Garvnanda</text>
+    <!-- Mid Left Branch -->
+    <path d="M 492 250 L 400 200 L 320 200 L 260 160" class="branch-y"/>
     
-    {nodes_svg}
+    <!-- High Left Branch -->
+    <path d="M 500 180 L 430 120 L 340 120 L 300 95" class="branch-y"/>
+
+    <!-- BRANCHES RIGHT -->
+    <!-- Low Right Branch -->
+    <path d="M 508 310 L 620 310 L 700 260 L 770 260" class="branch-y"/>
+    
+    <!-- Mid Right Branch -->
+    <path d="M 508 250 L 600 200 L 680 200 L 740 160" class="branch-y"/>
+    
+    <!-- High Right Branch -->
+    <path d="M 500 180 L 570 120 L 660 120 L 700 95" class="branch-y"/>
+
+    <!-- TOP CENTER TRUNK FRUIT -->
+    <path d="M 500 160 L 500 90" class="branch-y"/>
+
+    <!-- FRUIT NODES & BADGES -->
+    
+    <!-- Top Center Core Node -->
+    <g class="fruit-group" style="transform-origin: 500px 90px;">
+      <circle cx="500" cy="90" r="15" class="fruit-green"/>
+      <rect x="430" y="55" width="140" height="22" rx="4" fill="#161B22" stroke="#39D353" stroke-width="1"/>
+      <text x="500" y="70" fill="#39D353" class="mono" font-size="12" font-weight="800" text-anchor="middle">@Garvnanda Core</text>
+    </g>
+
+    <!-- Node 1: High Left -->
+    <g class="fruit-group" style="transform-origin: 300px 95px;">
+      <circle cx="300" cy="95" r="14" class="fruit-pink"/>
+      <rect x="180" y="83" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="230" y="99" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r1}</text>
+    </g>
+
+    <!-- Node 2: High Right -->
+    <g class="fruit-group" style="transform-origin: 700px 95px;">
+      <circle cx="700" cy="95" r="14" class="fruit-blue"/>
+      <rect x="720" y="83" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="770" y="99" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r2}</text>
+    </g>
+
+    <!-- Node 3: Mid Left -->
+    <g class="fruit-group" style="transform-origin: 260px 160px;">
+      <circle cx="260" cy="160" r="14" class="fruit-blue"/>
+      <rect x="140" y="148" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="190" y="164" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r3}</text>
+    </g>
+
+    <!-- Node 4: Mid Right -->
+    <g class="fruit-group" style="transform-origin: 740px 160px;">
+      <circle cx="740" cy="160" r="14" class="fruit-pink"/>
+      <rect x="760" y="148" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="810" y="164" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r4}</text>
+    </g>
+
+    <!-- Node 5: Low Left -->
+    <g class="fruit-group" style="transform-origin: 230px 260px;">
+      <circle cx="230" cy="260" r="14" class="fruit-green"/>
+      <rect x="110" y="248" width="105" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="162" y="264" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r5}</text>
+    </g>
+
+    <!-- Node 6: Low Right -->
+    <g class="fruit-group" style="transform-origin: 770px 260px;">
+      <circle cx="770" cy="260" r="14" class="fruit-green"/>
+      <rect x="790" y="248" width="105" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="842" y="264" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r6}</text>
+    </g>
   </g>
 </svg>'''
+
 
 def gen_maze_svg():
     matrix = get_contribution_matrix()
