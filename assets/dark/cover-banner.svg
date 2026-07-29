@@ -29,6 +29,6 @@
   <circle cx="820" cy="170" r="3.5" fill="#58A6FF"/>
   <circle cx="680" cy="150" r="3" fill="#58A6FF"/>
 
-  <text fill="#FFFFFF" class="title" x="500" y="110" font-size="44" letter-spacing="2" text-anchor="middle">Garv Nanda</text>
+  <text fill="#FFFFFF" class="title" x="500" y="110" font-size="44" letter-spacing="2" text-anchor="middle">Hello coders</text>
   <text fill="#8B949E" class="mono" x="500" y="152" font-size="18" font-weight="600" letter-spacing="3" text-anchor="middle">ML &amp; BACKEND ENGINEER</text>
 </svg>

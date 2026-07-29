@@ -9,8 +9,10 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/dark/header-v1.svg"/>
-  <img src="assets/header-v1.svg" alt="Garv Nanda Header"/>
+  <img src="assets/header-v1.svg" alt="Hello Coders Header"/>
 </picture>
+
+<br/><br/>
 
 <p align="center">
   <img src="https://media.giphy.com/media/QvpqTCiEcwtvx6wwJK/giphy.gif" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></img>

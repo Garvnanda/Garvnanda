@@ -51,7 +51,7 @@ def gen_cover_banner(dark=False):
   <circle cx="820" cy="170" r="3.5" fill="{node_color}"/>
   <circle cx="680" cy="150" r="3" fill="{node_color}"/>
 
-  <text fill="{text_color}" class="title" x="500" y="110" font-size="44" letter-spacing="2" text-anchor="middle">Garv Nanda</text>
+  <text fill="{text_color}" class="title" x="500" y="110" font-size="44" letter-spacing="2" text-anchor="middle">Hello coders</text>
   <text fill="{sub_color}" class="mono" x="500" y="152" font-size="18" font-weight="600" letter-spacing="3" text-anchor="middle">ML &amp; BACKEND ENGINEER</text>
 </svg>'''
 
@@ -88,7 +88,7 @@ def gen_header(dark=False):
   <text class="mono" fill="{muted}" x="48" y="38" font-size="13" font-weight="700" letter-spacing="3.5">PORTFOLIO — INDEX Nº 001</text>
   <text class="mono" fill="{muted}" x="952" y="38" font-size="13" font-weight="700" letter-spacing="3.5" text-anchor="end">DELHI, IN — 28.61° N</text>
 
-  <text fill="{bone}" class="title" x="46" y="150" font-size="70" letter-spacing="-2">Garv Nanda</text>
+  <text fill="{bone}" class="title" x="46" y="150" font-size="70" letter-spacing="-2">Hello coders</text>
   <text fill="{muted}" class="mono" x="48" y="194" font-size="21" font-weight="700">ML &amp; Backend Engineer — Training models while my CPU screams for mercy.</text>
 
   <text fill="{dim}" class="mono" x="48" y="248" font-size="15" font-weight="700" letter-spacing="1">focus  ▸</text>

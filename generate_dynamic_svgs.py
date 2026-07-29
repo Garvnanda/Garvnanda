@@ -205,7 +205,7 @@ def gen_constellation_svg():
         
     r1, r2, r3, r4, r5, r6 = [r.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;') for r in repo_names[:6]]
 
-    return f'''<svg viewBox="0 0 1000 440" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ecosystem Tree">
+    return f'''<svg viewBox="0 0 1000 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ecosystem Tree">
   <style>
     .mono {{ font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }}
     .bg {{ fill: #000000; }}
@@ -227,9 +227,9 @@ def gen_constellation_svg():
     }}
   </style>
   
-  <!-- Transparent / Black outer canvas -->
-  <rect width="1000" height="440" class="bg"/>
-  <rect x="48" y="20" width="904" height="400" rx="8" class="card"/>
+  <!-- Transparent / Black outer canvas with 540px height -->
+  <rect width="1000" height="540" class="bg"/>
+  <rect x="48" y="20" width="904" height="500" rx="8" class="card"/>
   
   <!-- Header Title -->
   <text fill="#FFFFFF" class="mono" x="72" y="56" font-size="16" font-weight="800" letter-spacing="1">LIVE ECOSYSTEM TREE 🌳</text>
@@ -238,88 +238,89 @@ def gen_constellation_svg():
 
   <g>
     <!-- ROOT BASE LINE -->
-    <path d="M 360 380 Q 500 380 500 340 Q 500 380 640 380" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M 340 470 Q 500 470 500 430 Q 500 470 660 470" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.4"/>
 
     <!-- TRUNK LINES (PARALLEL CIRCUIT TRUNKS) -->
-    <line x1="492" y1="360" x2="492" y2="200" class="trunk"/>
-    <line x1="500" y1="360" x2="500" y2="160" class="trunk"/>
-    <line x1="508" y1="360" x2="508" y2="200" class="trunk"/>
+    <line x1="492" y1="450" x2="492" y2="260" class="trunk"/>
+    <line x1="500" y1="450" x2="500" y2="200" class="trunk"/>
+    <line x1="508" y1="450" x2="508" y2="260" class="trunk"/>
 
     <!-- BRANCHES LEFT -->
     <!-- Low Left Branch -->
-    <path d="M 492 310 L 380 310 L 300 260 L 230 260" class="branch-y"/>
+    <path d="M 492 410 L 380 410 L 300 370 L 230 370" class="branch-y"/>
     
     <!-- Mid Left Branch -->
-    <path d="M 492 250 L 400 200 L 320 200 L 260 160" class="branch-y"/>
+    <path d="M 492 320 L 400 270 L 320 270 L 260 240" class="branch-y"/>
     
     <!-- High Left Branch -->
-    <path d="M 500 180 L 430 120 L 340 120 L 300 95" class="branch-y"/>
+    <path d="M 500 240 L 430 180 L 340 180 L 300 150" class="branch-y"/>
 
     <!-- BRANCHES RIGHT -->
     <!-- Low Right Branch -->
-    <path d="M 508 310 L 620 310 L 700 260 L 770 260" class="branch-y"/>
+    <path d="M 508 410 L 620 410 L 700 370 L 770 370" class="branch-y"/>
     
     <!-- Mid Right Branch -->
-    <path d="M 508 250 L 600 200 L 680 200 L 740 160" class="branch-y"/>
+    <path d="M 508 320 L 600 270 L 680 270 L 740 240" class="branch-y"/>
     
     <!-- High Right Branch -->
-    <path d="M 500 180 L 570 120 L 660 120 L 700 95" class="branch-y"/>
+    <path d="M 500 240 L 570 180 L 660 180 L 700 150" class="branch-y"/>
 
     <!-- TOP CENTER TRUNK FRUIT -->
-    <path d="M 500 160 L 500 90" class="branch-y"/>
+    <path d="M 500 200 L 500 135" class="branch-y"/>
 
     <!-- FRUIT NODES & BADGES -->
     
-    <!-- Top Center Core Node -->
-    <g class="fruit-group" style="transform-origin: 500px 90px;">
-      <circle cx="500" cy="90" r="15" class="fruit-green"/>
-      <rect x="430" y="55" width="140" height="22" rx="4" fill="#161B22" stroke="#39D353" stroke-width="1"/>
-      <text x="500" y="70" fill="#39D353" class="mono" font-size="12" font-weight="800" text-anchor="middle">@Garvnanda Core</text>
+    <!-- Top Center Core Node (Padded well below header line at y=70) -->
+    <g class="fruit-group" style="transform-origin: 500px 135px;">
+      <circle cx="500" cy="135" r="15" class="fruit-green"/>
+      <rect x="430" y="96" width="140" height="24" rx="4" fill="#161B22" stroke="#39D353" stroke-width="1"/>
+      <text x="500" y="112" fill="#39D353" class="mono" font-size="12" font-weight="800" text-anchor="middle">@Garvnanda Core</text>
     </g>
 
     <!-- Node 1: High Left -->
-    <g class="fruit-group" style="transform-origin: 300px 95px;">
-      <circle cx="300" cy="95" r="14" class="fruit-pink"/>
-      <rect x="180" y="83" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-      <text x="230" y="99" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r1}</text>
+    <g class="fruit-group" style="transform-origin: 300px 150px;">
+      <circle cx="300" cy="150" r="14" class="fruit-pink"/>
+      <rect x="170" y="138" width="110" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="225" y="154" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r1}</text>
     </g>
 
     <!-- Node 2: High Right -->
-    <g class="fruit-group" style="transform-origin: 700px 95px;">
-      <circle cx="700" cy="95" r="14" class="fruit-blue"/>
-      <rect x="720" y="83" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-      <text x="770" y="99" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r2}</text>
+    <g class="fruit-group" style="transform-origin: 700px 150px;">
+      <circle cx="700" cy="150" r="14" class="fruit-blue"/>
+      <rect x="730" y="138" width="110" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="785" y="154" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r2}</text>
     </g>
 
     <!-- Node 3: Mid Left -->
-    <g class="fruit-group" style="transform-origin: 260px 160px;">
-      <circle cx="260" cy="160" r="14" class="fruit-blue"/>
-      <rect x="140" y="148" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-      <text x="190" y="164" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r3}</text>
+    <g class="fruit-group" style="transform-origin: 260px 240px;">
+      <circle cx="260" cy="240" r="14" class="fruit-blue"/>
+      <rect x="130" y="228" width="110" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="185" y="244" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r3}</text>
     </g>
 
     <!-- Node 4: Mid Right -->
-    <g class="fruit-group" style="transform-origin: 740px 160px;">
-      <circle cx="740" cy="160" r="14" class="fruit-pink"/>
-      <rect x="760" y="148" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-      <text x="810" y="164" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r4}</text>
+    <g class="fruit-group" style="transform-origin: 740px 240px;">
+      <circle cx="740" cy="240" r="14" class="fruit-pink"/>
+      <rect x="770" y="228" width="110" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="825" y="244" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r4}</text>
     </g>
 
     <!-- Node 5: Low Left -->
-    <g class="fruit-group" style="transform-origin: 230px 260px;">
-      <circle cx="230" cy="260" r="14" class="fruit-green"/>
-      <rect x="110" y="248" width="105" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-      <text x="162" y="264" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r5}</text>
+    <g class="fruit-group" style="transform-origin: 230px 370px;">
+      <circle cx="230" cy="370" r="14" class="fruit-green"/>
+      <rect x="100" y="358" width="115" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="157" y="374" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r5}</text>
     </g>
 
     <!-- Node 6: Low Right -->
-    <g class="fruit-group" style="transform-origin: 770px 260px;">
-      <circle cx="770" cy="260" r="14" class="fruit-green"/>
-      <rect x="790" y="248" width="105" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-      <text x="842" y="264" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r6}</text>
+    <g class="fruit-group" style="transform-origin: 770px 370px;">
+      <circle cx="770" cy="370" r="14" class="fruit-green"/>
+      <rect x="800" y="358" width="115" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="857" y="374" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">{r6}</text>
     </g>
   </g>
 </svg>'''
+
 
 
 def gen_maze_svg():
