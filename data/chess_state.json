@@ -1,0 +1,9 @@
+{
+  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "status": "in_progress",
+  "move_history": [],
+  "last_move": "Reset Game",
+  "last_player": "System",
+  "turn_count": 1,
+  "winner": null
+}

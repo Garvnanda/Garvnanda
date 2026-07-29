@@ -35,14 +35,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — SYSTEM MAP"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/ecosystem.svg"/><img src="assets/ecosystem.svg" alt="System Ecosystem Map"/></picture>
-
-<div align="center">
-  <br/>
-  <!-- LIVE ECOSYSTEM CONSTELLATION -->
-  <picture>
-    <img src="assets/dynamic/constellation.svg" width="97%" alt="Live Ecosystem Constellation"/>
-  </picture>
-</div>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/dynamic/constellation.svg"/><img src="assets/dynamic/constellation.svg" alt="Live Ecosystem Constellation"/></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/s03.svg" alt="03 — PROJECTS"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="Featured Projects Grid"/></picture>
@@ -75,9 +68,7 @@
 <br/><br/>
 
 <!-- LIVE-TYPING IDE TERMINAL -->
-<picture>
-  <img src="assets/dynamic/terminal.svg" width="97%" alt="Live Terminal"/>
-</picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/dynamic/terminal.svg"/><img src="assets/dynamic/terminal.svg" alt="Live Terminal"/></picture>
 
 <br/><br/>
 
@@ -89,12 +80,44 @@
 
 <br/><br/>
 
-<!-- COMMIT HOVER MAZE GAME -->
-<picture>
-  <img src="assets/dynamic/maze.svg" width="97%" alt="Commit Hover Maze Game"/>
-</picture>
+
 
 </div>
+
+<br/>
+
+<!-- CHESS_START -->
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07.svg"/><img src="assets/s07.svg" alt="07 — CHESS ARENA"/></picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
+  <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game"/>
+</picture>
+
+<br/><br/>
+
+<div align="center">
+
+### ♟️ AVAILABLE LEGAL MOVES (CLICK TO PLAY)
+
+| Move | Click to Play | Move | Click to Play |
+| --- | --- | --- | --- |
+| **g1h3** | [ ▶ Play g1 ➔ h3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg1h3&body=Click+Submit+new+issue+to+play+move+g1h3) | **g1f3** | [ ▶ Play g1 ➔ f3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg1f3&body=Click+Submit+new+issue+to+play+move+g1f3) |
+| **b1c3** | [ ▶ Play b1 ➔ c3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb1c3&body=Click+Submit+new+issue+to+play+move+b1c3) | **b1a3** | [ ▶ Play b1 ➔ a3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb1a3&body=Click+Submit+new+issue+to+play+move+b1a3) |
+| **h2h3** | [ ▶ Play h2 ➔ h3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ch2h3&body=Click+Submit+new+issue+to+play+move+h2h3) | **g2g3** | [ ▶ Play g2 ➔ g3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg2g3&body=Click+Submit+new+issue+to+play+move+g2g3) |
+| **f2f3** | [ ▶ Play f2 ➔ f3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cf2f3&body=Click+Submit+new+issue+to+play+move+f2f3) | **e2e3** | [ ▶ Play e2 ➔ e3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ce2e3&body=Click+Submit+new+issue+to+play+move+e2e3) |
+| **d2d3** | [ ▶ Play d2 ➔ d3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cd2d3&body=Click+Submit+new+issue+to+play+move+d2d3) | **c2c3** | [ ▶ Play c2 ➔ c3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cc2c3&body=Click+Submit+new+issue+to+play+move+c2c3) |
+| **b2b3** | [ ▶ Play b2 ➔ b3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb2b3&body=Click+Submit+new+issue+to+play+move+b2b3) | **a2a3** | [ ▶ Play a2 ➔ a3 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ca2a3&body=Click+Submit+new+issue+to+play+move+a2a3) |
+| **h2h4** | [ ▶ Play h2 ➔ h4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ch2h4&body=Click+Submit+new+issue+to+play+move+h2h4) | **g2g4** | [ ▶ Play g2 ➔ g4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cg2g4&body=Click+Submit+new+issue+to+play+move+g2g4) |
+| **f2f4** | [ ▶ Play f2 ➔ f4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cf2f4&body=Click+Submit+new+issue+to+play+move+f2f4) | **e2e4** | [ ▶ Play e2 ➔ e4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ce2e4&body=Click+Submit+new+issue+to+play+move+e2e4) |
+| **d2d4** | [ ▶ Play d2 ➔ d4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cd2d4&body=Click+Submit+new+issue+to+play+move+d2d4) | **c2c4** | [ ▶ Play c2 ➔ c4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cc2c4&body=Click+Submit+new+issue+to+play+move+c2c4) |
+| **b2b4** | [ ▶ Play b2 ➔ b4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Cb2b4&body=Click+Submit+new+issue+to+play+move+b2b4) | **a2a4** | [ ▶ Play a2 ➔ a4 ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Ca2a4&body=Click+Submit+new+issue+to+play+move+a2a4) |
+
+[ **🔄 Reset Chess Game** ](https://github.com/Garvnanda/Garvnanda/issues/new?title=chess%7Creset&body=Click+Submit+New+Issue+to+reset+the+board)
+
+
+</div>
+<!-- CHESS_END -->
 
 <br/>
 

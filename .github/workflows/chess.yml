@@ -1,0 +1,67 @@
+name: Profile Chess Engine Workflow
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  play_chess:
+    if: startsWith(github.event.issue.title, 'chess|')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install python-chess
+
+      - name: Parse Move & Execute Engine
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+          USER="${{ github.event.issue.user.login }}"
+          
+          # Extract move from title format: chess|e2e4 or chess|reset
+          MOVE=$(echo "$TITLE" | cut -d'|' -f2 | tr -d ' ')
+          
+          echo "Processing Chess move '$MOVE' from user '$USER'..."
+          python scripts/chess_game.py "$MOVE" "$USER"
+
+      - name: Commit and Push Board Updates
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/chess_state.json assets/chess_board.svg assets/dark/chess_board.svg README.md
+          git commit -m 'chore(chess): process move and update board telemetry [skip ci]' || echo "No changes to commit"
+          git push
+
+      - name: Close Issue with Confirmation Comment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const title = context.payload.issue.title;
+            const move = title.split('|')[1] || 'move';
+            const body = `### ♟️ Chess Move Processed!\n\nYour move **\`${move}\`** has been executed against **@Garvnanda's AI Bot**.\n\nThe board and available legal moves have been updated directly on the profile README!`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body: body
+            });
+            
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              state: 'closed',
+              state_reason: 'completed'
+            });
