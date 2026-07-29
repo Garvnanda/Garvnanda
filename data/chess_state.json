@@ -1,5 +1,5 @@
 {
-  "fen": "rnbqkb1r/pppppppp/7n/8/2P5/7N/PPQPPPPP/RNBK1B1R w q - 3 6",
+  "fen": "rnbqkbr1/pppppppp/7n/8/2P5/1Q5N/PP1PPPPP/RNBK1B1R w q - 5 7",
   "status": "in_progress",
   "move_history": [
     "c2c3",
@@ -11,11 +11,13 @@
     "c3c4",
     "h8g8",
     "g1h3",
-    "g8h8"
+    "g8h8",
+    "c2b3",
+    "h8g8"
   ],
-  "last_move": "g1h3 (You) \u2794 g8h8 (AI)",
+  "last_move": "c2b3 (You) \u2794 h8g8 (AI)",
   "last_player": "Garvnanda",
-  "turn_count": 6,
+  "turn_count": 7,
   "winner": null,
   "repo_count": 6
 }
