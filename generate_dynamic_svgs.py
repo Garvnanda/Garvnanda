@@ -394,8 +394,9 @@ def gen_maze_svg():
 </svg>'''
 
 if __name__ == "__main__":
-    assets_dir = "c:/Projects/Garvnanda/Garvnanda/assets/dynamic"
-    dark_dir = "c:/Projects/Garvnanda/Garvnanda/assets/dark/dynamic"
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    assets_dir = os.path.join(base_dir, "assets", "dynamic")
+    dark_dir = os.path.join(base_dir, "assets", "dark", "dynamic")
     
     term_svg = gen_terminal_svg()
     const_svg = gen_constellation_svg()

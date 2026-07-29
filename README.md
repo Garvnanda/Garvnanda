@@ -103,8 +103,8 @@
 </td>
 <td align="center" valign="middle" width="520">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
-    <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game" width="480"/>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg?v=1"/>
+    <img src="assets/chess_board.svg?v=1" alt="GitHub Profile Chess Game" width="480"/>
   </picture>
 </td>
 <td align="center" valign="middle">

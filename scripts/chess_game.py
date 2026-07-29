@@ -11,10 +11,11 @@ except ImportError:
     os.system("pip install python-chess")
     import chess
 
-STATE_PATH = "c:/Projects/Garvnanda/Garvnanda/data/chess_state.json"
-ASSETS_DIR = "c:/Projects/Garvnanda/Garvnanda/assets"
-DARK_ASSETS_DIR = "c:/Projects/Garvnanda/Garvnanda/assets/dark"
-README_PATH = "c:/Projects/Garvnanda/Garvnanda/README.md"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATE_PATH = os.path.join(BASE_DIR, "data", "chess_state.json")
+ASSETS_DIR = os.path.join(BASE_DIR, "assets")
+DARK_ASSETS_DIR = os.path.join(BASE_DIR, "assets", "dark")
+README_PATH = os.path.join(BASE_DIR, "README.md")
 REPO_URL = "https://github.com/Garvnanda/Garvnanda"
 
 PIECE_SYMBOLS = {
@@ -98,7 +99,6 @@ def create_svg(path, content):
     print(f"Generated valid Minimalist Chess SVG: {path}")
 
 def gen_board_svg(board, last_move_uci=None, last_player="System"):
-    # Clean 8x8 Board geometry
     sq_size = 50
     board_x, board_y = 50, 60
     
@@ -115,7 +115,6 @@ def gen_board_svg(board, last_move_uci=None, last_player="System"):
         except:
             pass
 
-    # Draw Squares & Pieces
     for rank in range(7, -1, -1):
         for file in range(8):
             sq = chess.square(file, rank)
@@ -125,13 +124,11 @@ def gen_board_svg(board, last_move_uci=None, last_player="System"):
             is_light = (rank + file) % 2 != 0
             color = "#21262D" if is_light else "#111418"
             
-            # Highlight last move
             if sq in (last_from, last_to):
                 color = "#1F402B" if is_light else "#142E1E"
                 
             board_rects += f'<rect x="{px}" y="{py}" width="{sq_size}" height="{sq_size}" fill="{color}"/>'
             
-            # File/Rank Labels
             if rank == 0:
                 file_name = chr(ord('a') + file)
                 board_rects += f'<text x="{px + sq_size - 6}" y="{py + sq_size - 4}" fill="#484F58" class="mono" font-size="10">{file_name}</text>'
@@ -139,14 +136,12 @@ def gen_board_svg(board, last_move_uci=None, last_player="System"):
                 rank_name = str(rank + 1)
                 board_rects += f'<text x="{px + 4}" y="{py + 14}" fill="#484F58" class="mono" font-size="10">{rank_name}</text>'
 
-            # Piece
             piece = board.piece_at(sq)
             if piece:
                 sym = PIECE_SYMBOLS.get(piece.symbol(), '')
                 p_color = "#FFFFFF" if piece.color == chess.WHITE else "#58A6FF"
                 pieces_svg += f'<text x="{px + sq_size/2}" y="{py + sq_size/2 + 13}" fill="{p_color}" font-size="34" text-anchor="middle">{sym}</text>'
 
-    # Status Line
     status_str = "YOUR TURN (WHITE)"
     status_col = "#39D353"
     if board.is_checkmate():
@@ -166,11 +161,9 @@ def gen_board_svg(board, last_move_uci=None, last_player="System"):
   <rect width="500" height="500" class="bg"/>
   <rect x="20" y="20" width="460" height="460" rx="8" class="card"/>
 
-  <!-- Minimal Header -->
   <text fill="#FFFFFF" class="mono" x="50" y="45" font-size="13" font-weight="800">Garv AI (Black) ♟  vs  You (White) ♙</text>
   <text fill="{status_col}" class="mono" x="450" y="45" font-size="12" font-weight="800" text-anchor="end">{status_str}</text>
 
-  <!-- 8x8 Chess Board -->
   <g>
     <rect x="{board_x - 2}" y="{board_y - 2}" width="404" height="404" fill="#161B22" stroke="#30363D" stroke-width="2" rx="4"/>
     {board_rects}
@@ -186,12 +179,10 @@ def update_readme(board, state):
         content = f.read()
 
     legal_moves = list(board.legal_moves)
-    
     left_badges = []
     right_badges = []
 
     if not board.is_game_over():
-        # Split legal moves evenly to left and right columns
         for i, m in enumerate(legal_moves[:12]):
             uci = m.uci()
             move_fmt = f"{uci[:2]} ➔ {uci[2:]}"
@@ -206,6 +197,9 @@ def update_readme(board, state):
 
     left_html = "<br/><br/>".join(left_badges) if left_badges else "<i>No moves</i>"
     right_html = "<br/><br/>".join(right_badges) if right_badges else "<i>No moves</i>"
+
+    # Cache buster query string to force GitHub camo proxy to instantly refresh image
+    v = state.get("turn_count", 1)
 
     chess_section = f'''<!-- CHESS_START -->
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07.svg"/><img src="assets/s07.svg" alt="07 — CHESS ARENA"/></picture>
@@ -224,8 +218,8 @@ def update_readme(board, state):
 </td>
 <td align="center" valign="middle" width="520">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg"/>
-    <img src="assets/chess_board.svg" alt="GitHub Profile Chess Game" width="480"/>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/dark/chess_board.svg?v={v}"/>
+    <img src="assets/chess_board.svg?v={v}" alt="GitHub Profile Chess Game" width="480"/>
   </picture>
 </td>
 <td align="center" valign="middle">
@@ -237,7 +231,6 @@ def update_readme(board, state):
 </div>
 <!-- CHESS_END -->'''
 
-    # Replace or append CHESS section
     if "<!-- CHESS_START -->" in content and "<!-- CHESS_END -->" in content:
         start_idx = content.find("<!-- CHESS_START -->")
         end_idx = content.find("<!-- CHESS_END -->") + len("<!-- CHESS_END -->")
@@ -249,23 +242,20 @@ def update_readme(board, state):
         else:
             new_content = content + "\n\n" + chess_section
 
-    # Remove any stale hover maze section
     new_content = new_content.replace('<!-- COMMIT HOVER MAZE GAME -->\n<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/dynamic/maze.svg"/><img src="assets/dynamic/maze.svg" alt="Commit Hover Maze Game"/></picture>', '')
 
     with open(README_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
-    print("Updated README.md with clean side-by-side Chess layout!")
+    print("Updated README.md with live Chess game arena and cache-busting!")
 
 def main():
     state = load_state()
     board = chess.Board(state["fen"])
     
-    # Process move if passed via CLI: python chess_game.py "chess|e2e4" "Username"
     if len(sys.argv) >= 2:
         raw_input = sys.argv[1].strip()
         player_name = sys.argv[2] if len(sys.argv) >= 3 else "Anonymous"
         
-        # Regex search for UCI move or reset keyword
         match = re.search(r'([a-h][1-8][a-h][1-8]|reset)', raw_input, re.IGNORECASE)
         if match:
             move_input = match.group(1).lower()
@@ -290,7 +280,6 @@ def main():
                         state["last_move"] = move_input
                         state["last_player"] = player_name
                         
-                        # AI Counter-move if game not over
                         if not board.is_game_over():
                             ai_move = get_best_ai_move(board)
                             if ai_move:
@@ -307,12 +296,10 @@ def main():
         else:
             print(f"No valid UCI move found in input string: {raw_input}")
 
-    # Generate Minimal Board SVG
     svg_content = gen_board_svg(board, state.get("last_move"), state.get("last_player"))
     create_svg(os.path.join(ASSETS_DIR, "chess_board.svg"), svg_content)
     create_svg(os.path.join(DARK_ASSETS_DIR, "chess_board.svg"), svg_content)
 
-    # Save State & Update README
     save_state(state)
     update_readme(board, state)
 
