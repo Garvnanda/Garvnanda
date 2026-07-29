@@ -103,8 +103,8 @@
 </td>
 <td align="center" valign="middle" width="520">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Garvnanda/Garvnanda/main/assets/dark/chess_board.svg?v=1785355028"/>
-    <img src="https://raw.githubusercontent.com/Garvnanda/Garvnanda/main/assets/chess_board.svg?v=1785355028" alt="GitHub Profile Chess Game" width="480"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Garvnanda/Garvnanda/c049a37fb30f9238674c2124ce0dc0c2d79c4053/assets/dark/chess_board.svg"/>
+    <img src="https://raw.githubusercontent.com/Garvnanda/Garvnanda/c049a37fb30f9238674c2124ce0dc0c2d79c4053/assets/chess_board.svg" alt="GitHub Profile Chess Game" width="480"/>
   </picture>
 </td>
 <td align="center" valign="middle">

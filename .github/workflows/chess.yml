@@ -38,7 +38,21 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add data/chess_state.json assets/chess_board.svg assets/dark/chess_board.svg README.md
           git commit -m 'chore(chess): process move and update board telemetry [skip ci]' || echo "No changes to commit"
+          
+          # Inject new commit SHA into raw.githubusercontent.com URLs in README.md to bypass Camo proxy cache
+          NEW_SHA=$(git rev-parse HEAD)
+          python -c "
+import re
+with open('README.md', 'r') as f:
+    c = f.read()
+c = re.sub(r'raw\.githubusercontent\.com/Garvnanda/Garvnanda/[a-zA-Z0-9_-]+/', f'raw.githubusercontent.com/Garvnanda/Garvnanda/{NEW_SHA}/', c)
+with open('README.md', 'w') as f:
+    f.write(c)
+"
+          git add README.md
+          git commit --amend --no-edit || true
           git push
+
 
       - name: Close Issue with Confirmation Comment
         uses: actions/github-script@v6
