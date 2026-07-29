@@ -4,7 +4,6 @@ import xml.etree.ElementTree as ET
 def create_svg(path, content):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     clean_content = content.strip()
-    # Validate XML
     try:
         ET.fromstring(clean_content)
     except ET.ParseError as e:
@@ -13,6 +12,51 @@ def create_svg(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(clean_content)
     print(f"Generated valid SVG: {path}")
+
+def gen_cover_banner(dark=False):
+    bg = "#0D1117" if dark else "#F6F8FA"
+    text_color = "#FFFFFF" if dark else "#000000"
+    sub_color = "#8B949E" if dark else "#57606A"
+    line_color = "rgba(255,255,255,0.12)" if dark else "rgba(0,0,0,0.12)"
+    node_color = "#58A6FF" if dark else "#0969DA"
+
+    return f'''<svg viewBox="0 0 1000 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Nanda Cover Banner">
+  <style>
+    .mono {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }}
+    .title {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-weight: 900; }}
+  </style>
+  <rect width="1000" height="220" rx="8" fill="{bg}"/>
+  
+  <!-- Constellation Mesh Network Background -->
+  <line x1="80" y1="40" x2="220" y2="90" stroke="{line_color}" stroke-width="1"/>
+  <line x1="220" y1="90" x2="160" y2="160" stroke="{line_color}" stroke-width="1"/>
+  <line x1="160" y1="160" x2="300" y2="140" stroke="{line_color}" stroke-width="1"/>
+  <line x1="300" y1="140" x2="380" y2="60" stroke="{line_color}" stroke-width="1"/>
+  <line x1="380" y1="60" x2="220" y2="90" stroke="{line_color}" stroke-width="1"/>
+
+  <line x1="620" y1="50" x2="740" y2="120" stroke="{line_color}" stroke-width="1"/>
+  <line x1="740" y1="120" x2="880" y2="70" stroke="{line_color}" stroke-width="1"/>
+  <line x1="880" y1="70" x2="820" y2="170" stroke="{line_color}" stroke-width="1"/>
+  <line x1="820" y1="170" x2="680" y2="150" stroke="{line_color}" stroke-width="1"/>
+  <line x1="680" y1="150" x2="620" y2="50" stroke="{line_color}" stroke-width="1"/>
+
+  <!-- Nodes -->
+  <circle cx="80" cy="40" r="3" fill="{node_color}"/>
+  <circle cx="220" cy="90" r="4" fill="{node_color}"/>
+  <circle cx="160" cy="160" r="3" fill="{node_color}"/>
+  <circle cx="300" cy="140" r="3.5" fill="{node_color}"/>
+  <circle cx="380" cy="60" r="3" fill="{node_color}"/>
+  
+  <circle cx="620" cy="50" r="3" fill="{node_color}"/>
+  <circle cx="740" cy="120" r="4" fill="{node_color}"/>
+  <circle cx="880" cy="70" r="3" fill="{node_color}"/>
+  <circle cx="820" cy="170" r="3.5" fill="{node_color}"/>
+  <circle cx="680" cy="150" r="3" fill="{node_color}"/>
+
+  <!-- Main Banner Text -->
+  <text fill="{text_color}" class="title" x="500" y="110" font-size="44" letter-spacing="2" text-anchor="middle">Garv Nanda</text>
+  <text fill="{sub_color}" class="mono" x="500" y="152" font-size="18" font-weight="600" letter-spacing="3" text-anchor="middle">ML &amp; BACKEND ENGINEER</text>
+</svg>'''
 
 def gen_section(num, title, dark=False):
     bg = "#000000" if dark else "#FFFFFF"
@@ -25,7 +69,7 @@ def gen_section(num, title, dark=False):
   </style>
   <rect width="1000" height="90" fill="{bg}"/>
   <line x1="48" y1="45" x2="952" y2="45" stroke="{line_color}" stroke-width="1.5"/>
-  <rect x="48" y="25" width="280" height="40" fill="{bg}"/>
+  <rect x="48" y="25" width="290" height="40" fill="{bg}"/>
   <text fill="{text_color}" class="mono" x="56" y="51" font-size="18" font-weight="800" letter-spacing="3.5">{num} — {title.upper()}</text>
 </svg>'''
 
@@ -37,32 +81,26 @@ def gen_header(dark=False):
     accent = "#BBBBBB" if dark else "#333333"
     rule = "#30363D" if dark else "#E1E4E8"
     
-    return f'''<svg viewBox="0 0 1000 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Nanda Header">
+    return f'''<svg viewBox="0 0 1000 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Nanda Header">
   <style>
     .mono {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }}
     .title {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-weight: 900; }}
   </style>
-  <rect width="1000" height="420" fill="{bg}"/>
+  <rect width="1000" height="360" fill="{bg}"/>
   <line x1="48" y1="50" x2="952" y2="50" stroke="{rule}" stroke-width="1.5"/>
   <text class="mono" fill="{muted}" x="48" y="38" font-size="13" font-weight="700" letter-spacing="3.5">PORTFOLIO — INDEX Nº 001</text>
   <text class="mono" fill="{muted}" x="952" y="38" font-size="13" font-weight="700" letter-spacing="3.5" text-anchor="end">DELHI, IN — 28.61° N</text>
 
-  <text fill="{bone}" class="title" x="46" y="160" font-size="72" letter-spacing="-2">Garv Nanda</text>
-  <text fill="{muted}" class="mono" x="48" y="206" font-size="22" font-weight="700">ML &amp; Backend Engineer — Training models while my CPU screams for mercy.</text>
+  <text fill="{bone}" class="title" x="46" y="150" font-size="70" letter-spacing="-2">Garv Nanda</text>
+  <text fill="{muted}" class="mono" x="48" y="194" font-size="21" font-weight="700">ML &amp; Backend Engineer — Training models while my CPU screams for mercy.</text>
 
-  <text fill="{dim}" class="mono" x="48" y="268" font-size="15" font-weight="700" letter-spacing="1">focus  ▸</text>
-  <text fill="{accent}" class="mono" x="140" y="268" font-size="15" font-weight="600" letter-spacing="0.5">machine learning · high-throughput backends · AI safety · Web3 systems</text>
+  <text fill="{dim}" class="mono" x="48" y="248" font-size="15" font-weight="700" letter-spacing="1">focus  ▸</text>
+  <text fill="{accent}" class="mono" x="140" y="248" font-size="15" font-weight="600" letter-spacing="0.5">machine learning · high-throughput backends · AI safety · Web3 systems</text>
   
-  <text fill="{dim}" class="mono" x="48" y="300" font-size="15" font-weight="700" letter-spacing="1">status ▸</text>
-  <text fill="{accent}" class="mono" x="140" y="300" font-size="15" font-weight="600" letter-spacing="0.5">open for internships · freelance · research collaboration</text>
+  <text fill="{dim}" class="mono" x="48" y="280" font-size="15" font-weight="700" letter-spacing="1">status ▸</text>
+  <text fill="{accent}" class="mono" x="140" y="280" font-size="15" font-weight="600" letter-spacing="0.5">open for internships · freelance · research collaboration</text>
 
-  <line x1="48" y1="350" x2="952" y2="350" stroke="{rule}" stroke-width="1.5"/>
-  <text fill="{muted}" class="mono" x="48" y="386" font-size="13" font-weight="700" letter-spacing="2.5">PYTHON &amp; PYTORCH</text>
-  <text fill="{accent}" class="mono" x="240" y="386" font-size="14">·</text>
-  <text fill="{muted}" class="mono" x="260" y="386" font-size="13" font-weight="700" letter-spacing="2.5">FASTAPI &amp; BACKENDS</text>
-  <text fill="{accent}" class="mono" x="490" y="386" font-size="14">·</text>
-  <text fill="{muted}" class="mono" x="510" y="386" font-size="13" font-weight="700" letter-spacing="2.5">AI SAFETY &amp; LLMS</text>
-  <text fill="{muted}" class="mono" x="952" y="386" font-size="13" font-weight="700" letter-spacing="2.5" text-anchor="end">3RD YEAR CSE @ GGSIPU</text>
+  <line x1="48" y1="318" x2="952" y2="318" stroke="{rule}" stroke-width="1.5"/>
 </svg>'''
 
 def gen_whoami(dark=False):
@@ -105,7 +143,6 @@ def gen_ecosystem(dark=False):
   </style>
   <rect width="1000" height="420" fill="{bg}"/>
   
-  <!-- Box 1 -->
   <rect x="48" y="20" width="436" height="175" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="72" y="56" font-size="16" font-weight="800" letter-spacing="1">01. MACHINE LEARNING &amp; LLMS</text>
   <line x1="72" y1="70" x2="460" y2="70" stroke="{border}" stroke-width="1"/>
@@ -113,7 +150,6 @@ def gen_ecosystem(dark=False):
   <text fill="{muted}" class="mono" x="72" y="128" font-size="14" font-weight="500">• Speech Recognition (Sarvam ASR &amp; AI4Bharat)</text>
   <text fill="{muted}" class="mono" x="72" y="154" font-size="14" font-weight="500">• PyTorch, Scikit-Learn &amp; Embeddings</text>
 
-  <!-- Box 2 -->
   <rect x="516" y="20" width="436" height="175" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="540" y="56" font-size="16" font-weight="800" letter-spacing="1">02. BACKEND &amp; SYSTEM DESIGN</text>
   <line x1="540" y1="70" x2="928" y2="70" stroke="{border}" stroke-width="1"/>
@@ -121,7 +157,6 @@ def gen_ecosystem(dark=False):
   <text fill="{muted}" class="mono" x="540" y="128" font-size="14" font-weight="500">• Supabase / PostgreSQL &amp; Redis Caching</text>
   <text fill="{muted}" class="mono" x="540" y="154" font-size="14" font-weight="500">• Containerization &amp; Zoho Catalyst Deployment</text>
 
-  <!-- Box 3 -->
   <rect x="48" y="220" width="436" height="175" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="72" y="256" font-size="16" font-weight="800" letter-spacing="1">03. AI SAFETY &amp; NEURAL AUDITING</text>
   <line x1="72" y1="270" x2="460" y2="270" stroke="{border}" stroke-width="1"/>
@@ -129,7 +164,6 @@ def gen_ecosystem(dark=False):
   <text fill="{muted}" class="mono" x="72" y="328" font-size="14" font-weight="500">• Backdoor Poisoning &amp; Leakage Inspection</text>
   <text fill="{muted}" class="mono" x="72" y="354" font-size="14" font-weight="500">• Explainable AI &amp; Robustness Benchmarks</text>
 
-  <!-- Box 4 -->
   <rect x="516" y="220" width="436" height="175" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="540" y="256" font-size="16" font-weight="800" letter-spacing="1">04. WEB3 &amp; DECENTRALIZED APPS</text>
   <line x1="540" y1="270" x2="928" y2="270" stroke="{border}" stroke-width="1"/>
@@ -167,7 +201,7 @@ def gen_projects(dark=False):
   <text fill="{bone}" class="mono" x="{x+24}" y="{y+42}" font-size="17" font-weight="800" letter-spacing="1">0{idx+1}. {title}</text>
   <line x1="{x+24}" y1="{y+56}" x2="{x+412}" y2="{y+56}" stroke="{border}" stroke-width="1"/>
   <text fill="{muted}" class="mono" x="{x+24}" y="{y+92}" font-size="14" font-weight="500">{desc}</text>
-  <text fill="{dim}" class="mono" x="{x+24}" y="{y+136}" font-size="13" font-weight="700">TAGS: {tech}</text>'''
+  <text fill="{dim}" class="mono" x="{x+24}" y="{y+136}" font-size="13" font-weight="700">STACK: {tech}</text>'''
 
     return f'''<svg viewBox="0 0 1000 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Featured Projects">
   <style>
@@ -175,6 +209,58 @@ def gen_projects(dark=False):
   </style>
   <rect width="1000" height="640" fill="{bg}"/>
   {boxes}
+</svg>'''
+
+def gen_github_stats(dark=False):
+    bg = "#000000" if dark else "#FFFFFF"
+    bone = "#FFFFFF" if dark else "#000000"
+    muted = "#AAAAAA" if dark else "#444444"
+    dim = "#888888" if dark else "#666666"
+    card_bg = "#111111" if dark else "#F8F9FA"
+    border = "#30363D" if dark else "#E1E4E8"
+    accent = "#58A6FF" if dark else "#0969DA"
+
+    return f'''<svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub Statistics &amp; Metrics">
+  <style>
+    .mono {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }}
+  </style>
+  <rect width="1000" height="240" fill="{bg}"/>
+  
+  <!-- Left Box: Core Telemetry Stats -->
+  <rect x="48" y="10" width="436" height="220" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
+  <text fill="{bone}" class="mono" x="72" y="44" font-size="16" font-weight="800" letter-spacing="1">GITHUB CORE TELEMETRY</text>
+  <line x1="72" y1="56" x2="460" y2="56" stroke="{border}" stroke-width="1"/>
+
+  <text fill="{muted}" class="mono" x="72" y="92" font-size="14" font-weight="600">Total Repositories</text>
+  <text fill="{bone}" class="mono" x="460" y="92" font-size="14" font-weight="800" text-anchor="end">13 Repos</text>
+
+  <text fill="{muted}" class="mono" x="72" y="124" font-size="14" font-weight="600">Primary Domain</text>
+  <text fill="{bone}" class="mono" x="460" y="124" font-size="14" font-weight="800" text-anchor="end">Machine Learning &amp; Backend</text>
+
+  <text fill="{muted}" class="mono" x="72" y="156" font-size="14" font-weight="600">Commit Status</text>
+  <text fill="{accent}" class="mono" x="460" y="156" font-size="14" font-weight="800" text-anchor="end">Active Contributor ●</text>
+
+  <text fill="{muted}" class="mono" x="72" y="188" font-size="14" font-weight="600">Profile Handle</text>
+  <text fill="{bone}" class="mono" x="460" y="188" font-size="14" font-weight="800" text-anchor="end">@Garvnanda</text>
+
+  <!-- Right Box: Language Distribution Breakdown -->
+  <rect x="516" y="10" width="436" height="220" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
+  <text fill="{bone}" class="mono" x="540" y="44" font-size="16" font-weight="800" letter-spacing="1">MOST USED LANGUAGES</text>
+  <line x1="540" y1="56" x2="928" y2="56" stroke="{border}" stroke-width="1"/>
+
+  <!-- Bar Visual -->
+  <rect x="540" y="78" width="200" height="12" rx="4" fill="#3572A5"/>
+  <rect x="744" y="78" width="90" height="12" rx="4" fill="#3178C6"/>
+  <rect x="838" y="78" width="50" height="12" rx="4" fill="#f34b7d"/>
+  <rect x="892" y="78" width="36" height="12" rx="4" fill="#AA88FF"/>
+
+  <text fill="{muted}" class="mono" x="540" y="122" font-size="14" font-weight="600">Python — 52%</text>
+  <text fill="{muted}" class="mono" x="740" y="122" font-size="14" font-weight="600">TypeScript / JS — 24%</text>
+
+  <text fill="{muted}" class="mono" x="540" y="158" font-size="14" font-weight="600">C++ / C — 14%</text>
+  <text fill="{muted}" class="mono" x="740" y="158" font-size="14" font-weight="600">Solidity / SQL — 10%</text>
+
+  <text fill="{dim}" class="mono" x="540" y="198" font-size="12" font-weight="500">Calculated across @Garvnanda core repositories</text>
 </svg>'''
 
 def gen_telemetry(dark=False):
@@ -262,25 +348,21 @@ def gen_stack(dark=False):
   </style>
   <rect width="1000" height="480" fill="{bg}"/>
   
-  <!-- Row 1: Languages -->
   <rect x="48" y="10" width="904" height="100" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="76" y="42" font-size="16" font-weight="800" letter-spacing="1">PROGRAMMING LANGUAGES</text>
   <line x1="76" y1="52" x2="924" y2="52" stroke="{border}" stroke-width="1"/>
   <text fill="{muted}" class="mono" x="76" y="80" font-size="14.5" font-weight="600">Python  ·  C++  ·  SQL  ·  JavaScript  ·  TypeScript  ·  Solidity</text>
 
-  <!-- Row 2: ML & AI -->
   <rect x="48" y="125" width="904" height="100" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="76" y="157" font-size="16" font-weight="800" letter-spacing="1">MACHINE LEARNING &amp; AI</text>
   <line x1="76" y1="167" x2="924" y2="167" stroke="{border}" stroke-width="1"/>
   <text fill="{muted}" class="mono" x="76" y="195" font-size="14.5" font-weight="600">PyTorch  ·  Gemma 4  ·  Hugging Face  ·  Scikit-Learn  ·  Pandas  ·  NetworkX  ·  OpenCV</text>
 
-  <!-- Row 3: Backend & Infrastructure -->
   <rect x="48" y="240" width="904" height="100" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="76" y="272" font-size="16" font-weight="800" letter-spacing="1">BACKEND &amp; CLOUD INFRASTRUCTURE</text>
   <line x1="76" y1="282" x2="924" y2="282" stroke="{border}" stroke-width="1"/>
   <text fill="{muted}" class="mono" x="76" y="310" font-size="14.5" font-weight="600">FastAPI  ·  Supabase / PostgreSQL  ·  Redis  ·  Docker  ·  Uvicorn  ·  Zoho Catalyst</text>
 
-  <!-- Row 4: Tools -->
   <rect x="48" y="355" width="904" height="100" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
   <text fill="{bone}" class="mono" x="76" y="387" font-size="16" font-weight="800" letter-spacing="1">DEVELOPER TOOLS &amp; WORKFLOWS</text>
   <line x1="76" y1="397" x2="924" y2="397" stroke="{border}" stroke-width="1"/>
@@ -315,10 +397,12 @@ sections = [
 
 for dark in [False, True]:
     folder = os.path.join(base_dir, "assets", "dark" if dark else "")
+    create_svg(os.path.join(folder, "cover-banner.svg"), gen_cover_banner(dark))
     create_svg(os.path.join(folder, "header-v1.svg"), gen_header(dark))
     create_svg(os.path.join(folder, "whoami.svg"), gen_whoami(dark))
     create_svg(os.path.join(folder, "ecosystem.svg"), gen_ecosystem(dark))
     create_svg(os.path.join(folder, "projects.svg"), gen_projects(dark))
+    create_svg(os.path.join(folder, "github-stats.svg"), gen_github_stats(dark))
     create_svg(os.path.join(folder, "telemetry.svg"), gen_telemetry(dark))
     create_svg(os.path.join(folder, "timeline.svg"), gen_timeline(dark))
     create_svg(os.path.join(folder, "experience.svg"), gen_experience(dark))

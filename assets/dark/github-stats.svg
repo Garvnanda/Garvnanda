@@ -1,0 +1,42 @@
+<svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub Statistics &amp; Metrics">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="240" fill="#000000"/>
+  
+  <!-- Left Box: Core Telemetry Stats -->
+  <rect x="48" y="10" width="436" height="220" rx="8" fill="#111111" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#FFFFFF" class="mono" x="72" y="44" font-size="16" font-weight="800" letter-spacing="1">GITHUB CORE TELEMETRY</text>
+  <line x1="72" y1="56" x2="460" y2="56" stroke="#30363D" stroke-width="1"/>
+
+  <text fill="#AAAAAA" class="mono" x="72" y="92" font-size="14" font-weight="600">Total Repositories</text>
+  <text fill="#FFFFFF" class="mono" x="460" y="92" font-size="14" font-weight="800" text-anchor="end">13 Repos</text>
+
+  <text fill="#AAAAAA" class="mono" x="72" y="124" font-size="14" font-weight="600">Primary Domain</text>
+  <text fill="#FFFFFF" class="mono" x="460" y="124" font-size="14" font-weight="800" text-anchor="end">Machine Learning &amp; Backend</text>
+
+  <text fill="#AAAAAA" class="mono" x="72" y="156" font-size="14" font-weight="600">Commit Status</text>
+  <text fill="#58A6FF" class="mono" x="460" y="156" font-size="14" font-weight="800" text-anchor="end">Active Contributor ●</text>
+
+  <text fill="#AAAAAA" class="mono" x="72" y="188" font-size="14" font-weight="600">Profile Handle</text>
+  <text fill="#FFFFFF" class="mono" x="460" y="188" font-size="14" font-weight="800" text-anchor="end">@Garvnanda</text>
+
+  <!-- Right Box: Language Distribution Breakdown -->
+  <rect x="516" y="10" width="436" height="220" rx="8" fill="#111111" stroke="#30363D" stroke-width="1.5"/>
+  <text fill="#FFFFFF" class="mono" x="540" y="44" font-size="16" font-weight="800" letter-spacing="1">MOST USED LANGUAGES</text>
+  <line x1="540" y1="56" x2="928" y2="56" stroke="#30363D" stroke-width="1"/>
+
+  <!-- Bar Visual -->
+  <rect x="540" y="78" width="200" height="12" rx="4" fill="#3572A5"/>
+  <rect x="744" y="78" width="90" height="12" rx="4" fill="#3178C6"/>
+  <rect x="838" y="78" width="50" height="12" rx="4" fill="#f34b7d"/>
+  <rect x="892" y="78" width="36" height="12" rx="4" fill="#AA88FF"/>
+
+  <text fill="#AAAAAA" class="mono" x="540" y="122" font-size="14" font-weight="600">Python — 52%</text>
+  <text fill="#AAAAAA" class="mono" x="740" y="122" font-size="14" font-weight="600">TypeScript / JS — 24%</text>
+
+  <text fill="#AAAAAA" class="mono" x="540" y="158" font-size="14" font-weight="600">C++ / C — 14%</text>
+  <text fill="#AAAAAA" class="mono" x="740" y="158" font-size="14" font-weight="600">Solidity / SQL — 10%</text>
+
+  <text fill="#888888" class="mono" x="540" y="198" font-size="12" font-weight="500">Calculated across @Garvnanda core repositories</text>
+</svg>
