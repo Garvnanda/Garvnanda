@@ -29,6 +29,6 @@
   <text fill="#FFFFFF" class="mono" x="540" y="256" font-size="16" font-weight="800" letter-spacing="1">04. WEB3 &amp; DECENTRALIZED APPS</text>
   <line x1="540" y1="270" x2="928" y2="270" stroke="#30363D" stroke-width="1"/>
   <text fill="#AAAAAA" class="mono" x="540" y="302" font-size="14" font-weight="500">• Smart Contract Architecture (Solidity)</text>
-  <text fill="#AAAAAA" class="mono" x="540" y="328" font-size="14" font-weight="500">• Decentralized SocialFi Infrastructure</text>
+  <text fill="#AAAAAA" class="mono" x="540" y="284" font-size="14" font-weight="500">• Decentralized SocialFi Infrastructure</text>
   <text fill="#AAAAAA" class="mono" x="540" y="354" font-size="14" font-weight="500">• Web3 Backend Integration &amp; Node APIs</text>
 </svg>

@@ -165,7 +165,7 @@ def gen_ecosystem(dark=False):
   <text fill="{bone}" class="mono" x="540" y="256" font-size="16" font-weight="800" letter-spacing="1">04. WEB3 &amp; DECENTRALIZED APPS</text>
   <line x1="540" y1="270" x2="928" y2="270" stroke="{border}" stroke-width="1"/>
   <text fill="{muted}" class="mono" x="540" y="302" font-size="14" font-weight="500">• Smart Contract Architecture (Solidity)</text>
-  <text fill="{muted}" class="mono" x="540" y="328" font-size="14" font-weight="500">• Decentralized SocialFi Infrastructure</text>
+  <text fill="{muted}" class="mono" x="540" y="284" font-size="14" font-weight="500">• Decentralized SocialFi Infrastructure</text>
   <text fill="{muted}" class="mono" x="540" y="354" font-size="14" font-weight="500">• Web3 Backend Integration &amp; Node APIs</text>
 </svg>'''
 
@@ -255,150 +255,6 @@ def gen_github_stats(dark=False):
   <text fill="{muted}" class="mono" x="740" y="158" font-size="14" font-weight="600">Solidity / SQL — 10%</text>
 
   <text fill="{dim}" class="mono" x="540" y="198" font-size="12" font-weight="500">Calculated across @Garvnanda core repositories</text>
-</svg>'''
-
-def gen_airplane_contributions(dark=False):
-    bg = "#0D1117" if dark else "#FFFFFF"
-    card_bg = "#161B22" if dark else "#F6F8FA"
-    border = "#30363D" if dark else "#E1E4E8"
-    grid_empty = "#21262D" if dark else "#EBEDF0"
-    grid_c1 = "#0E4429" if dark else "#9BE9A8"
-    grid_c2 = "#006D32" if dark else "#40C463"
-    grid_c3 = "#26A641" if dark else "#30A14E"
-    grid_c4 = "#39D353" if dark else "#216E39"
-    text_color = "#FFFFFF" if dark else "#000000"
-    sub_color = "#8B949E" if dark else "#57606A"
-
-    # Build 52-week contribution matrix grid
-    rects = ""
-    import random
-    random.seed(42)
-    colors = [grid_empty]*18 + [grid_c1]*6 + [grid_c2]*4 + [grid_c3]*3 + [grid_c4]*2
-    
-    for col in range(48):
-        for row in range(7):
-            x = 80 + col * 17
-            y = 70 + row * 17
-            c = random.choice(colors)
-            rects += f'<rect x="{x}" y="{y}" width="13" height="13" rx="2" fill="{c}"/>'
-
-    return f'''<svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Airplane Contribution Flight Matrix">
-  <style>
-    .mono {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }}
-    
-    @keyframes planeFlight {{
-      0%   {{ transform: translate(75px, 65px) rotate(15deg); }}
-      15%  {{ transform: translate(250px, 115px) rotate(0deg); }} /* Land on spot 1 */
-      25%  {{ transform: translate(250px, 115px) rotate(0deg); }} /* Pause 1s */
-      40%  {{ transform: translate(450px, 70px) rotate(-10deg); }}
-      50%  {{ transform: translate(550px, 135px) rotate(0deg); }} /* Land on spot 2 */
-      60%  {{ transform: translate(550px, 135px) rotate(0deg); }} /* Pause 1s */
-      75%  {{ transform: translate(750px, 85px) rotate(15deg); }}
-      85%  {{ transform: translate(850px, 150px) rotate(0deg); }} /* Land on spot 3 */
-      92%  {{ transform: translate(850px, 150px) rotate(0deg); }} /* Pause 1s */
-      100% {{ transform: translate(940px, 45px) rotate(-20deg); }} /* Takeoff and exit */
-    }}
-
-    @keyframes smokeExpand {{
-      0%   {{ opacity: 0.8; transform: scale(0.6); }}
-      50%  {{ opacity: 0.5; transform: scale(1.3); }}
-      100% {{ opacity: 0; transform: scale(2.0); }}
-    }}
-
-    .plane {{ animation: planeFlight 12s cubic-bezier(.4,0,.2,1) infinite; }}
-    .smoke {{ transform-origin: center; animation: smokeExpand 2.5s ease-out infinite; }}
-    .s1 {{ animation-delay: 0.3s; }}
-    .s2 {{ animation-delay: 1.5s; }}
-    .s3 {{ animation-delay: 3.2s; }}
-    .s4 {{ animation-delay: 5.0s; }}
-    .s5 {{ animation-delay: 7.1s; }}
-    .s6 {{ animation-delay: 9.0s; }}
-  </style>
-
-  <rect width="1000" height="240" rx="8" fill="{bg}"/>
-  <rect x="48" y="10" width="904" height="220" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
-
-  <text fill="{text_color}" class="mono" x="72" y="42" font-size="16" font-weight="800" letter-spacing="1.5">AIRPLANE CONTRIBUTION FLIGHT MATRIX ✈</text>
-  <text fill="{sub_color}" class="mono" x="928" y="42" font-size="12" font-weight="600" text-anchor="end">REAL-TIME FLIGHT TELEMETRY</text>
-  <line x1="72" y1="52" x2="928" y2="52" stroke="{border}" stroke-width="1"/>
-
-  <!-- 52-Week Grid -->
-  <g opacity="0.9">
-    {rects}
-  </g>
-
-  <!-- Flight Path Line -->
-  <path d="M 75 65 C 200 130, 220 120, 250 115 C 350 115, 400 60, 450 70 C 500 80, 520 135, 550 135 C 650 135, 700 70, 750 85 C 800 100, 830 150, 850 150 C 900 150, 920 60, 940 45" 
-        stroke="rgba(88,166,255,0.3)" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-
-  <!-- Smoke Puff Clouds along Flight Trail -->
-  <g fill="rgba(200,220,255,0.4)">
-    <circle class="smoke s1" cx="245" cy="115" r="8"/>
-    <circle class="smoke s2" cx="350" cy="85" r="10"/>
-    <circle class="smoke s3" cx="545" cy="135" r="9"/>
-    <circle class="smoke s4" cx="660" cy="95" r="11"/>
-    <circle class="smoke s5" cx="845" cy="150" r="10"/>
-    <circle class="smoke s6" cx="910" cy="70" r="12"/>
-  </g>
-
-  <!-- Animated Jet Airplane -->
-  <g class="plane">
-    <!-- Airplane Body & Wings -->
-    <path d="M 0 0 L -12 -5 L -8 -1 L -18 -2 L -16 0 L -18 2 L -8 1 L -12 5 Z" fill="#58A6FF" stroke="#FFFFFF" stroke-width="1"/>
-    <circle cx="-16" cy="0" r="2.5" fill="#FFA500"/>
-  </g>
-</svg>'''
-
-def gen_profile_3d(dark=False):
-    bg = "#0D1117" if dark else "#FFFFFF"
-    card_bg = "#161B22" if dark else "#F6F8FA"
-    border = "#30363D" if dark else "#E1E4E8"
-    text_color = "#FFFFFF" if dark else "#000000"
-    sub_color = "#8B949E" if dark else "#57606A"
-
-    return f'''<svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3D Contribution City">
-  <style>
-    .mono {{ font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }}
-  </style>
-  <rect width="1000" height="240" rx="8" fill="{bg}"/>
-  <rect x="48" y="10" width="904" height="220" rx="8" fill="{card_bg}" stroke="{border}" stroke-width="1.5"/>
-
-  <text fill="{text_color}" class="mono" x="72" y="44" font-size="16" font-weight="800" letter-spacing="1">3D CONTRIBUTION CITY TELEMETRY 🏙</text>
-  <text fill="{sub_color}" class="mono" x="928" y="44" font-size="12" font-weight="600" text-anchor="end">ISOMETRIC COMMIT METRICS</text>
-  <line x1="72" y1="56" x2="928" y2="56" stroke="{border}" stroke-width="1"/>
-
-  <!-- Isometric 3D Blocks representation -->
-  <g transform="translate(500, 150) rotate(-20) skewX(30)">
-    <!-- Row 1 -->
-    <rect x="-300" y="-40" width="24" height="24" fill="#0E4429" stroke="#30363D"/>
-    <rect x="-260" y="-40" width="24" height="24" fill="#006D32" stroke="#30363D"/>
-    <rect x="-220" y="-40" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="-180" y="-40" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="-140" y="-40" width="24" height="24" fill="#006D32" stroke="#30363D"/>
-    <rect x="-100" y="-40" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="-60" y="-40" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="-20" y="-40" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="20" y="-40" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="60" y="-40" width="24" height="24" fill="#006D32" stroke="#30363D"/>
-    <rect x="100" y="-40" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="140" y="-40" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="180" y="-40" width="24" height="24" fill="#0E4429" stroke="#30363D"/>
-
-    <!-- Row 2 -->
-    <rect x="-300" y="0" width="24" height="24" fill="#006D32" stroke="#30363D"/>
-    <rect x="-260" y="0" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="-220" y="0" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="-180" y="0" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="-140" y="0" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="-100" y="0" width="24" height="24" fill="#0E4429" stroke="#30363D"/>
-    <rect x="-60" y="0" width="24" height="24" fill="#006D32" stroke="#30363D"/>
-    <rect x="-20" y="0" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="20" y="0" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="60" y="0" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-    <rect x="100" y="0" width="24" height="24" fill="#006D32" stroke="#30363D"/>
-    <rect x="140" y="0" width="24" height="24" fill="#26A641" stroke="#30363D"/>
-    <rect x="180" y="0" width="24" height="24" fill="#39D353" stroke="#30363D"/>
-  </g>
 </svg>'''
 
 def gen_telemetry(dark=False):
@@ -533,10 +389,6 @@ sections = [
     ("s06", "stack")
 ]
 
-# Create profile-3d-contrib directory & starter SVG
-p3d_dir = os.path.join(base_dir, "profile-3d-contrib")
-create_svg(os.path.join(p3d_dir, "profile-night-view.svg"), gen_profile_3d(dark=True))
-
 for dark in [False, True]:
     folder = os.path.join(base_dir, "assets", "dark" if dark else "")
     create_svg(os.path.join(folder, "cover-banner.svg"), gen_cover_banner(dark))
@@ -545,7 +397,6 @@ for dark in [False, True]:
     create_svg(os.path.join(folder, "ecosystem.svg"), gen_ecosystem(dark))
     create_svg(os.path.join(folder, "projects.svg"), gen_projects(dark))
     create_svg(os.path.join(folder, "github-stats.svg"), gen_github_stats(dark))
-    create_svg(os.path.join(folder, "airplane-contributions.svg"), gen_airplane_contributions(dark))
     create_svg(os.path.join(folder, "telemetry.svg"), gen_telemetry(dark))
     create_svg(os.path.join(folder, "timeline.svg"), gen_timeline(dark))
     create_svg(os.path.join(folder, "experience.svg"), gen_experience(dark))
@@ -555,4 +406,4 @@ for dark in [False, True]:
     for filename, title in sections:
         create_svg(os.path.join(folder, f"{filename}.svg"), gen_section(filename.upper(), title, dark))
 
-print("All SVG assets including airplane contributions and 3D contribution city generated successfully!")
+print("All profile SVG assets generated successfully!")
