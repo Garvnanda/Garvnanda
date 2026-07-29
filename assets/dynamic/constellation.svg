@@ -3,15 +3,12 @@
     .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
     .bg { fill: #000000; }
     .card { fill: #111111; stroke: #30363D; stroke-width: 1.5; }
-    
     .node-group { animation: float 4s ease-in-out infinite; transition: transform 0.3s; }
     .node-group:hover { transform: scale(1.12); cursor: pointer; }
-    
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-6px); }
     }
-    
     .center-pulse { animation: pulse 3s infinite; transform-origin: 500px 210px; }
     @keyframes pulse {
       0% { transform: scale(1); opacity: 0.5; }
@@ -19,103 +16,70 @@
       100% { transform: scale(1); opacity: 0.5; }
     }
   </style>
-  
-  <!-- Black canvas matching Garv design system -->
+
   <rect width="1000" height="420" class="bg"/>
-  
-  <!-- Outer Card Frame aligned with x=48 width=904 -->
   <rect x="48" y="20" width="904" height="380" rx="8" class="card"/>
   
-  <!-- Header Title -->
   <text fill="#FFFFFF" class="mono" x="72" y="56" font-size="16" font-weight="800" letter-spacing="1">LIVE ECOSYSTEM CONSTELLATION 🌌</text>
   <text fill="#8B949E" class="mono" x="928" y="56" font-size="12" font-weight="600" text-anchor="end">REAL-TIME REPOSITORY GRAPH</text>
   <line x1="72" y1="70" x2="928" y2="70" stroke="#30363D" stroke-width="1"/>
 
-  <!-- Orbits & Connections -->
   <g>
-    <!-- Orbit Guide Circles -->
     <circle cx="500" cy="210" r="95" stroke="#21262D" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
     <circle cx="500" cy="210" r="150" stroke="#21262D" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
 
     <line x1="500" y1="210" x2="500.0" y2="115.0" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="500" y1="210" x2="582.2724133595217" y2="257.5" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="500" y1="210" x2="417.7275866404783" y2="257.5" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="500" y1="210" x2="629.9038105676658" y2="285.0" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="500" y1="210" x2="370.0961894323342" y2="285.0" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="500" y1="210" x2="500.0" y2="60.0" stroke="#30363D" stroke-width="1.5" stroke-dasharray="4 4"/>
 
-    <!-- Center Node (Garv Nanda) -->
     <circle cx="500" cy="210" r="40" fill="#39D353" class="center-pulse"/>
     <circle cx="500" cy="210" r="22" fill="#238636" stroke="#FFFFFF" stroke-width="2.5"/>
-    
-    <!-- Center Label Badge -->
     <rect x="435" y="240" width="130" height="26" rx="4" fill="#0D1117" stroke="#238636" stroke-width="1.5"/>
     <text x="500" y="257" fill="#39D353" class="mono" font-size="13" text-anchor="middle" font-weight="800">@Garvnanda</text>
     
     
         <g class="node-group" style="animation-delay: 0.0s; transform-origin: 500.0px 115.0px;">
-            <!-- Outer Glow Aura -->
             <circle cx="500.0" cy="115.0" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
             <circle cx="500.0" cy="115.0" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
             <circle cx="500.0" cy="115.0" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
             <rect x="444.0" y="131.0" width="112" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="500.0" y="147.0" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">Galla-Sathi</text>
         </g>
         
         <g class="node-group" style="animation-delay: 0.4s; transform-origin: 582.2724133595217px 257.5px;">
-            <!-- Outer Glow Aura -->
             <circle cx="582.2724133595217" cy="257.5" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
             <circle cx="582.2724133595217" cy="257.5" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
             <circle cx="582.2724133595217" cy="257.5" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
             <rect x="554.2724133595217" y="273.5" width="56" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="582.2724133595217" y="289.5" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">SANN</text>
         </g>
         
         <g class="node-group" style="animation-delay: 0.8s; transform-origin: 417.7275866404783px 257.5px;">
-            <!-- Outer Glow Aura -->
             <circle cx="417.7275866404783" cy="257.5" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
             <circle cx="417.7275866404783" cy="257.5" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
             <circle cx="417.7275866404783" cy="257.5" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
             <rect x="377.7275866404783" y="273.5" width="80" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="417.7275866404783" y="289.5" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">DevLens</text>
         </g>
         
         <g class="node-group" style="animation-delay: 1.2000000000000002s; transform-origin: 629.9038105676658px 285.0px;">
-            <!-- Outer Glow Aura -->
             <circle cx="629.9038105676658" cy="285.0" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
             <circle cx="629.9038105676658" cy="285.0" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
             <circle cx="629.9038105676658" cy="285.0" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
             <rect x="577.9038105676658" y="301.0" width="104" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="629.9038105676658" y="317.0" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">DebateMind</text>
         </g>
         
         <g class="node-group" style="animation-delay: 1.6s; transform-origin: 370.0961894323342px 285.0px;">
-            <!-- Outer Glow Aura -->
             <circle cx="370.0961894323342" cy="285.0" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
             <circle cx="370.0961894323342" cy="285.0" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
             <circle cx="370.0961894323342" cy="285.0" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
             <rect x="306.0961894323342" y="301.0" width="128" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="370.0961894323342" y="317.0" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">DATATHON-2026</text>
         </g>
         
         <g class="node-group" style="animation-delay: 2.0s; transform-origin: 500.0px 60.0px;">
-            <!-- Outer Glow Aura -->
             <circle cx="500.0" cy="60.0" r="18" fill="#58A6FF" opacity="0.15" filter="blur(4px)"/>
-            <!-- Main Node Dot -->
             <circle cx="500.0" cy="60.0" r="9" fill="#1F6FEB" stroke="#58A6FF" stroke-width="2"/>
             <circle cx="500.0" cy="60.0" r="3" fill="#FFFFFF"/>
-            
-            <!-- Repository Text Badge Box (prevents text clipping and background overlap) -->
             <rect x="452.0" y="76.0" width="96" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="500.0" y="92.0" fill="#FFFFFF" class="mono" font-size="12" font-weight="800" text-anchor="middle">CREATOR_X</text>
         </g>
