@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import random
+import re
 import xml.etree.ElementTree as ET
 
 try:
@@ -259,46 +260,52 @@ def main():
     state = load_state()
     board = chess.Board(state["fen"])
     
-    # Process move if passed via CLI: python chess_game.py "e2e4" "Username"
+    # Process move if passed via CLI: python chess_game.py "chess|e2e4" "Username"
     if len(sys.argv) >= 2:
-        move_input = sys.argv[1].strip().lower()
+        raw_input = sys.argv[1].strip()
         player_name = sys.argv[2] if len(sys.argv) >= 3 else "Anonymous"
         
-        if move_input == "reset":
-            state = {
-                "fen": chess.STARTING_FEN,
-                "status": "in_progress",
-                "move_history": [],
-                "last_move": "Reset Game",
-                "last_player": player_name,
-                "turn_count": 1,
-                "winner": None,
-                "repo_count": state.get("repo_count", 6)
-            }
-            board = chess.Board()
+        # Regex search for UCI move or reset keyword
+        match = re.search(r'([a-h][1-8][a-h][1-8]|reset)', raw_input, re.IGNORECASE)
+        if match:
+            move_input = match.group(1).lower()
+            if move_input == "reset":
+                state = {
+                    "fen": chess.STARTING_FEN,
+                    "status": "in_progress",
+                    "move_history": [],
+                    "last_move": "Reset Game",
+                    "last_player": player_name,
+                    "turn_count": 1,
+                    "winner": None,
+                    "repo_count": state.get("repo_count", 6)
+                }
+                board = chess.Board()
+            else:
+                try:
+                    user_move = chess.Move.from_uci(move_input)
+                    if user_move in board.legal_moves:
+                        board.push(user_move)
+                        state["move_history"].append(move_input)
+                        state["last_move"] = move_input
+                        state["last_player"] = player_name
+                        
+                        # AI Counter-move if game not over
+                        if not board.is_game_over():
+                            ai_move = get_best_ai_move(board)
+                            if ai_move:
+                                board.push(ai_move)
+                                state["move_history"].append(ai_move.uci())
+                                state["last_move"] = f"{move_input} (You) ➔ {ai_move.uci()} (AI)"
+                        
+                        state["fen"] = board.fen()
+                        state["turn_count"] += 1
+                    else:
+                        print(f"Illegal move attempted: {move_input}")
+                except Exception as e:
+                    print(f"Error processing move {move_input}: {e}")
         else:
-            try:
-                user_move = chess.Move.from_uci(move_input)
-                if user_move in board.legal_moves:
-                    board.push(user_move)
-                    state["move_history"].append(move_input)
-                    state["last_move"] = move_input
-                    state["last_player"] = player_name
-                    
-                    # AI Counter-move if game not over
-                    if not board.is_game_over():
-                        ai_move = get_best_ai_move(board)
-                        if ai_move:
-                            board.push(ai_move)
-                            state["move_history"].append(ai_move.uci())
-                            state["last_move"] = f"{move_input} (You) ➔ {ai_move.uci()} (AI)"
-                    
-                    state["fen"] = board.fen()
-                    state["turn_count"] += 1
-                else:
-                    print(f"Illegal move attempted: {move_input}")
-            except Exception as e:
-                print(f"Error processing move {move_input}: {e}")
+            print(f"No valid UCI move found in input string: {raw_input}")
 
     # Generate Minimal Board SVG
     svg_content = gen_board_svg(board, state.get("last_move"), state.get("last_player"))

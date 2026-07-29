@@ -6,7 +6,7 @@ on:
 
 jobs:
   play_chess:
-    if: startsWith(github.event.issue.title, 'chess|')
+    if: contains(github.event.issue.title, 'chess') || contains(github.event.issue.title, 'Play') || contains(github.event.issue.title, '|')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,11 +29,8 @@ jobs:
           TITLE="${{ github.event.issue.title }}"
           USER="${{ github.event.issue.user.login }}"
           
-          # Extract move from title format: chess|e2e4 or chess|reset
-          MOVE=$(echo "$TITLE" | cut -d'|' -f2 | tr -d ' ')
-          
-          echo "Processing Chess move '$MOVE' from user '$USER'..."
-          python scripts/chess_game.py "$MOVE" "$USER"
+          echo "Processing Chess issue '$TITLE' from user '$USER'..."
+          python scripts/chess_game.py "$TITLE" "$USER"
 
       - name: Commit and Push Board Updates
         run: |
@@ -48,8 +45,7 @@ jobs:
         with:
           script: |
             const title = context.payload.issue.title;
-            const move = title.split('|')[1] || 'move';
-            const body = `### ♟️ Chess Move Processed!\n\nYour move **\`${move}\`** has been executed against **@Garvnanda's AI Bot**.\n\nThe board and available legal moves have been updated directly on the profile README!`;
+            const body = `### ♟️ Chess Move Processed!\n\nYour move (**\`${title}\`**) has been executed against **@Garvnanda's AI Bot**.\n\nThe board and available legal moves have been updated directly on the profile README!`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,
