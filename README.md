@@ -66,12 +66,21 @@
 
 <br/><br/>
 
-<!-- Real-Time Auto-Updating Contribution Streak Counter -->
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Garvnanda&theme=dark&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&sideNums=FFFFFF&sideTitle=8B949E" width="97%" alt="Garv Nanda's Real-Time Contribution Streak"/>
-</p>
+<!-- ANIMATED AIRPLANE CONTRIBUTION FLIGHT MATRIX WITH SMOKE TRAIL -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/dark/airplane-contributions.svg"/>
+  <img src="assets/airplane-contributions.svg" width="100%" alt="Airplane Contribution Flight Matrix"/>
+</picture>
 
-<br/>
+<br/><br/>
+
+<!-- 3D CONTRIBUTION CITY CALENDAR -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-view.svg"/>
+  <img src="profile-3d-contrib/profile-night-view.svg" width="100%" alt="3D Contribution City Calendar"/>
+</picture>
+
+<br/><br/>
 
 <!-- Contribution Activity Graph -->
 <picture>
@@ -89,49 +98,6 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06.svg"/><img src="assets/s06.svg" alt="06 — STACK" width="100%"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stack.svg"/><img src="assets/stack.svg" alt="Technical stack" width="100%"/></picture>
-
-<br/>
-
-<!-- DYNAMIC INTERACTIVE CONSOLE (IN-PAGE INTERACTIVE EXPANDABLE WIDGETS) -->
-<div align="center">
-
-<details>
-<summary><b>⚡ [ CLICK TO LAUNCH LIVE SYSTEM DIAGNOSTICS CONSOLE ]</b></summary>
-<br/>
-
-```text
-===============================================================================
-               GARV NANDA // SYSTEM DIAGNOSTICS & TELEMETRY v3.4.0
-===============================================================================
-[+] USER_IDENTIFIER      : Garvnanda
-[+] CORE_DOMAINS         : Machine Learning (PyTorch, Gemma), FastAPI, Web3
-[+] STATUS               : ONLINE — Processing neural tasks & high-throughput APIs
-[+] LOCATION_COORDINATES : DELHI, IN — 28.61° N
-[+] ACTIVE_PROJECTS      : 06 Flagship Repositories Registered
-[+] SYSTEM_LOAD          : CPU 98% (Training PyTorch LoRA Adapters)
-[+] ACCELERATOR          : CUDA GPU Active (PyTorch 2.x Enabled)
-[+] AUDIT_LOG            : SANN Neural Poisoning Defense Active (0 Leakage)
-===============================================================================
-```
-</details>
-
-<br/>
-
-<details>
-<summary><b>🐍 [ CLICK TO VIEW DYNAMIC CONTRIBUTION SNAKE GAME MATRIX ]</b></summary>
-<br/>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Garvnanda/Garvnanda/output/github-contribution-grid-snake-dark.svg"/>
-    <img src="https://raw.githubusercontent.com/Garvnanda/Garvnanda/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake Matrix" width="100%"/>
-  </picture>
-</p>
-<p align="center"><i>Dynamically eats contribution squares automatically on every commit via GitHub Actions!</i></p>
-
-</details>
-
-</div>
 
 <br/>
 
