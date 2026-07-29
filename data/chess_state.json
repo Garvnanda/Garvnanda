@@ -1,5 +1,5 @@
 {
-  "fen": "rnbqkb1r/pppppppp/7n/8/8/2P5/PPQPPPPP/RNBK1BNR w q - 5 4",
+  "fen": "rnbqkbr1/pppppppp/7n/8/2P5/8/PPQPPPPP/RNBK1BNR w q - 1 5",
   "status": "in_progress",
   "move_history": [
     "c2c3",
@@ -7,11 +7,13 @@
     "d1c2",
     "h8g8",
     "e1d1",
-    "g8h8"
+    "g8h8",
+    "c3c4",
+    "h8g8"
   ],
-  "last_move": "e1d1 (You) \u2794 g8h8 (AI)",
+  "last_move": "c3c4 (You) \u2794 h8g8 (AI)",
   "last_player": "sadhakshara",
-  "turn_count": 4,
+  "turn_count": 5,
   "winner": null,
   "repo_count": 6
 }
