@@ -3,7 +3,6 @@ import sys
 import json
 import random
 import re
-import subprocess
 import xml.etree.ElementTree as ET
 
 try:
@@ -18,15 +17,6 @@ ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 DARK_ASSETS_DIR = os.path.join(BASE_DIR, "assets", "dark")
 README_PATH = os.path.join(BASE_DIR, "README.md")
 REPO_URL = "https://github.com/Garvnanda/Garvnanda"
-
-def get_git_ref():
-    try:
-        out = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-        if out and len(out) >= 7:
-            return out
-    except:
-        pass
-    return "main"
 
 PIECE_SYMBOLS = {
     'P': '♙', 'N': '♘', 'B': '♗', 'R': '♖', 'Q': '♕', 'K': '♔',
@@ -208,9 +198,10 @@ def update_readme(board, state):
     left_html = "<br/><br/>".join(left_badges) if left_badges else "<i>No moves</i>"
     right_html = "<br/><br/>".join(right_badges) if right_badges else "<i>No moves</i>"
 
-    # Dynamic Commit SHA raw URL to guarantee 100% instant Camo proxy cache bypass
-    ref = get_git_ref()
-    raw_base = f"https://raw.githubusercontent.com/Garvnanda/Garvnanda/{ref}"
+    # Absolute raw URLs with timestamp cache-buster to completely bypass GitHub camo caching
+    import time
+    v = int(time.time())
+    raw_base = "https://raw.githubusercontent.com/Garvnanda/Garvnanda/main"
     
     chess_section = f'''<!-- CHESS_START -->
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07.svg"/><img src="assets/s07.svg" alt="07 — CHESS ARENA"/></picture>
@@ -229,8 +220,8 @@ def update_readme(board, state):
 </td>
 <td align="center" valign="middle" width="520">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="{raw_base}/assets/dark/chess_board.svg"/>
-    <img src="{raw_base}/assets/chess_board.svg" alt="GitHub Profile Chess Game" width="480"/>
+    <source media="(prefers-color-scheme: dark)" srcset="{raw_base}/assets/dark/chess_board.svg?v={v}"/>
+    <img src="{raw_base}/assets/chess_board.svg?v={v}" alt="GitHub Profile Chess Game" width="480"/>
   </picture>
 </td>
 <td align="center" valign="middle">
