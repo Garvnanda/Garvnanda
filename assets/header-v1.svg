@@ -1,0 +1,27 @@
+<svg viewBox="0 0 1000 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Garv Nanda Header">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+    .title { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; font-weight: 800; }
+  </style>
+  <rect width="1000" height="380" fill="#FFFFFF"/>
+  <line x1="48" y1="48" x2="952" y2="48" stroke="#E1E4E8" stroke-width="1"/>
+  <text class="mono" fill="#555555" x="48" y="36" font-size="11" letter-spacing="3.5">PORTFOLIO — INDEX Nº 001</text>
+  <text class="mono" fill="#555555" x="952" y="36" font-size="11" letter-spacing="3.5" text-anchor="end">DELHI, IN — 28.61° N</text>
+
+  <text fill="#000000" class="title" x="46" y="150" font-size="64" letter-spacing="-2">Garv Nanda</text>
+  <text fill="#555555" class="mono" x="48" y="190" font-size="18" font-weight="600">ML &amp; Backend Engineer — Training models while my CPU screams for mercy.</text>
+
+  <text fill="#777777" class="mono" x="48" y="246" font-size="13" letter-spacing="1">focus  ▸</text>
+  <text fill="#444444" class="mono" x="128" y="246" font-size="13" letter-spacing="1">machine learning · high-throughput backends · AI safety · Web3 systems</text>
+  
+  <text fill="#777777" class="mono" x="48" y="274" font-size="13" letter-spacing="1">status ▸</text>
+  <text fill="#444444" class="mono" x="128" y="274" font-size="13" letter-spacing="1">open for internships · freelance · research collaboration</text>
+
+  <line x1="48" y1="318" x2="952" y2="318" stroke="#E1E4E8" stroke-width="1"/>
+  <text fill="#555555" class="mono" x="48" y="350" font-size="11.5" letter-spacing="2.5">PYTHON &amp; PYTORCH</text>
+  <text fill="#444444" class="mono" x="225" y="350" font-size="11.5">·</text>
+  <text fill="#555555" class="mono" x="245" y="350" font-size="11.5" letter-spacing="2.5">FASTAPI &amp; BACKENDS</text>
+  <text fill="#444444" class="mono" x="455" y="350" font-size="11.5">·</text>
+  <text fill="#555555" class="mono" x="475" y="350" font-size="11.5" letter-spacing="2.5">AI SAFETY &amp; LLMS</text>
+  <text fill="#555555" class="mono" x="952" y="350" font-size="11.5" letter-spacing="2.5" text-anchor="end">3RD YEAR CSE @ GGSIPU</text>
+</svg>

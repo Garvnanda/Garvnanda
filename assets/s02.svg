@@ -1,0 +1,9 @@
+<svg viewBox="0 0 1000 80" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Section S02">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="80" fill="#FFFFFF"/>
+  <line x1="48" y1="40" x2="952" y2="40" stroke="#E1E4E8" stroke-width="1"/>
+  <rect x="48" y="24" width="220" height="32" fill="#FFFFFF"/>
+  <text fill="#000000" class="mono" x="56" y="45" font-size="14" font-weight="700" letter-spacing="3">S02 — SYSTEM MAP</text>
+</svg>

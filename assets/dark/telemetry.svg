@@ -1,0 +1,10 @@
+<svg viewBox="0 0 1000 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Development Telemetry">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="120" fill="#000000"/>
+  <rect x="48" y="10" width="904" height="100" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  
+  <text fill="#FFFFFF" class="mono" x="76" y="44" font-size="15" font-weight="700" letter-spacing="2">REAL-TIME DEVELOPMENT TELEMETRY</text>
+  <text fill="#888888" class="mono" x="76" y="74" font-size="12">Live commit telemetry, repository metrics, and language breakdown synced directly from @Garvnanda</text>
+</svg>

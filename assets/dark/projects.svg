@@ -1,0 +1,37 @@
+<svg viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Featured Projects">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="520" fill="#000000"/>
+  
+  <rect x="48" y="20" width="436" height="145" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="72" y="56" font-size="14" font-weight="700" letter-spacing="1">01. DATATHON-2026</text>
+  <line x1="72" y1="68" x2="460" y2="68" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="72" y="96" font-size="11.5">Conversational AI for KSP Crime Database (Zoho Catalyst)</text>
+  <text fill="#A0A0A0" class="mono" x="72" y="128" font-size="11" font-weight="600">TAGS: FastAPI · Gemma LLM · NetworkX · Streamlit</text>
+  <rect x="516" y="20" width="436" height="145" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="540" y="56" font-size="14" font-weight="700" letter-spacing="1">02. DEBATEMIND</text>
+  <line x1="540" y1="68" x2="928" y2="68" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="540" y="96" font-size="11.5">AI-Powered Debate & Argumentation Analysis Engine</text>
+  <text fill="#A0A0A0" class="mono" x="540" y="128" font-size="11" font-weight="600">TAGS: Python · NLP · LLMs · Speech Analysis</text>
+  <rect x="48" y="185" width="436" height="145" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="72" y="221" font-size="14" font-weight="700" letter-spacing="1">03. DEVLENS</text>
+  <line x1="72" y1="233" x2="460" y2="233" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="72" y="261" font-size="11.5">Developer Productivity & Codebase Telemetry Suite</text>
+  <text fill="#A0A0A0" class="mono" x="72" y="293" font-size="11" font-weight="600">TAGS: Python · AST Parser · Code Metrics</text>
+  <rect x="516" y="185" width="436" height="145" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="540" y="221" font-size="14" font-weight="700" letter-spacing="1">04. SANN</text>
+  <line x1="540" y1="233" x2="928" y2="233" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="540" y="261" font-size="11.5">Self-Auditing Neural Networks — AI Safety Framework</text>
+  <text fill="#A0A0A0" class="mono" x="540" y="293" font-size="11" font-weight="600">TAGS: PyTorch · HuggingFace · Poisoning Detector</text>
+  <rect x="48" y="350" width="436" height="145" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="72" y="386" font-size="14" font-weight="700" letter-spacing="1">05. CREATOR_X</text>
+  <line x1="72" y1="398" x2="460" y2="398" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="72" y="426" font-size="11.5">Decentralized SocialFi Web3 & Mobile Platform</text>
+  <text fill="#A0A0A0" class="mono" x="72" y="458" font-size="11" font-weight="600">TAGS: Solidity · Web3.js · Node.js · React Native</text>
+  <rect x="516" y="350" width="436" height="145" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="540" y="386" font-size="14" font-weight="700" letter-spacing="1">06. GALLA-SATHI</text>
+  <line x1="540" y1="398" x2="928" y2="398" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="540" y="426" font-size="11.5">Voice-First AI Copilot for Kirana Shopkeepers</text>
+  <text fill="#A0A0A0" class="mono" x="540" y="458" font-size="11" font-weight="600">TAGS: TypeScript · FastAPI · Gemma 4 · Sarvam ASR</text>
+</svg>

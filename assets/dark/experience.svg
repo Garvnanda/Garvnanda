@@ -1,0 +1,14 @@
+<svg viewBox="0 0 1000 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Experience">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="160" fill="#000000"/>
+  <rect x="48" y="10" width="904" height="140" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  
+  <text fill="#FFFFFF" class="mono" x="76" y="44" font-size="14" font-weight="700" letter-spacing="1">ML &amp; BACKEND SOFTWARE ENGINEER</text>
+  <text fill="#888888" class="mono" x="952" y="44" font-size="12" text-anchor="end">2024 — PRESENT</text>
+  <line x1="76" y1="56" x2="924" y2="56" stroke="#30363D" stroke-width="1"/>
+  
+  <text fill="#888888" class="mono" x="76" y="84" font-size="12">• Architecting production machine learning models, REST APIs, and automated evaluation suites.</text>
+  <text fill="#888888" class="mono" x="76" y="108" font-size="12">• Designing voice-first LLM applications, neural safety audit tools, and high-performance backends.</text>
+</svg>

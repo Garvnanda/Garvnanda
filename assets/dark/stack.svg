@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Technical Stack">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="320" fill="#000000"/>
+  
+  <rect x="48" y="10" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="72" y="40" font-size="13" font-weight="700" letter-spacing="1">PROGRAMMING LANGUAGES</text>
+  <line x1="72" y1="50" x2="460" y2="50" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="72" y="78" font-size="12">Python · C++ · SQL · JavaScript · TypeScript · Solidity</text>
+
+  <rect x="516" y="10" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="540" y="40" font-size="13" font-weight="700" letter-spacing="1">MACHINE LEARNING &amp; AI</text>
+  <line x1="540" y1="50" x2="928" y2="50" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="540" y="78" font-size="12">PyTorch · Gemma 4 · Hugging Face · Scikit-Learn · Pandas · NetworkX</text>
+
+  <rect x="48" y="165" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="72" y="195" font-size="13" font-weight="700" letter-spacing="1">BACKEND &amp; CLOUD INFRASTRUCTURE</text>
+  <line x1="72" y1="205" x2="460" y2="205" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="72" y="233" font-size="12">FastAPI · Supabase / PostgreSQL · Redis · Docker · Uvicorn · Catalyst</text>
+
+  <rect x="516" y="165" width="436" height="135" rx="6" fill="#111111" stroke="#30363D" stroke-width="1"/>
+  <text fill="#FFFFFF" class="mono" x="540" y="195" font-size="13" font-weight="700" letter-spacing="1">DEVELOPER TOOLS &amp; WORKFLOWS</text>
+  <line x1="540" y1="205" x2="928" y2="205" stroke="#30363D" stroke-width="1"/>
+  <text fill="#888888" class="mono" x="540" y="233" font-size="12">Git · GitHub Actions · Linux · Jupyter · Streamlit · Vercel · VS Code</text>
+</svg>

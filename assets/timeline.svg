@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1000 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Development Timeline">
+  <style>
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1000" height="280" fill="#FFFFFF"/>
+  <rect x="48" y="10" width="904" height="260" rx="6" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1"/>
+  <line x1="80" y1="36" x2="80" y2="216" stroke="#E1E4E8" stroke-width="2"/>
+  
+  <circle cx="80" cy="32" r="5" fill="#000000"/>
+  <text fill="#000000" class="mono" x="104" y="36" font-size="13" font-weight="700">2023</text>
+  <text fill="#555555" class="mono" x="160" y="36" font-size="12">Foundations — CS & Systems Engineering at GGSIPU, deep dive into Python, C++, and DSA.</text>
+  <circle cx="80" cy="92" r="5" fill="#000000"/>
+  <text fill="#000000" class="mono" x="104" y="96" font-size="13" font-weight="700">2024</text>
+  <text fill="#555555" class="mono" x="160" y="96" font-size="12">ML & Backend Expansion — Developed News-Categorizer, DevLens, DebateMind, and microservice APIs.</text>
+  <circle cx="80" cy="152" r="5" fill="#000000"/>
+  <text fill="#000000" class="mono" x="104" y="156" font-size="13" font-weight="700">2025</text>
+  <text fill="#555555" class="mono" x="160" y="156" font-size="12">AI Safety & LLMs — Fine-tuned Gemma 4 for GallaSaathi, created SANN auditing suite, built Creator_X.</text>
+  <circle cx="80" cy="212" r="5" fill="#000000"/>
+  <text fill="#000000" class="mono" x="104" y="216" font-size="13" font-weight="700">2026</text>
+  <text fill="#555555" class="mono" x="160" y="216" font-size="12">Enterprise Datathon — Built Intelligent Conversational Crime AI for KSP Database (Zoho Catalyst).</text>
+</svg>
