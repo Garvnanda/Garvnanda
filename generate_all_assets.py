@@ -51,8 +51,7 @@ def gen_cover_banner(dark=False):
   <circle cx="820" cy="170" r="3.5" fill="{node_color}"/>
   <circle cx="680" cy="150" r="3" fill="{node_color}"/>
 
-  <text fill="{text_color}" class="title" x="500" y="110" font-size="44" letter-spacing="2" text-anchor="middle">Garv Nanda</text>
-  <text fill="{sub_color}" class="mono" x="500" y="152" font-size="18" font-weight="600" letter-spacing="3" text-anchor="middle">ML &amp; BACKEND ENGINEER</text>
+  <text fill="{text_color}" class="title" x="500" y="125" font-size="44" letter-spacing="2" text-anchor="middle">Hello coders</text>
 </svg>'''
 
 def gen_section(num, title, dark=False):
