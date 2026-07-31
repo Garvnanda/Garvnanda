@@ -55,24 +55,24 @@ function renderWall(entries) {
         .join("\n")
     : `<text class="mono" x="16" y="40" font-size="12" fill="var(--muted)">no messages yet — be the first</text>`;
 
-  return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guestbook wall">
+  return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Feedback wall">
   <style>${THEME}</style>
   <line x1="16" y1="20" x2="${width - 16}" y2="20" stroke="var(--rule)"/>
-  <text class="mono" x="16" y="14" font-size="10" fill="var(--muted)" letter-spacing="2">GUESTBOOK — LAST ${entries.length || 0}</text>
+  <text class="mono" x="16" y="14" font-size="10" fill="var(--muted)" letter-spacing="2">FEEDBACK — LAST ${entries.length || 0}</text>
   ${rows}
 </svg>`;
 }
 
 function signPage() {
   return `<!doctype html>
-<html><head><meta charset="utf-8"><title>Sign the guestbook</title>
+<html><head><meta charset="utf-8"><title>Leave feedback</title>
 <style>body{font-family:ui-monospace,monospace;max-width:420px;margin:64px auto;color:#333}input,textarea{width:100%;padding:8px;margin:6px 0;font-family:inherit}button{padding:8px 16px;font-family:inherit;background:#000;color:#fff;border:0;cursor:pointer}</style>
 </head><body>
-<h2>Sign my guestbook</h2>
+<h2>Leave feedback</h2>
 <form method="POST" action="/guestbook/submit">
 <label>Name<input name="name" maxlength="${MAX_NAME}" required></label>
 <label>Message<textarea name="message" maxlength="${MAX_MSG}" rows="3" required></textarea></label>
-<button type="submit">Sign</button>
+<button type="submit">Submit</button>
 </form>
 </body></html>`;
 }
