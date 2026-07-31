@@ -1,26 +1,31 @@
-<svg viewBox="0 0 1000 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Technical Stack">
+<svg viewBox="0 0 1000 206" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stack — languages, backend, ML, data, web, tooling">
   <style>
-    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+    :root { --bone: #444444; --rule: #C0C0C0; --muted: #888888; --accent: #555555; }
+    @media (prefers-color-scheme: dark) { :root { --bone: #DDDDDD; --rule: #444444; --muted: #777777; --accent: #AAAAAA; } }
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .rise { opacity: 0; animation: rise .6s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes rise { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
+    .a1{animation-delay:.1s} .a2{animation-delay:.2s} .a3{animation-delay:.3s} .a4{animation-delay:.4s} .a5{animation-delay:.5s} .a6{animation-delay:.6s}
+    @media (prefers-reduced-motion: reduce) { .rise { animation: none; opacity: 1; } }
   </style>
-  <rect width="1000" height="480" fill="#FFFFFF"/>
-  
-  <rect x="48" y="10" width="904" height="100" rx="8" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1.5"/>
-  <text fill="#000000" class="mono" x="76" y="42" font-size="16" font-weight="800" letter-spacing="1">PROGRAMMING LANGUAGES</text>
-  <line x1="76" y1="52" x2="924" y2="52" stroke="#E1E4E8" stroke-width="1"/>
-  <text fill="#333333" class="mono" x="76" y="80" font-size="14.5" font-weight="600">Python  ·  C++  ·  SQL  ·  JavaScript  ·  TypeScript  ·  Solidity</text>
 
-  <rect x="48" y="125" width="904" height="100" rx="8" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1.5"/>
-  <text fill="#000000" class="mono" x="76" y="157" font-size="16" font-weight="800" letter-spacing="1">MACHINE LEARNING &amp; AI</text>
-  <line x1="76" y1="167" x2="924" y2="167" stroke="#E1E4E8" stroke-width="1"/>
-  <text fill="#333333" class="mono" x="76" y="195" font-size="14.5" font-weight="600">PyTorch  ·  Gemma 4  ·  Hugging Face  ·  Scikit-Learn  ·  Pandas  ·  NetworkX  ·  OpenCV</text>
+  <line x1="138" y1="8" x2="138" y2="198" stroke="var(--rule)" stroke-width="1" opacity=".4"/>
 
-  <rect x="48" y="240" width="904" height="100" rx="8" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1.5"/>
-  <text fill="#000000" class="mono" x="76" y="272" font-size="16" font-weight="800" letter-spacing="1">BACKEND &amp; CLOUD INFRASTRUCTURE</text>
-  <line x1="76" y1="282" x2="924" y2="282" stroke="#E1E4E8" stroke-width="1"/>
-  <text fill="#333333" class="mono" x="76" y="310" font-size="14.5" font-weight="600">FastAPI  ·  Supabase / PostgreSQL  ·  Redis  ·  Docker  ·  Uvicorn  ·  Zoho Catalyst</text>
+  <text class="mono rise a1" x="48" y="32"  font-size="12" fill="var(--muted)" letter-spacing="2">LANGUAGES</text>
+  <text class="mono rise a1" x="154" y="32"  font-size="15" fill="var(--bone)">Python · JavaScript · TypeScript · C++ · SQL</text>
 
-  <rect x="48" y="355" width="904" height="100" rx="8" fill="#F8F9FA" stroke="#E1E4E8" stroke-width="1.5"/>
-  <text fill="#000000" class="mono" x="76" y="387" font-size="16" font-weight="800" letter-spacing="1">DEVELOPER TOOLS &amp; WORKFLOWS</text>
-  <line x1="76" y1="397" x2="924" y2="397" stroke="#E1E4E8" stroke-width="1"/>
-  <text fill="#333333" class="mono" x="76" y="425" font-size="14.5" font-weight="600">Git  ·  GitHub Actions  ·  Linux  ·  Jupyter  ·  Streamlit  ·  Vercel  ·  VS Code</text>
+  <text class="mono rise a2" x="48" y="64"  font-size="12" fill="var(--muted)" letter-spacing="2">BACKEND</text>
+  <text class="mono rise a2" x="154" y="64"  font-size="15" fill="var(--bone)">FastAPI · Flask · Node.js · Express · REST APIs</text>
+
+  <text class="mono rise a3" x="48" y="96"  font-size="12" fill="var(--muted)" letter-spacing="2">ML / AI</text>
+  <text class="mono rise a3" x="154" y="96"  font-size="15" fill="var(--bone)">PyTorch · scikit-learn · Transformers · LLM pipelines</text>
+
+  <text class="mono rise a4" x="48" y="128" font-size="12" fill="var(--muted)" letter-spacing="2">DATA</text>
+  <text class="mono rise a4" x="154" y="128" font-size="15" fill="var(--bone)">PostgreSQL · MongoDB · Pandas · NumPy</text>
+
+  <text class="mono rise a5" x="48" y="160" font-size="12" fill="var(--muted)" letter-spacing="2">WEB</text>
+  <text class="mono rise a5" x="154" y="160" font-size="15" fill="var(--bone)">React · Next.js · Tailwind CSS</text>
+
+  <text class="mono rise a6" x="48" y="192" font-size="12" fill="var(--muted)" letter-spacing="2">TOOLING</text>
+  <text class="mono rise a6" x="154" y="192" font-size="15" fill="var(--bone)">Git · Docker · Postman · Vercel</text>
 </svg>
