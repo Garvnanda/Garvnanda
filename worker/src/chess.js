@@ -50,6 +50,20 @@ export async function handleChess(request, env, path) {
     return new Response(movesPage(moves, game), { headers: { "Content-Type": "text/html; charset=utf-8" } });
   }
 
+  if (path === "/chess/legal-moves.json") {
+    const game = await getGame(env);
+    const verbose = game.moves({ verbose: true });
+    const moves = verbose.map((m) => ({ uci: m.from + m.to + (m.promotion || ""), san: m.san }));
+    const body = JSON.stringify({
+      turn: game.turn() === "w" ? "white" : "black",
+      gameOver: game.isGameOver(),
+      moves,
+    });
+    return new Response(body, {
+      headers: { "Content-Type": "application/json", "Cache-Control": "no-store, max-age=0", "Access-Control-Allow-Origin": "*" },
+    });
+  }
+
   if (path === "/chess/move") {
     const url = new URL(request.url);
     const uci = url.searchParams.get("uci") || "";
@@ -100,7 +114,7 @@ function movesPage(moves, game) {
 }
 
 function renderBoard(game) {
-  const size = 320;
+  const size = 480;
   const sq = size / 8;
   const board = game.board(); // 8x8, [0]=rank8..[7]=rank1
   let squares = "";

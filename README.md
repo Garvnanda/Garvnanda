@@ -49,12 +49,6 @@
 
 </div>
 
-<img src="assets/s07.svg" alt="07 — airstrike"/>
-
-<p align="center">
-<img src="assets/airstrike.svg" alt="A plane bombs every contribution red, lowest count first" width="780"/>
-</p>
-
 <img src="assets/s05.svg" alt="05 — recent commits"/>
 
 <p align="center">
@@ -71,21 +65,32 @@
 
 <a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=0"><img src="https://img.shields.io/badge/-1-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=1"><img src="https://img.shields.io/badge/-2-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=2"><img src="https://img.shields.io/badge/-3-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=3"><img src="https://img.shields.io/badge/-4-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=4"><img src="https://img.shields.io/badge/-5-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=5"><img src="https://img.shields.io/badge/-6-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=6"><img src="https://img.shields.io/badge/-7-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=7"><img src="https://img.shields.io/badge/-8-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=8"><img src="https://img.shields.io/badge/-9-000?style=flat-square"/></a>
 
-<img src="assets/divider.svg" width="500" alt=""/>
+</div>
 
-**Guestbook** — leave a note for whoever's next
+<img src="assets/divider.svg" width="700" alt=""/>
+
+<div align="center">
+
+**Play me at Chess**
+
+<!-- CHESS_START -->
+<p align="center">
+  <b>Click any move badge to play against Garv's AI Bot</b><br/>
+  <font color="#8B949E">populates after the worker is redeployed and the chess-widget Action runs once</font>
+</p>
+<!-- CHESS_END -->
+
+</div>
+
+<img src="assets/divider.svg" width="700" alt=""/>
+
+<div align="center">
+
+**Guestbook** — leave feedback for whoever's next
 
 <a href="https://garvnanda-profile.garvnanda.workers.dev/guestbook/sign"><img src="https://img.shields.io/badge/✍️_SIGN_MY_GUESTBOOK-000?style=for-the-badge"/></a>
 
 <img src="https://garvnanda-profile.garvnanda.workers.dev/guestbook/wall.svg" width="600" alt="Guestbook wall"/>
-
-<img src="assets/divider.svg" width="500" alt=""/>
-
-**Play me at Chess** — pick a move, I reply instantly
-
-<img src="https://garvnanda-profile.garvnanda.workers.dev/chess/board.svg" width="320" alt="Chess board"/>
-
-<a href="https://garvnanda-profile.garvnanda.workers.dev/chess/moves"><img src="https://img.shields.io/badge/-View%20legal%20moves-000?style=flat-square"/></a>
 
 </div>
 
