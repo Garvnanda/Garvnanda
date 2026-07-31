@@ -1,0 +1,30 @@
+name: Generate Real Contribution Snake Game
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate Contribution Grid Snake Game from Real Contributions
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: Garvnanda
+          outputs: |
+            assets/github-contribution-grid-snake.svg
+            assets/dark/github-contribution-grid-snake.svg?palette=github-dark
+
+      - name: Commit and Push Snake SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          git commit -m "chore: update contribution snake [skip ci]" || exit 0
+          git push
