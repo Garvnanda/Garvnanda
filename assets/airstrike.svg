@@ -1,0 +1,9 @@
+<svg viewBox="0 0 780 106" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution airstrike — pending first run">
+  <style>
+    :root { --bone:#444444; --muted:#888888; }
+    @media (prefers-color-scheme: dark) { :root { --bone:#DDDDDD; --muted:#777777; } }
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+  <text class="mono" x="8" y="16" font-size="10" fill="var(--muted)" letter-spacing="2">CONTRIBUTION AIRSTRIKE</text>
+  <text class="mono" x="8" y="56" font-size="13" fill="var(--bone)">will populate after the airstrike-widget Action's first run.</text>
+</svg>

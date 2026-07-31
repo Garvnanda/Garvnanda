@@ -1,60 +1,60 @@
-<svg viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six projects by Garv Nanda">
+<svg viewBox="0 0 1000 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six projects by Garv Nanda">
   <style>
-    :root { --ink:#000000; --paper:#FFFFFF; }
-    @media (prefers-color-scheme:dark) { :root { --ink:#FFFFFF; --paper:#000000; } }
+    :root { --ink:#222222; --panel:#F8F9FA; --rule:#E1E4E8; --muted:#888888; }
+    @media (prefers-color-scheme:dark) { :root { --ink:#DDDDDD; --panel:#161616; --rule:#333333; --muted:#777777; } }
     .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; }
     .row { opacity:0; animation:reveal .55s cubic-bezier(.2,.7,.2,1) forwards; }
-    .rule { stroke:var(--ink); stroke-width:1; }
-    .title { fill:var(--ink); font-size:17px; font-weight:700; letter-spacing:.8px; }
-    .copy { fill:var(--ink); font-size:12px; }
-    .meta { fill:var(--ink); font-size:11px; letter-spacing:.4px; }
-    @keyframes reveal { from { opacity:0; } to { opacity:1; } }
+    .card { fill: var(--panel); stroke: var(--rule); stroke-width: 1.5; }
+    .title { fill:var(--ink); font-size:16px; font-weight:700; letter-spacing:.6px; }
+    .copy { fill:var(--ink); font-size:12px; opacity:.92; }
+    .meta { fill:var(--muted); font-size:10.5px; letter-spacing:.4px; }
+    @keyframes reveal { from { opacity:0; transform:translateY(6px);} to { opacity:1; transform:translateY(0);} }
     .r1{animation-delay:.05s}.r2{animation-delay:.10s}.r3{animation-delay:.15s}.r4{animation-delay:.20s}.r5{animation-delay:.25s}.r6{animation-delay:.30s}
     @media (prefers-reduced-motion:reduce) { .row { animation:none; opacity:1; } }
   </style>
 
   <g class="mono">
-    <g class="row r1" transform="translate(0 20)">
-      <text class="title" x="48" y="24">01 / DEVLENS</text>
-      <text class="copy" x="48" y="49">AI-powered onboarding tool that helps new developers understand codebases fast.</text>
-      <text class="copy" x="48" y="68">Visualizes dependencies, maps issues to code, and explains architecture through a "Digital Senior Mentor" interface.</text>
-      <text class="meta" x="48" y="87">PYTHON · AI · CODEBASE ANALYSIS · DEVELOPER TOOLING</text>
-      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    <g class="row r1" transform="translate(0 12)">
+      <rect class="card" x="48" y="8" width="904" height="100" rx="8"/>
+      <text class="title" x="72" y="36">01 / DEVLENS</text>
+      <text class="copy" x="72" y="58">AI-powered onboarding tool that helps new developers understand codebases fast.</text>
+      <text class="copy" x="72" y="76">Visualizes dependencies, maps issues to code, explains architecture via a "Digital Senior Mentor" interface.</text>
+      <text class="meta" x="72" y="96">PYTHON · AI · CODEBASE ANALYSIS · DEVELOPER TOOLING</text>
     </g>
-    <g class="row r2" transform="translate(0 130)">
-      <text class="title" x="48" y="24">02 / DATATHON-2026</text>
-      <text class="copy" x="48" y="49">Conversational AI system for law-enforcement investigators to query a crime database in plain English or Kannada.</text>
-      <text class="copy" x="48" y="68">Every answer grounded in visible data references, confidence indicators, and safeguards against wrong answers.</text>
-      <text class="meta" x="48" y="87">PYTHON · NLP · LLM · DATA-GROUNDED QA · DATATHON 2026</text>
-      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    <g class="row r2" transform="translate(0 122)">
+      <rect class="card" x="48" y="8" width="904" height="100" rx="8"/>
+      <text class="title" x="72" y="36">02 / DATATHON-2026</text>
+      <text class="copy" x="72" y="58">Conversational AI for law-enforcement investigators to query a crime database in plain English or Kannada.</text>
+      <text class="copy" x="72" y="76">Every answer grounded in visible data references, confidence indicators, and anti-hallucination safeguards.</text>
+      <text class="meta" x="72" y="96">PYTHON · NLP · LLM · DATA-GROUNDED QA · DATATHON 2026</text>
     </g>
-    <g class="row r3" transform="translate(0 240)">
-      <text class="title" x="48" y="24">03 / GALLA-SAATHI</text>
-      <text class="copy" x="48" y="49">Voice-first AI copilot for Indian kirana shopkeepers, built on a fine-tuned Gemma model.</text>
-      <text class="copy" x="48" y="68">Helps underbanked retail owners manage credit, inventory and ledgers via voice in Hindi, Punjabi or code-switched English.</text>
-      <text class="meta" x="48" y="87">TYPESCRIPT · GEMMA · VOICE AI · FINTECH FOR RETAIL</text>
-      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    <g class="row r3" transform="translate(0 232)">
+      <rect class="card" x="48" y="8" width="904" height="100" rx="8"/>
+      <text class="title" x="72" y="36">03 / GALLA-SAATHI</text>
+      <text class="copy" x="72" y="58">Voice-first AI copilot for Indian kirana shopkeepers, built on a fine-tuned Gemma model.</text>
+      <text class="copy" x="72" y="76">Helps underbanked retail owners manage credit, inventory and ledgers via voice — Hindi, Punjabi, code-switched English.</text>
+      <text class="meta" x="72" y="96">TYPESCRIPT · GEMMA · VOICE AI · FINTECH FOR RETAIL</text>
     </g>
-    <g class="row r4" transform="translate(0 350)">
-      <text class="title" x="48" y="24">04 / DEBATEMIND</text>
-      <text class="copy" x="48" y="49">AI system that simulates structured debates between two agents.</text>
-      <text class="copy" x="48" y="68">A reinforcement-learning model learns which argument strategies work best, scored by a neutral judge model.</text>
-      <text class="meta" x="48" y="87">PYTHON · REINFORCEMENT LEARNING · MULTI-AGENT AI</text>
-      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    <g class="row r4" transform="translate(0 342)">
+      <rect class="card" x="48" y="8" width="904" height="100" rx="8"/>
+      <text class="title" x="72" y="36">04 / DEBATEMIND</text>
+      <text class="copy" x="72" y="58">AI system that simulates structured debates between two agents.</text>
+      <text class="copy" x="72" y="76">A reinforcement-learning model learns which argument strategies work best, scored by a neutral judge model.</text>
+      <text class="meta" x="72" y="96">PYTHON · REINFORCEMENT LEARNING · MULTI-AGENT AI</text>
     </g>
-    <g class="row r5" transform="translate(0 460)">
-      <text class="title" x="48" y="24">05 / SANN</text>
-      <text class="copy" x="48" y="49">Self-Auditing Neural Networks — models that examine and evaluate their own performance and behavior.</text>
-      <text class="copy" x="48" y="68">Explores self-diagnostic mechanisms for catching model failure modes before they reach production.</text>
-      <text class="meta" x="48" y="87">PYTHON · NEURAL NETWORKS · MODEL AUDITING · ML RESEARCH</text>
-      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    <g class="row r5" transform="translate(0 452)">
+      <rect class="card" x="48" y="8" width="904" height="100" rx="8"/>
+      <text class="title" x="72" y="36">05 / SANN</text>
+      <text class="copy" x="72" y="58">Self-Auditing Neural Networks — models that examine and evaluate their own performance and behavior.</text>
+      <text class="copy" x="72" y="76">Explores self-diagnostic mechanisms for catching model failure modes before they reach production.</text>
+      <text class="meta" x="72" y="96">PYTHON · NEURAL NETWORKS · MODEL AUDITING · ML RESEARCH</text>
     </g>
-    <g class="row r6" transform="translate(0 570)">
-      <text class="title" x="48" y="24">06 / CREATOR_X</text>
-      <text class="copy" x="48" y="49">SocialFi platform combining social networking with Web3, built as backend, contracts and app.</text>
-      <text class="copy" x="48" y="68">Smart contracts for token-based creator economics, paired with a dedicated backend and frontend app.</text>
-      <text class="meta" x="48" y="87">SOLIDITY · SMART CONTRACTS · SOCIALFI · WEB3</text>
-      <line class="rule" x1="48" y1="104" x2="952" y2="104"/>
+    <g class="row r6" transform="translate(0 562)">
+      <rect class="card" x="48" y="8" width="904" height="100" rx="8"/>
+      <text class="title" x="72" y="36">06 / CREATOR_X</text>
+      <text class="copy" x="72" y="58">SocialFi platform combining social networking with Web3, built as backend, contracts and app.</text>
+      <text class="copy" x="72" y="76">Smart contracts for token-based creator economics, paired with a dedicated backend and frontend app.</text>
+      <text class="meta" x="72" y="96">SOLIDITY · SMART CONTRACTS · SOCIALFI · WEB3</text>
     </g>
   </g>
 </svg>

@@ -13,11 +13,11 @@
 
 <br/>
 
-<a href="https://drive.google.com/file/d/1Z_oiTt0xa8733B-JupRAk3ohW_P-XQIx/view?usp=sharing"><img src="https://img.shields.io/badge/RESUME-000000?style=flat-square&logo=adobeacrobatreader&logoColor=ffffff" alt="Resume"/></a>
-<a href="https://www.linkedin.com/in/garv-nanda-4106b6336"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=flat-square&logo=linkedin&logoColor=ffffff" alt="LinkedIn"/></a>
-<a href="https://www.instagram.com/garvnandaa/"><img src="https://img.shields.io/badge/INSTAGRAM-000000?style=flat-square&logo=instagram&logoColor=ffffff" alt="Instagram"/></a>
-<a href="mailto:garvnanda326@gmail.com"><img src="https://img.shields.io/badge/EMAIL-000000?style=flat-square&logo=gmail&logoColor=ffffff" alt="Email"/></a>
-<a href="https://wa.me/919319148946"><img src="https://img.shields.io/badge/WHATSAPP-000000?style=flat-square&logo=whatsapp&logoColor=ffffff" alt="WhatsApp"/></a>
+<a href="https://drive.google.com/file/d/1Z_oiTt0xa8733B-JupRAk3ohW_P-XQIx/view?usp=sharing"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/RESUME-0d1117?style=flat-square&logo=adobeacrobatreader&logoColor=ffffff"/><img src="https://img.shields.io/badge/RESUME-ffffff?style=flat-square&logo=adobeacrobatreader&logoColor=000000&color=ffffff" alt="Resume"/></picture></a>
+<a href="https://www.linkedin.com/in/garv-nanda-4106b6336"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000&color=ffffff" alt="LinkedIn"/></picture></a>
+<a href="https://www.instagram.com/garvnandaa/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/INSTAGRAM-0d1117?style=flat-square&logo=instagram&logoColor=ffffff"/><img src="https://img.shields.io/badge/INSTAGRAM-ffffff?style=flat-square&logo=instagram&logoColor=000000&color=ffffff" alt="Instagram"/></picture></a>
+<a href="mailto:garvnanda326@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/EMAIL-0d1117?style=flat-square&logo=gmail&logoColor=ffffff"/><img src="https://img.shields.io/badge/EMAIL-ffffff?style=flat-square&logo=gmail&logoColor=000000&color=ffffff" alt="Email"/></picture></a>
+<a href="https://wa.me/919319148946"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/WHATSAPP-0d1117?style=flat-square&logo=whatsapp&logoColor=ffffff"/><img src="https://img.shields.io/badge/WHATSAPP-ffffff?style=flat-square&logo=whatsapp&logoColor=000000&color=ffffff" alt="WhatsApp"/></picture></a>
 
 </div>
 
@@ -25,6 +25,19 @@
 <img src="assets/stack.svg" alt="Technical stack"/>
 <img src="assets/s03.svg" alt="03 — projects"/>
 <img src="assets/projects.svg" alt="6 projects"/>
+
+<div align="center">
+
+<a href="https://github.com/Garvnanda/devlens"><img src="https://img.shields.io/badge/DEVLENS-AI%20Onboarding%20Tool-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DevLens"/></a>
+<a href="https://github.com/Garvnanda/DATATHON-2026"><img src="https://img.shields.io/badge/DATATHON--2026-Crime%20QA%20AI-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DATATHON-2026"/></a>
+<a href="https://github.com/Garvnanda/galla-sathi"><img src="https://img.shields.io/badge/GALLA--SAATHI-Voice%20AI%20Copilot-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="Galla-Saathi"/></a>
+<br/><br/>
+<a href="https://github.com/Garvnanda/debatemind"><img src="https://img.shields.io/badge/DEBATEMIND-Multi--Agent%20RL-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DebateMind"/></a>
+<a href="https://github.com/Garvnanda/SANN"><img src="https://img.shields.io/badge/SANN-Self--Auditing%20NN-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="SANN"/></a>
+<a href="https://github.com/Garvnanda/CREATOR_X"><img src="https://img.shields.io/badge/CREATOR__X-SocialFi%20Web3-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="CREATOR_X"/></a>
+
+</div>
+
 <img src="assets/s04.svg" alt="04 — telemetry"/>
 
 <div align="center">
@@ -35,6 +48,12 @@
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=444444&line=555555&point=444444&area_color=888888&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="GitHub contribution activity"/>
 
 </div>
+
+<img src="assets/s07.svg" alt="07 — airstrike"/>
+
+<p align="center">
+<img src="assets/airstrike.svg" alt="A plane bombs every contribution red, lowest count first" width="780"/>
+</p>
 
 <img src="assets/s05.svg" alt="05 — recent commits"/>
 
