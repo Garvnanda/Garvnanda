@@ -2,6 +2,17 @@
 
 <img src="assets/header-v1.svg" alt="Garv Nanda"/>
 
+</div>
+
+<img src="assets/s01.svg" alt="01 — whoami"/>
+<img src="assets/whoami.svg" alt="About Garv"/>
+
+<div align="center">
+
+<img src="https://media.giphy.com/media/QvpqTCiEcwtvx6wwJK/giphy.gif" width="270" alt="setup landing on a table">
+
+<br/>
+
 <a href="https://drive.google.com/file/d/1Z_oiTt0xa8733B-JupRAk3ohW_P-XQIx/view?usp=sharing"><img src="https://img.shields.io/badge/RESUME-000000?style=flat-square&logo=adobeacrobatreader&logoColor=ffffff" alt="Resume"/></a>
 <a href="https://www.linkedin.com/in/garv-nanda-4106b6336"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=flat-square&logo=linkedin&logoColor=ffffff" alt="LinkedIn"/></a>
 <a href="https://www.instagram.com/garvnandaa/"><img src="https://img.shields.io/badge/INSTAGRAM-000000?style=flat-square&logo=instagram&logoColor=ffffff" alt="Instagram"/></a>
@@ -9,13 +20,6 @@
 <a href="https://wa.me/919319148946"><img src="https://img.shields.io/badge/WHATSAPP-000000?style=flat-square&logo=whatsapp&logoColor=ffffff" alt="WhatsApp"/></a>
 
 </div>
-
-<img src="assets/s01.svg" alt="01 — whoami"/>
-<img src="assets/whoami.svg" alt="About Garv"/>
-
-<p align="center">
-<img src="https://media.giphy.com/media/QvpqTCiEcwtvx6wwJK/giphy.gif" width="270" alt="setup landing on a table">
-</p>
 
 <img src="assets/s02.svg" alt="02 — stack"/>
 <img src="assets/stack.svg" alt="Technical stack"/>
@@ -48,7 +52,7 @@
 
 <a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=0"><img src="https://img.shields.io/badge/-1-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=1"><img src="https://img.shields.io/badge/-2-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=2"><img src="https://img.shields.io/badge/-3-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=3"><img src="https://img.shields.io/badge/-4-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=4"><img src="https://img.shields.io/badge/-5-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=5"><img src="https://img.shields.io/badge/-6-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=6"><img src="https://img.shields.io/badge/-7-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=7"><img src="https://img.shields.io/badge/-8-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=8"><img src="https://img.shields.io/badge/-9-000?style=flat-square"/></a>
 
-<br/><br/>
+<img src="assets/divider.svg" width="500" alt=""/>
 
 **Guestbook** — leave a note for whoever's next
 
@@ -56,7 +60,7 @@
 
 <img src="https://garvnanda-profile.garvnanda.workers.dev/guestbook/wall.svg" width="600" alt="Guestbook wall"/>
 
-<br/><br/>
+<img src="assets/divider.svg" width="500" alt=""/>
 
 **Play me at Chess** — pick a move, I reply instantly
 
