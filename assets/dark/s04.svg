@@ -1,9 +1,0 @@
-<svg viewBox="0 0 1000 90" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Section S04">
-  <style>
-    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
-  </style>
-  <rect width="1000" height="90" fill="#000000"/>
-  <line x1="48" y1="45" x2="952" y2="45" stroke="#30363D" stroke-width="1.5"/>
-  <rect x="48" y="25" width="290" height="40" fill="#000000"/>
-  <text fill="#FFFFFF" class="mono" x="56" y="51" font-size="18" font-weight="800" letter-spacing="3.5">S04 — TELEMETRY</text>
-</svg>
