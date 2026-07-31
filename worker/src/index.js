@@ -1,6 +1,6 @@
 import { handleTtt } from "./ttt.js";
 import { handleGuestbook } from "./guestbook.js";
-import { handleChess } from "./chess.js";
+import { handleChess } from "./chess-handler.js";
 import { ProfileState } from "./state-do.js";
 
 export { ProfileState };
