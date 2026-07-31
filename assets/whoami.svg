@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="whoami — bio, focus, status">
+<svg viewBox="0 0 1000 240" width="1000" height="240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="whoami — bio, focus, status">
   <style>
     :root { --bone: #333333; --rule: #E1E4E8; --muted: #888888; --dim: #AAAAAA; --accent: #555555; --panel: #F8F9FA; }
     @media (prefers-color-scheme: dark) { :root { --bone: #DDDDDD; --rule: #333333; --muted: #777777; --dim: #666666; --accent: #AAAAAA; --panel: #161616; } }

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 92" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Section 02 — STACK">
+<svg viewBox="0 0 1000 92" width="1000" height="92" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Section 02 — STACK">
   <style>
     :root { --rule: #C0C0C0; --muted: #888888; --accent: #555555; --ghost: #CCCCCC; }
     @media (prefers-color-scheme: dark) {

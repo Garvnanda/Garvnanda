@@ -104,7 +104,7 @@ const plane = `
   </g>
 `;
 
-const svg = `<svg viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution airstrike">
+const svg = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution airstrike">
   <style>
     :root { --bone:#444444; --muted:#888888; }
     @media (prefers-color-scheme: dark) { :root { --bone:#DDDDDD; --muted:#777777; } }
