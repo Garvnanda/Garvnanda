@@ -1,0 +1,13 @@
+name = "garvnanda-profile"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+# Create these with:
+#   wrangler kv namespace create PROFILE_KV
+# then paste the returned id below.
+kv_namespaces = [
+  { binding = "PROFILE_KV", id = "aa41519c1ecb4b3ba9add444a1ff3af1" }
+]
+
+[vars]
+PROFILE_URL = "https://github.com/Garvnanda"
