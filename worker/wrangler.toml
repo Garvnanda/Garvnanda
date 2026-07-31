@@ -2,12 +2,13 @@ name = "garvnanda-profile"
 main = "src/index.js"
 compatibility_date = "2026-07-01"
 
-# Create these with:
-#   wrangler kv namespace create PROFILE_KV
-# then paste the returned id below.
-kv_namespaces = [
-  { binding = "PROFILE_KV", id = "REPLACE_WITH_KV_NAMESPACE_ID" }
-]
+[[durable_objects.bindings]]
+name = "PROFILE_DO"
+class_name = "ProfileState"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ProfileState"]
 
 [vars]
 PROFILE_URL = "https://github.com/Garvnanda"
