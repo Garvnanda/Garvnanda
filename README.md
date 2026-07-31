@@ -25,8 +25,8 @@
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Garvnanda&show_icons=true&hide_border=true&bg_color=00000000&text_color=444444&icon_color=555555&title_color=444444" width="48%" alt="GitHub stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Garvnanda&layout=compact&hide_border=true&bg_color=00000000&text_color=444444&title_color=444444" width="48%" alt="Top languages"/>
+<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=Garvnanda&show_icons=true&hide_border=true&bg_color=00000000&text_color=444444&icon_color=555555&title_color=444444" width="48%" alt="GitHub stats"/>
+<img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=Garvnanda&layout=compact&hide_border=true&bg_color=00000000&text_color=444444&title_color=444444" width="48%" alt="Top languages"/>
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=444444&line=555555&point=444444&area_color=888888&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="GitHub contribution activity"/>
 
