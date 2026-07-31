@@ -44,25 +44,25 @@
 
 **Tic-Tac-Toe** — shared board, click a cell to play the next mark
 
-<img src="https://garvnanda-profile.garvnanda.workers.dev//ttt/board.svg" width="180" alt="Tic-tac-toe board"/>
+<img src="https://garvnanda-profile.garvnanda.workers.dev/ttt/board.svg" width="180" alt="Tic-tac-toe board"/>
 
-<a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=0"><img src="https://img.shields.io/badge/-1-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=1"><img src="https://img.shields.io/badge/-2-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=2"><img src="https://img.shields.io/badge/-3-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=3"><img src="https://img.shields.io/badge/-4-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=4"><img src="https://img.shields.io/badge/-5-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=5"><img src="https://img.shields.io/badge/-6-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=6"><img src="https://img.shields.io/badge/-7-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=7"><img src="https://img.shields.io/badge/-8-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev//ttt/play?cell=8"><img src="https://img.shields.io/badge/-9-000?style=flat-square"/></a>
+<a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=0"><img src="https://img.shields.io/badge/-1-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=1"><img src="https://img.shields.io/badge/-2-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=2"><img src="https://img.shields.io/badge/-3-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=3"><img src="https://img.shields.io/badge/-4-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=4"><img src="https://img.shields.io/badge/-5-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=5"><img src="https://img.shields.io/badge/-6-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=6"><img src="https://img.shields.io/badge/-7-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=7"><img src="https://img.shields.io/badge/-8-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=8"><img src="https://img.shields.io/badge/-9-000?style=flat-square"/></a>
 
 <br/><br/>
 
 **Guestbook** — leave a note for whoever's next
 
-<a href="https://garvnanda-profile.garvnanda.workers.dev//guestbook/sign"><img src="https://img.shields.io/badge/✍️_SIGN_MY_GUESTBOOK-000?style=for-the-badge"/></a>
+<a href="https://garvnanda-profile.garvnanda.workers.dev/guestbook/sign"><img src="https://img.shields.io/badge/✍️_SIGN_MY_GUESTBOOK-000?style=for-the-badge"/></a>
 
-<img src="https://garvnanda-profile.garvnanda.workers.dev//guestbook/wall.svg" width="600" alt="Guestbook wall"/>
+<img src="https://garvnanda-profile.garvnanda.workers.dev/guestbook/wall.svg" width="600" alt="Guestbook wall"/>
 
 <br/><br/>
 
 **Play me at Chess** — pick a move, I reply instantly
 
-<img src="https://garvnanda-profile.garvnanda.workers.dev//chess/board.svg" width="320" alt="Chess board"/>
+<img src="https://garvnanda-profile.garvnanda.workers.dev/chess/board.svg" width="320" alt="Chess board"/>
 
-<a href="https://garvnanda-profile.garvnanda.workers.dev//chess/moves"><img src="https://img.shields.io/badge/-View%20legal%20moves-000?style=flat-square"/></a>
+<a href="https://garvnanda-profile.garvnanda.workers.dev/chess/moves"><img src="https://img.shields.io/badge/-View%20legal%20moves-000?style=flat-square"/></a>
 
 </div>
 

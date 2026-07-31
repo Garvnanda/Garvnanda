@@ -21,7 +21,7 @@ Wrangler prints your Worker URL, e.g. `https://garvnanda-profile.<subdomain>.wor
 
 ## Wire it into the README
 
-In `README.md`, replace every `https://garvnanda-profile.garvnanda.workers.dev/` with your actual Worker URL from the deploy output.
+In `README.md`, replace every `https://YOUR-WORKER.workers.dev` with your actual Worker URL from the deploy output.
 
 ## Routes
 
