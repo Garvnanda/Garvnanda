@@ -2,6 +2,10 @@
 // contributed day in ascending order of commit count — cell flips to red on hit, plane
 // keeps flying and exits right after the last (highest-count) day is hit.
 //
+// Uses SMIL (<animate>/<animateMotion>) instead of CSS animation-path — SMIL is native
+// to the SVG spec and renders consistently across GitHub, VS Code's preview, and browsers,
+// where CSS `offset-path` support is inconsistent.
+//
 // Needs a token with `read:user` scope (contributionsCollection isn't reachable with the
 // default Actions GITHUB_TOKEN) — see .github/workflows/airstrike-widget.yml.
 
@@ -38,11 +42,11 @@ if (json.errors) throw new Error(`GraphQL errors: ${JSON.stringify(json.errors)}
 
 const weeks = json.data.user.contributionsCollection.contributionCalendar.weeks;
 
-const CELL = 11;
+const CELL = 10;
 const GAP = 3;
 const STEP = CELL + GAP;
-const MARGIN_TOP = 28;
-const MARGIN_LEFT = 8;
+const MARGIN_TOP = 34;
+const MARGIN_LEFT = 10;
 
 const days = [];
 weeks.forEach((week, wi) => {
@@ -60,7 +64,6 @@ function level(count) {
   if (q > 0.25) return 2;
   return 1;
 }
-const GREEN = ["#EBEDF0", "#9BE9A8", "#40C463", "#30A14E", "#216E39"];
 
 // Bombable = days with at least one contribution, ascending by count (ties by date).
 const bombable = days
@@ -69,61 +72,70 @@ const bombable = days
 
 const N = bombable.length;
 const TARGET_FLIGHT = 16; // seconds, total time to bomb every cell
-const perCellDelay = N ? Math.min(0.35, Math.max(0.04, TARGET_FLIGHT / N)) : 0;
-const lastHit = N ? (N - 1) * perCellDelay : 0;
-const flyOffDuration = 1.5;
-const totalDuration = lastHit + flyOffDuration + 0.6;
+const perCellDelay = N ? Math.min(0.35, Math.max(0.05, TARGET_FLIGHT / N)) : 0;
+const lastHit = N ? (N - 1) * perCellDelay + 0.2 : 0;
+const flyOffTail = 1.8;
+const totalDuration = Math.max(2, lastHit + flyOffTail);
 
 const width = MARGIN_LEFT + weeks.length * STEP + 8;
-const height = MARGIN_TOP + 7 * STEP + 8;
+const height = MARGIN_TOP + 7 * STEP + 10;
 
 const baseCells = days
-  .map((d) => `<rect x="${d.x}" y="${d.y}" width="${CELL}" height="${CELL}" rx="2" fill="${GREEN[level(d.contributionCount)]}"/>`)
+  .map((d) => `<rect class="lvl${level(d.contributionCount)}" x="${d.x}" y="${d.y}" width="${CELL}" height="${CELL}" rx="2"/>`)
   .join("\n  ");
 
 const hitCells = bombable
   .map((d, i) => {
-    const delay = (i * perCellDelay).toFixed(3);
-    return `<rect class="hit" style="animation-delay:${delay}s" x="${d.x}" y="${d.y}" width="${CELL}" height="${CELL}" rx="2" fill="#DA3633"/>`;
+    const begin = (i * perCellDelay).toFixed(3);
+    return `<rect class="hit" x="${d.x}" y="${d.y}" width="${CELL}" height="${CELL}" rx="2" opacity="0"><animate attributeName="opacity" from="0" to="1" begin="${begin}s" dur="0.15s" fill="freeze"/></rect>`;
   })
   .join("\n  ");
 
 const bursts = bombable
   .map((d, i) => {
-    const delay = (i * perCellDelay).toFixed(3);
+    const begin = (i * perCellDelay).toFixed(3);
     const cx = d.x + CELL / 2;
     const cy = d.y + CELL / 2;
-    return `<circle class="burst" style="animation-delay:${delay}s" cx="${cx}" cy="${cy}" r="1"/>`;
+    return `<circle class="burst" cx="${cx}" cy="${cy}" r="1" opacity="0"><animate attributeName="r" from="1" to="11" begin="${begin}s" dur="0.45s" fill="freeze"/><animate attributeName="opacity" from=".9" to="0" begin="${begin}s" dur="0.45s" fill="freeze"/></circle>`;
   })
   .join("\n  ");
 
-const planeY = MARGIN_TOP - 14;
-const plane = `
-  <g class="plane">
-    <path d="M -14 4 L 4 0 L -14 -4 L -8 0 Z" fill="var(--bone)"/>
-  </g>
-`;
+const planeY = MARGIN_TOP - 18;
+const planePath = `M -24 ${planeY} C ${width * 0.25} ${planeY - 12}, ${width * 0.55} ${planeY + 14}, ${width + 30} ${planeY}`;
 
-const svg = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution airstrike">
+const svg = `<svg viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution airstrike">
   <style>
-    :root { --bone:#444444; --muted:#888888; }
-    @media (prefers-color-scheme: dark) { :root { --bone:#DDDDDD; --muted:#777777; } }
+    :root {
+      --bg: #FFFFFF; --muted: #57606A; --bone: #24292F;
+      --lvl0: #EBEDF0; --lvl1: #9BE9A8; --lvl2: #40C463; --lvl3: #30A14E; --lvl4: #216E39;
+      --smoke: #6E7781;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0D1117; --muted: #8B949E; --bone: #C9D1D9;
+        --lvl0: #161B22; --lvl1: #0E4429; --lvl2: #006D32; --lvl3: #26A641; --lvl4: #39D353;
+        --smoke: #8B949E;
+      }
+    }
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace; }
-    .hit { opacity: 0; animation: hit .2s ease forwards; }
-    @keyframes hit { to { opacity: 1; } }
-    .burst { fill: none; stroke: #DA3633; stroke-width: 1; opacity: 0; animation: burst .5s ease-out forwards; }
-    @keyframes burst { 0% { r: 1; opacity: .9; } 100% { r: 9; opacity: 0; } }
-    .plane { offset-path: path("M -20 ${planeY} C 250 ${planeY - 10}, 500 ${planeY + 12}, ${width + 20} ${planeY}"); animation: fly ${totalDuration}s linear forwards; offset-rotate: 0deg; }
-    @keyframes fly { to { offset-distance: 100%; } }
-    @media (prefers-reduced-motion: reduce) { .hit { animation: none; opacity: 1; } .burst { display: none; } .plane { display: none; } }
+    .lvl0 { fill: var(--lvl0); } .lvl1 { fill: var(--lvl1); } .lvl2 { fill: var(--lvl2); }
+    .lvl3 { fill: var(--lvl3); } .lvl4 { fill: var(--lvl4); }
+    .hit { fill: #DA3633; }
+    .burst { fill: none; stroke: #F85149; stroke-width: 1.2; }
+    .plane-wrap { fill: var(--bone); }
   </style>
 
-  <text class="mono" x="${MARGIN_LEFT}" y="16" font-size="10" fill="var(--muted)" letter-spacing="2">CONTRIBUTION AIRSTRIKE — ${N} DAYS TARGETED</text>
+  <rect x="0" y="0" width="${width}" height="${height}" fill="var(--bg)"/>
+  <text class="mono" x="${MARGIN_LEFT}" y="18" font-size="10.5" fill="var(--muted)" letter-spacing="2">CONTRIBUTION AIRSTRIKE — ${N} DAYS TARGETED, LOWEST FIRST</text>
 
   ${baseCells}
   ${hitCells}
   ${bursts}
-  ${plane}
+
+  <g class="plane-wrap">
+    <path d="M -13 4 L 5 0 L -13 -4 L -7 0 Z"/>
+    <animateMotion path="${planePath}" begin="0s" dur="${totalDuration}s" fill="freeze"/>
+  </g>
 </svg>
 `;
 
