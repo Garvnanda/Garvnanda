@@ -25,5 +25,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add profile-3d-contrib
-          git diff --cached --quiet || git commit -m "chore: refresh 3D contribution calendar"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh 3D contribution calendar"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            sleep $((RANDOM % 10 + 1))
+          done
