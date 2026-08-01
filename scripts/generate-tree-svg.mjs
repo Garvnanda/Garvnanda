@@ -23,7 +23,7 @@ const esc = (s = "") => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/
 const short = (s = "", n = 26) => (s.length > n ? s.slice(0, n - 1) + "…" : s);
 
 // hex layout around a central core, canvas 1000x620
-const CENTER = { x: 500, y: 310, w: 190, h: 56 };
+const CENTER = { x: 500 - 190 / 2, y: 310 - 56 / 2, w: 190, h: 56 };
 const NODES = [
   { x: 60, y: 90, w: 190, h: 54 },
   { x: 750, y: 90, w: 190, h: 54 },

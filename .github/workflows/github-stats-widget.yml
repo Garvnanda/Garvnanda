@@ -1,0 +1,39 @@
+name: Update GitHub stats widget
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate github-stats.svg
+        run: node scripts/generate-github-stats-svg.mjs
+        env:
+          GH_USERNAME: Garvnanda
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/github-stats.svg assets/dark/github-stats.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh github stats widget"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push && break
+            sleep $((RANDOM % 10 + 1))
+          done
