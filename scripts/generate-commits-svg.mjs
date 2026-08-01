@@ -52,10 +52,10 @@ const lines = rows
   })
   .join("\n  ");
 
-const svg = `<svg viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recent commits">
+function buildSvg(vars) {
+  return `<svg viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recent commits">
   <style>
-    :root { --win: #ECECEC; --bar: #DEDEDE; --bone: #333333; --dim: #999999; --accent: #555555; --rule: #CCCCCC; }
-    @media (prefers-color-scheme: dark) { :root { --win: #1E1E1E; --bar: #2B2B2B; --bone: #DDDDDD; --dim: #777777; --accent: #AAAAAA; --rule: #3A3A3A; } }
+    :root { --win: ${vars.win}; --bar: ${vars.bar}; --bone: ${vars.bone}; --dim: ${vars.dim}; --accent: ${vars.accent}; --rule: ${vars.rule}; }
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
     .row { opacity: 0; animation: rise .5s ease forwards; }
     @keyframes rise { from { opacity: 0; transform: translateX(-4px); } to { opacity: 1; transform: translateX(0); } }
@@ -75,8 +75,13 @@ const svg = `<svg viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www
   ${lines}
 </svg>
 `;
+}
+
+const LIGHT = { win: "#FFFFFF", bar: "#F0F0F0", bone: "#000000", dim: "#000000", accent: "#000000", rule: "#000000" };
+const DARK = { win: "#0D1117", bar: "#161B22", bone: "#FFFFFF", dim: "#FFFFFF", accent: "#FFFFFF", rule: "#FFFFFF" };
 
 const { writeFileSync, mkdirSync } = await import("node:fs");
-mkdirSync("assets", { recursive: true });
-writeFileSync("assets/commits.svg", svg);
-console.log(`wrote assets/commits.svg with ${rows.filter((r) => r.repo).length} commit rows`);
+mkdirSync("assets/dark", { recursive: true });
+writeFileSync("assets/commits.svg", buildSvg(LIGHT));
+writeFileSync("assets/dark/commits.svg", buildSvg(DARK));
+console.log(`wrote assets/commits.svg + assets/dark/commits.svg with ${rows.filter((r) => r.repo).length} commit rows`);

@@ -14,7 +14,7 @@
       .draw,.rise,.fade { animation: none; }
       .draw{stroke-dashoffset:0} .rise,.fade{opacity:1}
     }
-    :root { --bone: #000000; --rule: #000000; --muted: #000000; --dim: #000000; --accent: #000000; }
+    :root { --bone: #FFFFFF; --rule: #FFFFFF; --muted: #FFFFFF; --dim: #FFFFFF; --accent: #FFFFFF; }
   </style>
 
   <line class="draw a1" x1="48" y1="58" x2="952" y2="58" stroke="var(--rule)" stroke-width="1"/>

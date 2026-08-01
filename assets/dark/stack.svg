@@ -7,7 +7,7 @@
     @keyframes rise { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
     .a0{animation-delay:0s} .a1{animation-delay:.1s} .a2{animation-delay:.2s} .a3{animation-delay:.3s} .a4{animation-delay:.4s} .a5{animation-delay:.5s} .a6{animation-delay:.6s}
     @media (prefers-reduced-motion: reduce) { .rise { animation: none; opacity: 1; } }
-    :root { --bone: #000000; --rule: #000000; --muted: #000000; --accent: #000000; --panel: #FFFFFF; }
+    :root { --bone: #FFFFFF; --rule: #FFFFFF; --muted: #FFFFFF; --accent: #FFFFFF; --panel: #0D1117; }
   </style>
 
   <rect x="24" y="8" width="952" height="214" rx="10" fill="var(--panel)" stroke="var(--rule)" stroke-width="1.5" class="rise a0"/>
