@@ -1,118 +1,116 @@
-<svg viewBox="0 0 1000 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live Ecosystem Tree">
+<svg viewBox="0 0 1000 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ecosystem Tree">
   <style>
     .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
     .bg { fill: #000000; }
-    .card { fill: #0A0A0A; stroke: #30363D; stroke-width: 1.5; }
+    .card { fill: #111111; stroke: #30363D; stroke-width: 1.5; }
 
-    .trunk { stroke: #FFFFFF; stroke-width: 2.5; stroke-linecap: round; }
-    .branch { stroke: #E3B341; stroke-width: 2; stroke-linecap: round; fill: none; opacity: .85; }
+    .trunk { stroke: #FFFFFF; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+    .branch-y { stroke: #E3B341; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 
-    .node-shadow { fill: #000000; opacity: .35; }
-    .node-pink { fill: #1A1112; stroke: #FF5F56; stroke-width: 2; }
-    .node-green { fill: #101A13; stroke: #39D353; stroke-width: 2; }
-    .node-blue { fill: #10161F; stroke: #58A6FF; stroke-width: 2; }
+    .fruit-pink { fill: #111111; stroke: #FF5F56; stroke-width: 3.5; }
+    .fruit-green { fill: #111111; stroke: #39D353; stroke-width: 3.5; }
+    .fruit-blue { fill: #111111; stroke: #58A6FF; stroke-width: 3.5; }
 
-    .label-pink { fill: #FF9E96; }
-    .label-green { fill: #7EE2A8; }
-    .label-blue { fill: #9CC9FF; }
+    .fruit-group { animation: float 4s ease-in-out infinite; transition: transform 0.3s; }
+    .fruit-group:hover { transform: scale(1.12); cursor: pointer; }
 
-    .tag { fill: #171B21; stroke: #30363D; stroke-width: 1; }
-    .tag-text { font-size: 11px; font-weight: 700; letter-spacing: .3px; }
-
-    .fruit-group { animation: float 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; transition: transform .25s ease; }
-    .fruit-group:hover { transform: scale(1.06); }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
     @media (prefers-reduced-motion: reduce) { .fruit-group { animation: none; } }
   </style>
 
-  <rect width="1000" height="560" class="bg"/>
-  <rect x="40" y="20" width="920" height="520" rx="10" class="card"/>
+  <!-- Transparent / Black outer canvas with 540px height -->
+  <rect width="1000" height="540" class="bg"/>
+  <rect x="48" y="20" width="904" height="500" rx="8" class="card"/>
 
-  <text fill="#FFFFFF" class="mono" x="66" y="58" font-size="16" font-weight="800" letter-spacing="1">LIVE ECOSYSTEM TREE 🌳</text>
-  <text fill="#8B949E" class="mono" x="934" y="58" font-size="12" font-weight="600" text-anchor="end">REAL-TIME REPOSITORY BRANCHES</text>
-  <line x1="66" y1="74" x2="934" y2="74" stroke="#21262D" stroke-width="1"/>
+  <!-- Header Title -->
+  <text fill="#FFFFFF" class="mono" x="72" y="56" font-size="16" font-weight="800" letter-spacing="1">LIVE ECOSYSTEM TREE 🌳</text>
+  <text fill="#8B949E" class="mono" x="928" y="56" font-size="12" font-weight="600" text-anchor="end">REAL-TIME REPOSITORY BRANCHES</text>
+  <line x1="72" y1="70" x2="928" y2="70" stroke="#30363D" stroke-width="1"/>
 
   <g>
-    <!-- ground -->
-    <path d="M 350 510 Q 500 510 500 492 Q 500 510 650 510" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.3"/>
+    <!-- ROOT BASE LINE -->
+    <path d="M 340 470 Q 500 470 500 430 Q 500 470 660 470" stroke="#FFFFFF" stroke-width="2.5" fill="none" opacity="0.4"/>
 
-    <!-- trunk -->
-    <line x1="497" y1="492" x2="497" y2="150" class="trunk"/>
-    <line x1="500" y1="492" x2="500" y2="140" class="trunk"/>
-    <line x1="503" y1="492" x2="503" y2="150" class="trunk"/>
+    <!-- TRUNK LINES (PARALLEL CIRCUIT TRUNKS) -->
+    <line x1="492" y1="450" x2="492" y2="260" class="trunk"/>
+    <line x1="500" y1="450" x2="500" y2="200" class="trunk"/>
+    <line x1="508" y1="450" x2="508" y2="260" class="trunk"/>
 
-    <!-- tier 3 (base) branches -->
-    <path d="M 500 430 Q 320 430 165 400" class="branch"/>
-    <path d="M 500 430 Q 680 430 835 400" class="branch"/>
+    <!-- BRANCHES LEFT -->
+    <!-- Low Left Branch -->
+    <path d="M 492 410 L 380 410 L 300 370 L 230 370" class="branch-y"/>
 
-    <!-- tier 2 (mid) branches -->
-    <path d="M 500 320 Q 350 306 210 268" class="branch"/>
-    <path d="M 500 320 Q 650 306 790 268" class="branch"/>
+    <!-- Mid Left Branch -->
+    <path d="M 492 320 L 400 270 L 320 270 L 260 240" class="branch-y"/>
 
-    <!-- tier 1 (upper) branches -->
-    <path d="M 500 215 Q 400 178 275 148" class="branch"/>
-    <path d="M 500 215 Q 600 178 725 148" class="branch"/>
+    <!-- High Left Branch -->
+    <path d="M 500 240 L 430 180 L 340 180 L 300 150" class="branch-y"/>
 
-    <!-- trunk to core -->
-    <path d="M 500 140 L 500 116" class="branch"/>
+    <!-- BRANCHES RIGHT -->
+    <!-- Low Right Branch -->
+    <path d="M 508 410 L 620 410 L 700 370 L 770 370" class="branch-y"/>
 
-    <!-- core node -->
-    <g class="fruit-group" style="transform-origin: 500px 116px;">
-      <ellipse cx="500" cy="128" rx="58" ry="9" class="node-shadow"/>
-      <circle cx="500" cy="116" r="16" class="node-green"/>
-      <circle cx="500" cy="116" r="5" fill="#39D353"/>
-      <rect x="424" y="82" width="152" height="26" rx="6" class="tag" stroke="#39D353"/>
-      <text x="500" y="99" fill="#39D353" class="mono tag-text" text-anchor="middle">@Garvnanda CORE</text>
+    <!-- Mid Right Branch -->
+    <path d="M 508 320 L 600 270 L 680 270 L 740 240" class="branch-y"/>
+
+    <!-- High Right Branch -->
+    <path d="M 500 240 L 570 180 L 660 180 L 700 150" class="branch-y"/>
+
+    <!-- TOP CENTER TRUNK FRUIT -->
+    <path d="M 500 200 L 500 135" class="branch-y"/>
+
+    <!-- FRUIT NODES & BADGES -->
+
+    <!-- Top Center Core Node -->
+    <g class="fruit-group" style="transform-origin: 500px 135px;">
+      <circle cx="500" cy="135" r="15" class="fruit-green"/>
+      <rect x="430" y="96" width="140" height="24" rx="4" fill="#161B22" stroke="#39D353" stroke-width="1"/>
+      <text x="500" y="112" fill="#39D353" class="mono" font-size="12" font-weight="800" text-anchor="middle">@Garvnanda Core</text>
     </g>
 
-    <!-- tier 1: DEVLENS / DATATHON-2026 -->
-    <g class="fruit-group" style="transform-origin: 275px 148px;">
-      <ellipse cx="275" cy="160" rx="46" ry="8" class="node-shadow"/>
-      <circle cx="275" cy="148" r="14" class="node-pink"/>
-      <circle cx="275" cy="148" r="4.5" fill="#FF5F56"/>
-      <rect x="205" y="116" width="140" height="25" rx="6" class="tag" stroke="#FF5F56"/>
-      <text x="275" y="133" class="mono tag-text label-pink" text-anchor="middle">DEVLENS</text>
-    </g>
-    <g class="fruit-group" style="transform-origin: 725px 148px;">
-      <ellipse cx="725" cy="160" rx="46" ry="8" class="node-shadow"/>
-      <circle cx="725" cy="148" r="14" class="node-blue"/>
-      <circle cx="725" cy="148" r="4.5" fill="#58A6FF"/>
-      <rect x="641" y="116" width="168" height="25" rx="6" class="tag" stroke="#58A6FF"/>
-      <text x="725" y="133" class="mono tag-text label-blue" text-anchor="middle">DATATHON-2026</text>
+    <!-- Node 1: High Left -->
+    <g class="fruit-group" style="transform-origin: 300px 150px;">
+      <circle cx="300" cy="150" r="14" class="fruit-pink"/>
+      <rect x="230" y="138" width="100" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="280" y="154" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">DEVLENS</text>
     </g>
 
-    <!-- tier 2: GALLA-SAATHI / DEBATEMIND -->
-    <g class="fruit-group" style="transform-origin: 210px 268px;">
-      <ellipse cx="210" cy="280" rx="46" ry="8" class="node-shadow"/>
-      <circle cx="210" cy="268" r="14" class="node-blue"/>
-      <circle cx="210" cy="268" r="4.5" fill="#58A6FF"/>
-      <rect x="122" y="236" width="176" height="25" rx="6" class="tag" stroke="#58A6FF"/>
-      <text x="210" y="253" class="mono tag-text label-blue" text-anchor="middle">GALLA-SAATHI</text>
-    </g>
-    <g class="fruit-group" style="transform-origin: 790px 268px;">
-      <ellipse cx="790" cy="280" rx="46" ry="8" class="node-shadow"/>
-      <circle cx="790" cy="268" r="14" class="node-pink"/>
-      <circle cx="790" cy="268" r="4.5" fill="#FF5F56"/>
-      <rect x="710" y="236" width="160" height="25" rx="6" class="tag" stroke="#FF5F56"/>
-      <text x="790" y="253" class="mono tag-text label-pink" text-anchor="middle">DEBATEMIND</text>
+    <!-- Node 2: High Right -->
+    <g class="fruit-group" style="transform-origin: 700px 150px;">
+      <circle cx="700" cy="150" r="14" class="fruit-blue"/>
+      <rect x="715" y="138" width="150" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="790" y="154" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">DATATHON-2026</text>
     </g>
 
-    <!-- tier 3: SANN / CREATOR_X -->
-    <g class="fruit-group" style="transform-origin: 165px 400px;">
-      <ellipse cx="165" cy="412" rx="40" ry="8" class="node-shadow"/>
-      <circle cx="165" cy="400" r="14" class="node-green"/>
-      <circle cx="165" cy="400" r="4.5" fill="#39D353"/>
-      <rect x="105" y="368" width="120" height="25" rx="6" class="tag" stroke="#39D353"/>
-      <text x="165" y="385" class="mono tag-text label-green" text-anchor="middle">SANN</text>
-    </g>
-    <g class="fruit-group" style="transform-origin: 835px 400px;">
-      <ellipse cx="835" cy="412" rx="46" ry="8" class="node-shadow"/>
-      <circle cx="835" cy="400" r="14" class="node-green"/>
-      <circle cx="835" cy="400" r="4.5" fill="#39D353"/>
-      <rect x="757" y="368" width="156" height="25" rx="6" class="tag" stroke="#39D353"/>
-      <text x="835" y="385" class="mono tag-text label-green" text-anchor="middle">CREATOR_X</text>
+    <!-- Node 3: Mid Left -->
+    <g class="fruit-group" style="transform-origin: 260px 240px;">
+      <circle cx="260" cy="240" r="14" class="fruit-blue"/>
+      <rect x="105" y="228" width="145" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="177" y="244" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">GALLA-SAATHI</text>
     </g>
 
-    <text x="500" y="472" fill="#484F58" class="mono" font-size="10.5" text-anchor="middle" letter-spacing=".5">6 repositories · sorted by recent activity</text>
+    <!-- Node 4: Mid Right -->
+    <g class="fruit-group" style="transform-origin: 740px 240px;">
+      <circle cx="740" cy="240" r="14" class="fruit-pink"/>
+      <rect x="755" y="228" width="130" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="820" y="244" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">DEBATEMIND</text>
+    </g>
+
+    <!-- Node 5: Low Left -->
+    <g class="fruit-group" style="transform-origin: 230px 370px;">
+      <circle cx="230" cy="370" r="14" class="fruit-green"/>
+      <rect x="175" y="358" width="90" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="220" y="374" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">SANN</text>
+    </g>
+
+    <!-- Node 6: Low Right -->
+    <g class="fruit-group" style="transform-origin: 770px 370px;">
+      <circle cx="770" cy="370" r="14" class="fruit-green"/>
+      <rect x="800" y="358" width="115" height="24" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+      <text x="857" y="374" fill="#FFFFFF" class="mono" font-size="11" font-weight="800" text-anchor="middle">CREATOR_X</text>
+    </g>
   </g>
 </svg>
