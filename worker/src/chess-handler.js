@@ -34,6 +34,28 @@ async function resetGame(env, game) {
   await Promise.all([env.PROFILE_KV.put(KEY, game.fen()), env.PROFILE_KV.put(STARTED_KEY, String(Date.now()))]);
 }
 
+// README's move badges are baked in by a scheduled workflow (every few minutes), so
+// without this ping a click updates the live board but the badges stay stale until the
+// next cron tick — the next click then targets a move that's no longer legal and gets
+// silently dropped, making the board look stuck after one turn. No-op until
+// GH_DISPATCH_TOKEN is set (wrangler secret put GH_DISPATCH_TOKEN).
+async function pingReadmeRefresh(env) {
+  if (!env.GH_DISPATCH_TOKEN || !env.GH_REPO) return;
+  try {
+    await fetch(`https://api.github.com/repos/${env.GH_REPO}/dispatches`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.GH_DISPATCH_TOKEN}`,
+        Accept: "application/vnd.github+json",
+        "User-Agent": "garvnanda-profile-worker",
+      },
+      body: JSON.stringify({ event_type: "chess-move" }),
+    });
+  } catch {
+    // best-effort — next scheduled cron run still catches it
+  }
+}
+
 // Greedy one-ply reply: prefer captures by material gain, else a random legal move.
 function pickReply(game) {
   const moves = game.moves({ verbose: true });
@@ -83,6 +105,7 @@ export async function handleChess(request, env, path) {
 
     if (game.isGameOver()) {
       await resetGame(env, new Chess());
+      await pingReadmeRefresh(env);
       return Response.redirect(env.PROFILE_URL || "https://github.com/", 302);
     }
 
@@ -101,6 +124,7 @@ export async function handleChess(request, env, path) {
       // illegal move — ignore, board unchanged
     }
 
+    await pingReadmeRefresh(env);
     return Response.redirect(env.PROFILE_URL || "https://github.com/", 302);
   }
 
