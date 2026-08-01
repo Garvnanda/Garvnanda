@@ -2,24 +2,36 @@ import { Chess } from "chess.js";
 import { THEME, svgHeaders, esc } from "./svg.js";
 
 const KEY = "chess:fen";
+const STARTED_KEY = "chess:started";
+const MAX_AGE_MS = 3 * 24 * 60 * 60 * 1000; // auto-reset stale/stuck games every 3 days
 
 const VALUES = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 };
 
 async function getGame(env) {
-  const fen = await env.PROFILE_KV.get(KEY);
+  const [fen, startedRaw] = await Promise.all([env.PROFILE_KV.get(KEY), env.PROFILE_KV.get(STARTED_KEY)]);
+  const started = startedRaw ? Number(startedRaw) : 0;
+  const stale = !started || Date.now() - started > MAX_AGE_MS;
+
   const game = new Chess();
-  if (fen) {
+  if (fen && !stale) {
     try {
       game.load(fen);
     } catch {
       /* corrupt state — start fresh */
     }
   }
+  if (!fen || stale) {
+    await resetGame(env, game);
+  }
   return game;
 }
 
 async function saveGame(env, game) {
   await env.PROFILE_KV.put(KEY, game.fen());
+}
+
+async function resetGame(env, game) {
+  await Promise.all([env.PROFILE_KV.put(KEY, game.fen()), env.PROFILE_KV.put(STARTED_KEY, String(Date.now()))]);
 }
 
 // Greedy one-ply reply: prefer captures by material gain, else a random legal move.
@@ -70,8 +82,7 @@ export async function handleChess(request, env, path) {
     const game = await getGame(env);
 
     if (game.isGameOver()) {
-      const fresh = new Chess();
-      await saveGame(env, fresh);
+      await resetGame(env, new Chess());
       return Response.redirect(env.PROFILE_URL || "https://github.com/", 302);
     }
 
