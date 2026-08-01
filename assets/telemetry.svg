@@ -1,0 +1,61 @@
+<svg viewBox="0 0 1000 330" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Telemetry: language distribution, shipping velocity, live profile counters">
+  <style>
+    :root { --bone: #000000; --muted: #000000; --dim: #000000; --rule: #000000; --accent: #000000; }
+    .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .bar { transform: scaleX(0); animation: grow 1.2s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes grow { to { transform: scaleX(1); } }
+    .g1{transform-origin:48px 0;animation-delay:.3s}.g2{transform-origin:48px 0;animation-delay:.45s}.g3{transform-origin:48px 0;animation-delay:.6s}
+    .g4{transform-origin:48px 0;animation-delay:.75s}.g5{transform-origin:48px 0;animation-delay:.9s}.g6{transform-origin:48px 0;animation-delay:1.05s}
+    .spark { stroke-dasharray: 700; stroke-dashoffset: 700; animation: draw 2.2s cubic-bezier(.6,0,.2,1) .5s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .dot { opacity: 0; animation: fade .4s ease forwards; }
+    .d1{animation-delay:1.3s}.d2{animation-delay:1.9s}
+    @keyframes fade { to { opacity: 1; } }
+    .rise { opacity: 0; animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+    @keyframes rise { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    .n1{animation-delay:.5s}.n2{animation-delay:.7s}.n3{animation-delay:.9s}.n4{animation-delay:1.1s}
+    .ping { animation: ping 2.2s ease-out infinite; transform-origin: 656.0px 92.0px; }
+    @keyframes ping { 0%{transform:scale(.4);opacity:.9} 80%,100%{transform:scale(2.8);opacity:0} }
+    @media (prefers-reduced-motion: reduce) {
+      .bar,.spark,.dot,.rise,.ping { animation: none; }
+      .bar{transform:scaleX(1)} .spark{stroke-dashoffset:0} .dot,.rise{opacity:1} .ping{opacity:0}
+    }
+  </style>
+
+  <line x1="48" y1="40" x2="952" y2="40" stroke="var(--rule)"/>
+  <text fill="var(--muted)" class="mono" x="48" y="28" font-size="11" letter-spacing="3.5">TELEMETRY — WHAT THE HANDS ARE DOING</text>
+  <text fill="var(--muted)" class="mono" x="952" y="28" font-size="11" letter-spacing="3.5" text-anchor="end">FIG. 02</text>
+  <line x1="360" y1="64" x2="360" y2="296" stroke="var(--rule)" opacity=".4"/>
+  <line x1="688" y1="64" x2="688" y2="296" stroke="var(--rule)" opacity=".4"/>
+
+  <text fill="var(--dim)" class="mono" x="48" y="78" font-size="10" letter-spacing="2.5">LANGUAGE DISTRIBUTION · LIVE</text>
+  <g class="mono" font-size="11">
+    <text fill="var(--bone)" x="48" y="100">python</text>       <rect class="bar g1" x="48" y="108" width="230" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="288" y="115" font-size="10">92%</text>
+    <text fill="var(--bone)" x="48" y="138">c++</text>       <rect class="bar g2" x="48" y="146" width="10" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="68" y="153" font-size="10">4%</text>
+    <text fill="var(--bone)" x="48" y="176">cython</text>       <rect class="bar g3" x="48" y="184" width="8" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="66" y="191" font-size="10">3%</text>
+    <text fill="var(--bone)" x="48" y="214">c</text>       <rect class="bar g4" x="48" y="222" width="6" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="64" y="229" font-size="10">1%</text>
+    <text fill="var(--bone)" x="48" y="252">typescript</text>       <rect class="bar g5" x="48" y="260" width="6" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="64" y="267" font-size="10">0%</text>
+    <text fill="var(--bone)" x="48" y="290">javascript</text>       <rect class="bar g6" x="48" y="298" width="6" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="64" y="305" font-size="10">0%</text>
+  </g>
+
+  <text fill="var(--dim)" class="mono" x="392" y="78" font-size="10" letter-spacing="2.5">SHIPPING VELOCITY · 2024 → 2026</text>
+  <g>
+    <line x1="392" y1="252" x2="656" y2="252" stroke="var(--rule)"/>
+    <polyline class="spark" points="392.0,252.0 524.0,145.3 656.0,92.0" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
+    <circle class="dot d1" cx="524.0" cy="145.3" r="2.5" fill="var(--bone)"/>
+    <circle class="dot d2" cx="656.0" cy="92.0" r="2.5" fill="var(--bone)"/>
+    <circle class="ping" cx="656.0" cy="92.0" r="4" stroke="var(--accent)" fill="none"/>
+    <circle class="dot d2" cx="656.0" cy="92.0" r="3" fill="var(--accent)"/>
+    <text fill="var(--dim)" class="mono" x="392" y="272" font-size="9.5" letter-spacing="1.5">'24</text>
+    <text fill="var(--dim)" class="mono" x="524" y="272" font-size="9.5" letter-spacing="1.5">'25</text>
+    <text fill="var(--dim)" class="mono" x="640" y="272" font-size="9.5" letter-spacing="1.5">'26</text>
+    <text fill="var(--muted)" class="mono dot d2" x="392" y="300" font-size="10" letter-spacing="1.5">trend — <tspan fill="var(--accent)">accelerating</tspan></text>
+  </g>
+
+  <g>
+    <g class="rise n1"><text fill="var(--bone)" class="mono" x="720" y="118" font-size="44">10</text><text fill="var(--muted)" class="mono" x="790" y="112" font-size="10" letter-spacing="2.5">REPOSITORIES</text></g>
+    <g class="rise n2"><text fill="var(--bone)" class="mono" x="720" y="178" font-size="44">6</text><text fill="var(--muted)" class="mono" x="790" y="172" font-size="10" letter-spacing="2.5">PROJECTS DOCUMENTED</text></g>
+    <g class="rise n3"><text fill="var(--bone)" class="mono" x="720" y="238" font-size="44">6</text><text fill="var(--muted)" class="mono" x="790" y="232" font-size="10" letter-spacing="2.5">TOP LANGUAGES — PYTHON / C++ / CYTHON / C</text></g>
+    <g class="rise n4"><text fill="var(--accent)" class="mono" x="718" y="298" font-size="44">∞</text><text fill="var(--muted)" class="mono" x="790" y="292" font-size="10" letter-spacing="2.5">TERMINAL TABS OPEN RIGHT NOW</text></g>
+  </g>
+</svg>

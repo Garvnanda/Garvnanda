@@ -1,11 +1,9 @@
-name: Update commits widget
+name: Update 3D contribution calendar
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
 
 permissions:
   contents: write
@@ -16,20 +14,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Generate commits.svg
-        run: node scripts/generate-commits-svg.mjs
+      - name: Generate 3D contribution calendar
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
-          GH_USERNAME: Garvnanda
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          username: Garvnanda
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/commits.svg assets/dark/commits.svg
-          git diff --cached --quiet || git commit -m "chore: refresh commits widget"
+          git add profile-3d-contrib
+          git diff --cached --quiet || git commit -m "chore: refresh 3D contribution calendar"
           git push

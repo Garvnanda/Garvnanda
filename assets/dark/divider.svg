@@ -5,7 +5,7 @@
     .draw { stroke: var(--rule); stroke-width: 1; stroke-dasharray: 460; stroke-dashoffset: 460; animation: d 1s cubic-bezier(.6,0,.2,1) forwards; }
     @keyframes d { to { stroke-dashoffset: 0; } }
     @media (prefers-reduced-motion: reduce) { .draw { animation: none; stroke-dashoffset: 0; } }
-    :root { --rule: #000000; }
+    :root { --rule: #FFFFFF; }
   </style>
   <line class="draw" x1="270" y1="12" x2="730" y2="12"/>
 </svg>

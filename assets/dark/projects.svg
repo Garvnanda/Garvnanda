@@ -11,7 +11,7 @@
     .meta { fill:var(--muted); font-size:10.5px; letter-spacing:.4px; }
     .r1{animation-delay:.05s}.r2{animation-delay:.10s}.r3{animation-delay:.15s}.r4{animation-delay:.20s}.r5{animation-delay:.25s}.r6{animation-delay:.30s}
     @media (prefers-reduced-motion:reduce) { .row { animation:none; opacity:1; } }
-    :root { --ink: #000000; --panel: #FFFFFF; --rule: #000000; --muted: #000000; }
+    :root { --ink: #FFFFFF; --panel: #0D1117; --rule: #FFFFFF; --muted: #FFFFFF; }
   </style>
 
   <g class="mono">

@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="assets/header-v1.svg" alt="Garv Nanda"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/header-v1.svg"/><img src="assets/header-v1.svg" alt="Garv Nanda"/></picture>
 
 </div>
 
-<img src="assets/s01.svg" alt="01 — whoami"/>
-<img src="assets/whoami.svg" alt="About Garv"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/s01.svg" alt="01 — whoami"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/whoami.svg"/><img src="assets/whoami.svg" alt="About Garv"/></picture>
 
 <div align="center">
 
@@ -21,10 +21,10 @@
 
 </div>
 
-<img src="assets/s02.svg" alt="02 — stack"/>
-<img src="assets/stack.svg" alt="Technical stack"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — stack"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stack.svg"/><img src="assets/stack.svg" alt="Technical stack"/></picture>
 
-<img src="assets/s03-ttt.svg" alt="03 — tic-tac-toe"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03-ttt.svg"/><img src="assets/s03-ttt.svg" alt="03 — tic-tac-toe"/></picture>
 
 <div align="center">
 
@@ -36,8 +36,8 @@
 
 </div>
 
-<img src="assets/s03.svg" alt="04 — projects"/>
-<img src="assets/projects.svg" alt="6 projects"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/s03.svg" alt="04 — projects"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="6 projects"/></picture>
 
 <div align="center">
 
@@ -51,32 +51,38 @@
 
 </div>
 
-<img src="assets/s04.svg" alt="05 — telemetry"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/><img src="assets/s04.svg" alt="05 — telemetry"/></picture>
+
+<p align="center">
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/telemetry.svg"/><img src="assets/telemetry.svg" alt="Live development telemetry" width="900"/></picture>
+</p>
 
 <div align="center">
 
-<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=Garvnanda&show_icons=true&hide_border=true&bg_color=00000000&text_color=444444&icon_color=555555&title_color=444444" width="48%" alt="GitHub stats"/>
-<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Garvnanda&layout=compact&hide_border=true&bg_color=00000000&text_color=444444&title_color=444444" width="48%" alt="Top languages"/>
+**3D Contribution Calendar** — rebuilt daily from live commit history
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=444444&line=555555&point=444444&area_color=888888&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="GitHub contribution activity"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>
+  <img src="profile-3d-contrib/profile-gitblock.svg" alt="3D contribution calendar"/>
+</picture>
 
 </div>
 
-<img src="assets/s05.svg" alt="06 — recent commits"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05.svg"/><img src="assets/s05.svg" alt="06 — recent commits"/></picture>
 
 <p align="center">
-<img src="assets/commits.svg" alt="Recent commits" width="760"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/commits.svg"/><img src="assets/commits.svg" alt="Recent commits" width="760"/></picture>
 </p>
 
-<img src="assets/s07-tree.svg" alt="07 — ecosystem tree"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07-tree.svg"/><img src="assets/s07-tree.svg" alt="07 — ecosystem tree"/></picture>
 
 <p align="center">
-<img src="assets/tree.svg" alt="Live ecosystem tree" width="900"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/tree.svg"/><img src="assets/tree.svg" alt="Live ecosystem tree" width="900"/></picture>
 </p>
 
-<img src="assets/divider.svg" width="700" alt=""/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/divider.svg"/><img src="assets/divider.svg" width="700" alt=""/></picture>
 
-<img src="assets/s06.svg" alt="08 — chess"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06.svg"/><img src="assets/s06.svg" alt="08 — chess"/></picture>
 
 <div align="center">
 
@@ -105,9 +111,9 @@
 
 </div>
 
-<img src="assets/footer.svg" alt="Current status"/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/footer.svg"/><img src="assets/footer.svg" alt="Current status"/></picture>
 
-<img src="assets/divider.svg" width="700" alt=""/>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/divider.svg"/><img src="assets/divider.svg" width="700" alt=""/></picture>
 
 <div align="center">
 

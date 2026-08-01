@@ -1,8 +1,8 @@
-name: Update commits widget
+name: Update ecosystem tree
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate commits.svg
-        run: node scripts/generate-commits-svg.mjs
+      - name: Generate tree.svg
+        run: node scripts/generate-tree-svg.mjs
         env:
           GH_USERNAME: Garvnanda
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/commits.svg assets/dark/commits.svg
-          git diff --cached --quiet || git commit -m "chore: refresh commits widget"
+          git add assets/tree.svg assets/dark/tree.svg
+          git diff --cached --quiet || git commit -m "chore: refresh ecosystem tree"
           git push
