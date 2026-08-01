@@ -59,11 +59,19 @@
 
 <div align="center">
 
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/github-stats.svg"/><img src="assets/github-stats.svg" width="97%" alt="GitHub statistics and repository languages"/></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=ffffff&line=ffffff&point=ffffff&area_color=ffffff&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY"/><img src="https://github-readme-activity-graph.vercel.app/graph?username=Garvnanda&bg_color=00000000&color=000000&line=000000&point=000000&area_color=000000&area=true&hide_border=true&radius=0&custom_title=CONTRIBUTION%20TELEMETRY" width="97%" alt="GitHub contribution activity"/></picture>
+
+</div>
+
+<div align="center">
+
 **3D Contribution Calendar** — rebuilt daily from live commit history
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-rainbow.svg"/>
-  <img src="profile-3d-contrib/profile-gitblock.svg" alt="3D contribution calendar"/>
+  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-green.svg"/>
+  <img src="profile-3d-contrib/profile-green.svg" alt="3D contribution calendar"/>
 </picture>
 
 </div>
