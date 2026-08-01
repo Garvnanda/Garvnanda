@@ -29,6 +29,40 @@ function rgb(r, g, b) {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
+// The action also renders a per-language pie chart + legend (top-languages
+// breakdown) using GitHub's official per-language colors via inline
+// fill="#rrggbb" / style="fill: #rrggbb;" attributes — not the cont-* classes
+// above. Remap each distinct color found to an evenly spaced gray so the
+// slices stay distinguishable but monochrome.
+function recolorLanguagePie(src, { light }) {
+  const colors = new Set();
+  const attrRe = /fill="(#[0-9A-Fa-f]{6})"/g;
+  const styleRe = /style="fill: (#[0-9A-Fa-f]{6});"/g;
+  for (const re of [attrRe, styleRe]) {
+    let m;
+    while ((m = re.exec(src))) colors.add(m[1].toLowerCase());
+  }
+
+  const known = new Set(["#000000", "#ffffff", "#00000f", "#0d1117"]);
+  const list = [...colors].filter((c) => !known.has(c)).sort();
+  if (list.length === 0) return src;
+
+  const [lo, hi] = light ? [70, 210] : [80, 235];
+  const step = list.length > 1 ? (hi - lo) / (list.length - 1) : 0;
+
+  let out = src;
+  list.forEach((color, i) => {
+    const v = Math.round(lo + step * i);
+    const gray = `#${v.toString(16).padStart(2, "0").repeat(3)}`;
+    out = out.split(`fill="${color}"`).join(`fill="${gray}"`);
+    out = out.split(`fill: ${color};`).join(`fill: ${gray};`);
+    const upper = color.toUpperCase();
+    out = out.split(`fill="${upper}"`).join(`fill="${gray}"`);
+    out = out.split(`fill: ${upper};`).join(`fill: ${gray};`);
+  });
+  return out;
+}
+
 function recolor(src, levels, { fg, weak, strong, bg }) {
   let out = src;
 
@@ -57,7 +91,7 @@ function recolor(src, levels, { fg, weak, strong, bg }) {
   out = out.replace(/\.stroke-weak \{ stroke: [^;]*;/, `.stroke-weak { stroke: ${weak};`);
   out = out.replace(/<rect x="0" y="0" width="1280" height="850" class="fill-bg"><\/rect>|<rect x="0" y="0" width="1280" height="850" class="fill-bg">/, "");
 
-  return out;
+  return recolorLanguagePie(out, { light: fg === "#000000" });
 }
 
 const lightPath = join(DIR, "profile-green.svg");
