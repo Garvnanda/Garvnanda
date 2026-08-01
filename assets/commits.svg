@@ -18,10 +18,10 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fixed bugs</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fixed some bugs</tspan></text>
-  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">built frontend</tspan></text>
-  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">SANN</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 9 completed</tspan></text>
-  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">SANN</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 7 completed</tspan></text>
-  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">SANN</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 6 completed</tspan></text>
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #1 from Garvnanda/readme-v2</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fixed bugs</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fixed some bugs</tspan></text>
+  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">built frontend</tspan></text>
+  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">SANN</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 9 completed</tspan></text>
+  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">SANN</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 7 completed</tspan></text>
 </svg>
