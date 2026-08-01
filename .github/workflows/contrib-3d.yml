@@ -20,6 +20,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: Garvnanda
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Recolor to profile theme
+        run: node scripts/apply-3d-theme.mjs
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
