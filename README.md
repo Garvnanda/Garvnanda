@@ -23,7 +23,20 @@
 
 <img src="assets/s02.svg" alt="02 — stack"/>
 <img src="assets/stack.svg" alt="Technical stack"/>
-<img src="assets/s03.svg" alt="03 — projects"/>
+
+<img src="assets/s03-ttt.svg" alt="03 — tic-tac-toe"/>
+
+<div align="center">
+
+**Tic-Tac-Toe** — shared board, click a cell to play the next mark
+
+<img src="https://garvnanda-profile.garvnanda.workers.dev/ttt/board.svg" width="180" alt="Tic-tac-toe board"/>
+
+<a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=0"><img src="https://img.shields.io/badge/-1-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=1"><img src="https://img.shields.io/badge/-2-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=2"><img src="https://img.shields.io/badge/-3-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=3"><img src="https://img.shields.io/badge/-4-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=4"><img src="https://img.shields.io/badge/-5-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=5"><img src="https://img.shields.io/badge/-6-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=6"><img src="https://img.shields.io/badge/-7-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=7"><img src="https://img.shields.io/badge/-8-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=8"><img src="https://img.shields.io/badge/-9-000?style=flat-square"/></a>
+
+</div>
+
+<img src="assets/s03.svg" alt="04 — projects"/>
 <img src="assets/projects.svg" alt="6 projects"/>
 
 <div align="center">
@@ -38,7 +51,7 @@
 
 </div>
 
-<img src="assets/s04.svg" alt="04 — telemetry"/>
+<img src="assets/s04.svg" alt="05 — telemetry"/>
 
 <div align="center">
 
@@ -49,25 +62,21 @@
 
 </div>
 
-<img src="assets/s05.svg" alt="05 — recent commits"/>
+<img src="assets/s05.svg" alt="06 — recent commits"/>
 
 <p align="center">
 <img src="assets/commits.svg" alt="Recent commits" width="760"/>
 </p>
 
-<img src="assets/s06.svg" alt="06 — play"/>
+<img src="assets/s07-tree.svg" alt="07 — ecosystem tree"/>
 
-<div align="center">
-
-**Tic-Tac-Toe** — shared board, click a cell to play the next mark
-
-<img src="https://garvnanda-profile.garvnanda.workers.dev/ttt/board.svg" width="180" alt="Tic-tac-toe board"/>
-
-<a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=0"><img src="https://img.shields.io/badge/-1-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=1"><img src="https://img.shields.io/badge/-2-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=2"><img src="https://img.shields.io/badge/-3-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=3"><img src="https://img.shields.io/badge/-4-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=4"><img src="https://img.shields.io/badge/-5-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=5"><img src="https://img.shields.io/badge/-6-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=6"><img src="https://img.shields.io/badge/-7-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=7"><img src="https://img.shields.io/badge/-8-000?style=flat-square"/></a><a href="https://garvnanda-profile.garvnanda.workers.dev/ttt/play?cell=8"><img src="https://img.shields.io/badge/-9-000?style=flat-square"/></a>
-
-</div>
+<p align="center">
+<img src="assets/tree.svg" alt="Live ecosystem tree" width="900"/>
+</p>
 
 <img src="assets/divider.svg" width="700" alt=""/>
+
+<img src="assets/s06.svg" alt="08 — chess"/>
 
 <div align="center">
 
