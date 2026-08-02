@@ -64,25 +64,33 @@ async function searchCount(q) {
   });
 }
 
-async function commitsThisYearCount() {
+// Raw commit search only counts commits (misses PR opens/issue opens/reviews, and its index
+// lags), so it undercounts against the number GitHub actually shows on the contribution graph.
+// contributionsCollection is the same source the graph itself is drawn from — ground truth.
+async function contributionsThisYear() {
   return withRetry(async () => {
-    const q = `author:${USERNAME} author-date:${YEAR}-01-01..${YEAR}-12-31`;
-    const res = await fetch(`https://api.github.com/search/commits?q=${encodeURIComponent(q)}`, {
-      headers: { ...headers, Accept: "application/vnd.github.cloak-preview+json" },
+    const query = `query($login: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $login) { contributionsCollection(from: $from, to: $to) { contributionCalendar { totalContributions } } }
+    }`;
+    const variables = { login: USERNAME, from: `${YEAR}-01-01T00:00:00Z`, to: `${YEAR}-12-31T23:59:59Z` };
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify({ query, variables }),
     });
-    if (!res.ok) throw new Error(`search/commits ${res.status}`);
-    const data = await res.json();
-    return data.total_count ?? 0;
+    if (!res.ok) throw new Error(`graphql ${res.status}`);
+    const { data, errors } = await res.json();
+    if (errors) throw new Error(`graphql: ${errors.map((e) => e.message).join("; ")}`);
+    return data.user.contributionsCollection.contributionCalendar.totalContributions;
   });
 }
 
-const [pullRequests, issues, commitsThisYear] = await Promise.all([
+const [pullRequests, issues, contributionsYear, publicRepos] = await Promise.all([
   searchCount(`author:${USERNAME} type:pr`),
   searchCount(`author:${USERNAME} type:issue`),
-  commitsThisYearCount(),
+  contributionsThisYear(),
+  get(`https://api.github.com/users/${USERNAME}`).then((u) => u.public_repos),
 ]);
-
-const contributedTo = owned.length;
 
 const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -118,10 +126,10 @@ function buildSvg(ink) {
     <text x="52" y="58" font-size="15" font-weight="700" letter-spacing="2">GITHUB STATS</text>
     <line class="rule" x1="52" y1="72" x2="452" y2="72"/>
     ${statRow(110, "TOTAL STARS", stars)}
-    ${statRow(146, `${YEAR} COMMITS`, commitsThisYear)}
+    ${statRow(146, `${YEAR} CONTRIBUTIONS`, contributionsYear)}
     ${statRow(182, "TOTAL PULL REQUESTS", pullRequests)}
     ${statRow(218, "TOTAL ISSUES", issues)}
-    ${statRow(254, "CONTRIBUTED TO", contributedTo)}
+    ${statRow(254, "PUBLIC REPOSITORIES", publicRepos)}
 
     <text x="548" y="58" font-size="15" font-weight="700" letter-spacing="2">LANGUAGES BY REPOSITORY</text>
     <line class="rule" x1="548" y1="72" x2="948" y2="72"/>
@@ -136,5 +144,5 @@ mkdirSync("assets/dark", { recursive: true });
 writeFileSync("assets/github-stats.svg", buildSvg("#000000"));
 writeFileSync("assets/dark/github-stats.svg", buildSvg("#FFFFFF"));
 console.log(
-  `wrote assets/github-stats.svg + assets/dark/github-stats.svg — stars:${stars} prs:${pullRequests} issues:${issues} commits:${commitsThisYear} langs:${languages.map((l) => l.join(":")).join(",")}`,
+  `wrote assets/github-stats.svg + assets/dark/github-stats.svg — stars:${stars} prs:${pullRequests} issues:${issues} contributions:${contributionsYear} repos:${publicRepos} langs:${languages.map((l) => l.join(":")).join(",")}`,
 );
