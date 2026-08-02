@@ -20,6 +20,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: Garvnanda
 
+      - name: Transparent background + daily heartbeat (gitblock)
+        run: |
+          sed -i 's/<rect x="0" y="0" width="1280" height="850" fill="#ffffff"><\/rect>/<rect x="0" y="0" width="1280" height="850" fill="none"><\/rect>/' profile-3d-contrib/profile-gitblock.svg
+          sed -i 's/<!-- heartbeat: [0-9-]*-->//;s/<!-- heartbeat: [0-9-]* -->//' profile-3d-contrib/profile-gitblock.svg
+          sed -i "s/<\/defs>/<\/defs><!-- heartbeat: $(date -u +%F) -->/" profile-3d-contrib/profile-gitblock.svg
+
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"

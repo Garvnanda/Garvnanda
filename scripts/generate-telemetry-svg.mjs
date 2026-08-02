@@ -17,6 +17,9 @@ async function get(url) {
 const repos = (await get(`https://api.github.com/users/${USERNAME}/repos?type=owner&sort=updated&per_page=100`)).filter(
   (r) => !r.fork && !r.archived
 );
+// repos above is filtered (non-fork, non-archived) for language/velocity stats — the displayed
+// REPOSITORIES counter should match GitHub's own public repo count, forks included.
+const publicRepoCount = (await get(`https://api.github.com/users/${USERNAME}`)).public_repos;
 
 // language bytes, aggregated across repos (capped to keep API calls bounded)
 const langTotals = {};
@@ -42,7 +45,7 @@ const perYear = years.map((y) => repos.filter((r) => new Date(r.created_at).getF
 const maxYear = Math.max(...perYear, 1);
 
 // counters
-const totalRepos = repos.length;
+const totalRepos = publicRepoCount;
 const platforms = [...new Set(topLangs.map((l) => l.lang))].slice(0, 4).join(" / ") || "MULTI";
 
 const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

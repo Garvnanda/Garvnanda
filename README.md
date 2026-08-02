@@ -69,10 +69,7 @@
 
 **3D Contribution Calendar** — rebuilt daily from live commit history
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile-3d-contrib/profile-night-green.svg"/>
-  <img src="profile-3d-contrib/profile-gitblock.svg" alt="3D contribution calendar"/>
-</picture>
+<img src="profile-3d-contrib/profile-gitblock.svg" alt="3D contribution calendar"/>
 
 </div>
 
