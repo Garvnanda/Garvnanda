@@ -20,11 +20,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: Garvnanda
 
-      - name: Transparent background + daily heartbeat (gitblock)
+      - name: Post-process gitblock (transparent bg, white text, strip footer counters, heartbeat)
         run: |
-          sed -i 's/<rect x="0" y="0" width="1280" height="850" fill="#ffffff"><\/rect>/<rect x="0" y="0" width="1280" height="850" fill="none"><\/rect>/' profile-3d-contrib/profile-gitblock.svg
-          sed -i 's/<!-- heartbeat: [0-9-]*-->//;s/<!-- heartbeat: [0-9-]* -->//' profile-3d-contrib/profile-gitblock.svg
-          sed -i "s/<\/defs>/<\/defs><!-- heartbeat: $(date -u +%F) -->/" profile-3d-contrib/profile-gitblock.svg
+          F=profile-3d-contrib/profile-gitblock.svg
+          # transparent background
+          sed -i 's/<rect x="0" y="0" width="1280" height="850" fill="#ffffff"><\/rect>/<rect x="0" y="0" width="1280" height="850" fill="none"><\/rect>/' "$F"
+          # dark text/icons -> white, so it's visible on the now-transparent background
+          sed -i 's/fill="#00000f"/fill="#ffffff"/g; s/fill="#111133"/fill="#ffffff"/g; s/fill="gray"/fill="#ffffff"/g' "$F"
+          # strip the action's own contributions/stars/forked footer row (redundant with the
+          # GitHub Stats panel above, and computed differently so the numbers didn't match it)
+          perl -0777 -pi -e 's/<text style="font-size: 32px; font-weight: bold;" x="384".*?(?=<text style="font-size: 16px;" x="1260")//s' "$F"
+          # daily heartbeat so the workflow always has a diff to commit, even with 0 new contributions
+          sed -i 's/<!-- heartbeat: [0-9-]*-->//;s/<!-- heartbeat: [0-9-]* -->//' "$F"
+          sed -i "s/<\/defs>/<\/defs><!-- heartbeat: $(date -u +%F) -->/" "$F"
 
       - name: Commit if changed
         run: |
