@@ -45,27 +45,35 @@ const languages = Object.entries(langCounts)
   .slice(0, 5);
 const maxLang = languages.length ? languages[0][1] : 1;
 
-async function searchCount(q) {
+// Search API has its own strict rate limit (30 req/min) separate from the core quota, so a
+// single transient failure is expected occasionally. Retry once; if it still fails, throw —
+// letting a bad fetch silently become a committed "0" is worse than the workflow step going red.
+async function withRetry(fn) {
   try {
-    const data = await get(`https://api.github.com/search/issues?q=${encodeURIComponent(q)}`);
-    return data.total_count ?? 0;
+    return await fn();
   } catch {
-    return 0;
+    await new Promise((r) => setTimeout(r, 3000));
+    return await fn();
   }
 }
 
+async function searchCount(q) {
+  return withRetry(async () => {
+    const data = await get(`https://api.github.com/search/issues?q=${encodeURIComponent(q)}`);
+    return data.total_count ?? 0;
+  });
+}
+
 async function commitsThisYearCount() {
-  try {
+  return withRetry(async () => {
     const q = `author:${USERNAME} author-date:${YEAR}-01-01..${YEAR}-12-31`;
     const res = await fetch(`https://api.github.com/search/commits?q=${encodeURIComponent(q)}`, {
       headers: { ...headers, Accept: "application/vnd.github.cloak-preview+json" },
     });
-    if (!res.ok) return 0;
+    if (!res.ok) throw new Error(`search/commits ${res.status}`);
     const data = await res.json();
     return data.total_count ?? 0;
-  } catch {
-    return 0;
-  }
+  });
 }
 
 const [pullRequests, issues, commitsThisYear] = await Promise.all([

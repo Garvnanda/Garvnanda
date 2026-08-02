@@ -52,8 +52,11 @@ const lines = rows
   })
   .join("\n  ");
 
+const today = new Date().toISOString().slice(0, 10);
+
 function buildSvg(vars) {
   return `<svg viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recent commits">
+  <!-- heartbeat: ${today} -->
   <style>
     :root { --win: ${vars.win}; --bar: ${vars.bar}; --bone: ${vars.bone}; --dim: ${vars.dim}; --accent: ${vars.accent}; --rule: ${vars.rule}; }
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
