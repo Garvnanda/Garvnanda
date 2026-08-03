@@ -36,8 +36,8 @@ jobs:
 
       - name: Commit if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Garvnanda"
+          git config user.email "184491525+Garvnanda@users.noreply.github.com"
           git add profile-3d-contrib
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh 3D contribution calendar"
