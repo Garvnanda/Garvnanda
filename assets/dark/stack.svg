@@ -14,7 +14,7 @@
   <line x1="162" y1="30" x2="162" y2="200" stroke="var(--rule)" stroke-width="1" opacity=".7"/>
 
   <text class="mono rise a1" x="56" y="52"  font-size="12" fill="var(--muted)" letter-spacing="2">LANGUAGES</text>
-  <text class="mono rise a1" x="178" y="52"  font-size="14" fill="var(--bone)">Python · JavaScript · TypeScript · C++ · SQL</text>
+  <text class="mono rise a1" x="178" y="52"  font-size="14" fill="var(--bone)">Python · JavaScript · TypeScript · C++ · Solidity · SQL</text>
 
   <text class="mono rise a2" x="56" y="84"  font-size="12" fill="var(--muted)" letter-spacing="2">BACKEND</text>
   <text class="mono rise a2" x="178" y="84"  font-size="14" fill="var(--bone)">FastAPI · Flask · Node.js · Express · REST APIs</text>
