@@ -1,14 +1,25 @@
 name: Update chess panel
 
 on:
+  # Off-the-hour minutes: GitHub drops scheduled runs under load, and ":00" plus
+  # very short intervals are the first to go. "*/5" was being delivered ~12x/day.
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
   repository_dispatch:
     types: [chess-move]
 
 permissions:
   contents: write
+
+# Keeps a scheduled tick from overlapping a still-running dispatch of this same
+# workflow. Deliberately per-workflow, not one group shared across all six: a
+# shared group holds only one pending run, so simultaneous widget workflows would
+# cancel each other and silently skip updates. Cross-workflow pushes are
+# serialised by the pull --rebase retry loop below instead.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -36,6 +47,13 @@ jobs:
           git config user.email "${AUTHOR##*|}"
           git commit -m "chore: refresh chess panel"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            # A conflicting pull leaves a rebase in progress; without this every
+            # later attempt fails instantly on the half-finished state.
+            git rebase --abort 2>/dev/null || true
             sleep $((RANDOM % 10 + 1))
           done
+          echo "::error::push to main failed after 5 attempts"
+          exit 1

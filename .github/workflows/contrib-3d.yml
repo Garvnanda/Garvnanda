@@ -1,12 +1,20 @@
 name: Update 3D contribution calendar
 
 on:
+  # Midnight UTC is the single most contended minute on GitHub's scheduler; this
+  # daily run is far more likely to actually fire an hour later at an odd minute.
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "19 1 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# Per-workflow only — see the note in chess-widget.yml for why these six do not
+# share one concurrency group.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -45,6 +53,13 @@ jobs:
           git config user.email "${AUTHOR##*|}"
           git commit -m "chore: refresh 3D contribution calendar"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            # A conflicting pull leaves a rebase in progress; without this every
+            # later attempt fails instantly on the half-finished state.
+            git rebase --abort 2>/dev/null || true
             sleep $((RANDOM % 10 + 1))
           done
+          echo "::error::push to main failed after 5 attempts"
+          exit 1
