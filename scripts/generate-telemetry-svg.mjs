@@ -2,6 +2,8 @@
 // shipping velocity (repos started per year), and profile counters — pulled
 // straight from the GitHub API. Run via GitHub Action on a schedule.
 
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+
 const USERNAME = process.env.GH_USERNAME || "Garvnanda";
 const TOKEN = process.env.GITHUB_TOKEN;
 
@@ -21,21 +23,39 @@ const repos = (await get(`https://api.github.com/users/${USERNAME}/repos?type=ow
 // REPOSITORIES counter should match GitHub's own public repo count, forks included.
 const publicRepoCount = (await get(`https://api.github.com/users/${USERNAME}`)).public_repos;
 
-// language bytes, aggregated across repos (capped to keep API calls bounded)
-const langTotals = {};
+// Build/packaging formats. These show up in language byte counts but say nothing
+// about what gets written by hand, so they are dropped before shares are computed.
+const IGNORED_LANGUAGES = new Set([
+  "Makefile", "CMake", "Dockerfile", "Shell", "Batchfile", "PowerShell", "Roff", "M4",
+]);
+
+// Language mix, normalised per repo (repo list capped to keep API calls bounded).
+// Summing raw bytes across every repo lets the single largest checkout decide the
+// whole chart — it previously reported Python at 91% with TypeScript and JavaScript
+// both at 0%, even though entire projects are written in them. Taking each repo's
+// internal share first and then averaging gives every project equal weight, which
+// answers "what do I work in" rather than "which repo has the most bytes on disk".
+const langShares = {};
+let reposMeasured = 0;
 for (const r of repos.slice(0, 40)) {
+  let langs;
   try {
-    const langs = await get(r.languages_url);
-    for (const [lang, bytes] of Object.entries(langs)) langTotals[lang] = (langTotals[lang] || 0) + bytes;
+    langs = await get(r.languages_url);
   } catch {
-    // ignore individual repo language fetch failures
+    continue; // ignore individual repo language fetch failures
   }
+  const entries = Object.entries(langs).filter(([lang]) => !IGNORED_LANGUAGES.has(lang));
+  const repoBytes = entries.reduce((sum, [, bytes]) => sum + bytes, 0);
+  if (!repoBytes) continue;
+  reposMeasured++;
+  for (const [lang, bytes] of entries) langShares[lang] = (langShares[lang] || 0) + bytes / repoBytes;
 }
-const totalBytes = Object.values(langTotals).reduce((a, b) => a + b, 0) || 1;
-const topLangs = Object.entries(langTotals)
+
+const languagesDetected = Object.keys(langShares).length;
+const topLangs = Object.entries(langShares)
   .sort((a, b) => b[1] - a[1])
   .slice(0, 6)
-  .map(([lang, bytes]) => ({ lang, pct: Math.round((bytes / totalBytes) * 100) }));
+  .map(([lang, share]) => ({ lang, pct: Math.round((share / Math.max(reposMeasured, 1)) * 100) }));
 const maxPct = Math.max(...topLangs.map((l) => l.pct), 1);
 
 // shipping velocity: repos created per calendar year, last 3 years
@@ -46,7 +66,11 @@ const maxYear = Math.max(...perYear, 1);
 
 // counters
 const totalRepos = publicRepoCount;
-const platforms = [...new Set(topLangs.map((l) => l.lang))].slice(0, 4).join(" / ") || "MULTI";
+
+// Read off the projects panel rather than hard-coding a number next to three live
+// ones. Entries there are titled "01 / DEVLENS", "02 / ...", so editing that panel
+// moves this counter with it and the two cannot drift apart.
+const projectsDocumented = (readFileSync("assets/projects.svg", "utf8").match(/>\d{2} \/ [^<]+</g) || []).length;
 
 const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -125,8 +149,8 @@ function buildSvg(vars) {
 
   <g>
     <g class="rise n1"><text fill="var(--bone)" class="mono" x="720" y="118" font-size="44">${totalRepos}</text><text fill="var(--muted)" class="mono" x="790" y="112" font-size="10" letter-spacing="2.5">REPOSITORIES</text></g>
-    <g class="rise n2"><text fill="var(--bone)" class="mono" x="720" y="178" font-size="44">6</text><text fill="var(--muted)" class="mono" x="790" y="172" font-size="10" letter-spacing="2.5">PROJECTS DOCUMENTED</text></g>
-    <g class="rise n3"><text fill="var(--bone)" class="mono" x="720" y="238" font-size="44">${topLangs.length}</text><text fill="var(--muted)" class="mono" x="790" y="232" font-size="10" letter-spacing="2.5">TOP LANGUAGES — ${esc(platforms.toUpperCase())}</text></g>
+    <g class="rise n2"><text fill="var(--bone)" class="mono" x="720" y="178" font-size="44">${projectsDocumented}</text><text fill="var(--muted)" class="mono" x="790" y="172" font-size="10" letter-spacing="2.5">PROJECTS DOCUMENTED</text></g>
+    <g class="rise n3"><text fill="var(--bone)" class="mono" x="720" y="238" font-size="44">${languagesDetected}</text><text fill="var(--muted)" class="mono" x="790" y="232" font-size="10" letter-spacing="2.5">LANGUAGES DETECTED</text></g>
     <g class="rise n4"><text fill="var(--accent)" class="mono" x="718" y="298" font-size="44">∞</text><text fill="var(--muted)" class="mono" x="790" y="292" font-size="10" letter-spacing="2.5">TERMINAL TABS OPEN RIGHT NOW</text></g>
   </g>
 </svg>
@@ -136,7 +160,6 @@ function buildSvg(vars) {
 const LIGHT = { bone: "#000000", muted: "#000000", dim: "#000000", rule: "#000000", accent: "#000000" };
 const DARK = { bone: "#FFFFFF", muted: "#FFFFFF", dim: "#FFFFFF", rule: "#FFFFFF", accent: "#FFFFFF" };
 
-const { writeFileSync, mkdirSync } = await import("node:fs");
 mkdirSync("assets/dark", { recursive: true });
 writeFileSync("assets/telemetry.svg", buildSvg(LIGHT));
 writeFileSync("assets/dark/telemetry.svg", buildSvg(DARK));

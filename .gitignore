@@ -3,3 +3,10 @@ node_modules/
 .env
 .env.*
 *.log
+
+# github-profile-3d-contrib emits ten themed calendars; the README renders one.
+# The other nine were regenerated and committed daily without ever being shown,
+# so they stay untracked. Wildcard rather than nine paths so new themes added by
+# a future version of the action are ignored by default too.
+profile-3d-contrib/*
+!profile-3d-contrib/profile-gitblock.svg
