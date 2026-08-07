@@ -48,9 +48,10 @@ jobs:
         run: |
           git add profile-3d-contrib
           git diff --cached --quiet && exit 0
-          AUTHOR="$(bash scripts/pick-author.sh)"
-          git config user.name "${AUTHOR%%|*}"
-          git config user.email "${AUTHOR##*|}"
+          # Bot on purpose: GitHub does not count github-actions[bot] toward the
+          # contribution graph, and these ~16 commits a day are automation, not work.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: refresh 3D contribution calendar"
           for i in 1 2 3 4 5; do
             if git pull --rebase origin main && git push; then
