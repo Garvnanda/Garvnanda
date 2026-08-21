@@ -18,10 +18,10 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #20 from Garvnanda/readme-v2</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: stop attributing automated widget commits to th</tspan></text>
-  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #19 from Garvnanda/readme-v2</tspan></text>
-  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: stop widget workflows silently failing, spread </tspan></text>
-  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #18 from Garvnanda/readme-v2</tspan></text>
-  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: attribute one automated commit per day, correct</tspan></text>
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">added readme</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 0 + phase 2</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #20 from Garvnanda/readme-v2</tspan></text>
+  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: stop attributing automated widget commits to th</tspan></text>
+  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #19 from Garvnanda/readme-v2</tspan></text>
+  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: stop widget workflows silently failing, spread </tspan></text>
 </svg>
