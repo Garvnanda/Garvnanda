@@ -18,10 +18,10 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">ready for deployment</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">optimized</tspan></text>
-  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">almost done</tspan></text>
-  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">done with the project</tspan></text>
-  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">edited assistant placing</tspan></text>
-  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">version 2 under progress</tspan></text>
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">deployed changes\</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">host changed</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">ready for deployment</tspan></text>
+  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">optimized</tspan></text>
+  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">almost done</tspan></text>
+  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">done with the project</tspan></text>
 </svg>
