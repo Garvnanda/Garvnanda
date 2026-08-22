@@ -18,10 +18,10 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">updated docs : added frontend.md</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 6 and phase 7</tspan></text>
-  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 4 and phase 5</tspan></text>
-  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 1 and phase 3</tspan></text>
-  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">added readme</tspan></text>
-  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 0 + phase 2</tspan></text>
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">feat(panel): restore the instrument console, explana</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">updated docs : added frontend.md</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 6 and phase 7</tspan></text>
+  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 4 and phase 5</tspan></text>
+  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">phase 1 and phase 3</tspan></text>
+  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">automate-india</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">added readme</tspan></text>
 </svg>
