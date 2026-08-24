@@ -45,14 +45,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: refresh ecosystem tree"
-          for i in 1 2 3 4 5; do
+          for i in $(seq 1 10); do
             if git pull --rebase origin main && git push; then
               exit 0
             fi
             # A conflicting pull leaves a rebase in progress; without this every
             # later attempt fails instantly on the half-finished state.
             git rebase --abort 2>/dev/null || true
-            sleep $((RANDOM % 10 + 1))
+            sleep $((RANDOM % 15 + 5))
           done
-          echo "::error::push to main failed after 5 attempts"
+          echo "::error::push to main failed after 10 attempts"
           exit 1
