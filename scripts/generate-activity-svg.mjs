@@ -1,7 +1,6 @@
 // Regenerates assets/activity.svg — the last 31 days of contributions as a line +
-// area chart with dated gridlines, in the same layout (proportions, axes, line style)
-// as haragam22/haragam22's contribution-telemetry.svg, restyled to this profile's
-// ink-only black/white theme instead of that panel's fixed dark colors.
+// area chart, with a bordered panel, gridlines, per-day dots, three date labels and a
+// totals row underneath.
 //
 // This replaced github-readme-activity-graph.vercel.app, which the README used to
 // embed. That deployment now answers 402 DEPLOYMENT_DISABLED for every URL including
@@ -15,7 +14,6 @@
 const USERNAME = process.env.GH_USERNAME || "Garvnanda";
 const TOKEN = process.env.GITHUB_TOKEN;
 const DAYS = 31;
-const TITLE = "CONTRIBUTION TELEMETRY";
 
 const headers = { "User-Agent": "activity-widget", Accept: "application/vnd.github+json" };
 if (TOKEN) headers.Authorization = `Bearer ${TOKEN}`;
@@ -50,11 +48,11 @@ async function contributionDays() {
     if (!res.ok) throw new Error(`graphql ${res.status}`);
     const { data, errors } = await res.json();
     if (errors) throw new Error(`graphql: ${errors.map((e) => e.message).join("; ")}`);
-    return data.user.contributionsCollection.contributionCalendar.weeks
+    const all = data.user.contributionsCollection.contributionCalendar.weeks
       .flatMap((w) => w.contributionDays)
       .filter((d) => d.date <= to.toISOString().slice(0, 10))
-      .sort((a, b) => a.date.localeCompare(b.date))
-      .slice(-DAYS);
+      .sort((a, b) => a.date.localeCompare(b.date));
+    return all.slice(-DAYS);
   });
 }
 
@@ -62,68 +60,76 @@ const days = await contributionDays();
 if (!days.length) throw new Error("contribution calendar came back empty");
 
 const counts = days.map((d) => d.contributionCount);
+const total = counts.reduce((a, b) => a + b, 0);
 const peak = Math.max(...counts);
+const peakDay = days[counts.indexOf(peak)].date;
+const avg = (total / days.length).toFixed(1);
 
-// 760x240 canvas, chart box at x=40..740 / y=40..210 — same proportions as the
-// reference panel, so the axes, tick density and line weight read the same way.
-const L = 40, R = 740, TOP = 40, BOT = 210;
-const STEPS = 4;
+// 1400x420 canvas — same layout as the original build, scaled up from its 1000x300
+// (both dimensions x1.4) so the chart is bigger without changing its proportions.
+const L = 90, R = 1328, TOP = 100, BOT = 320, PANEL_X = 34, PANEL_Y = 28, PANEL_W = 1332, PANEL_H = 364;
 const scale = Math.max(1, peak);
 const px = (i) => L + (i * (R - L)) / Math.max(1, days.length - 1);
 const py = (v) => BOT - (v / scale) * (BOT - TOP);
-const pts = counts.map((v, i) => [px(i), py(v)]);
 
-const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
+const points = counts.map((v, i) => [px(i), py(v)]);
+const line = points.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
 const area = `${line} L${R},${BOT} L${L},${BOT} Z`;
+const dots = points.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.8"/>`).join("");
 
-// Ten evenly spaced ticks (first and last always included), showing the bare
-// day-of-month the way the reference panel does — no month name, since a 31-day
-// window only ever touches at most two months and the crossover is obvious from the
-// numbers wrapping past the end of the month.
-const TICKS = 10;
-const tickIdx = Array.from({ length: TICKS }, (_, i) => Math.round((i * (days.length - 1)) / (TICKS - 1)));
-const xLabels = [...new Set(tickIdx)]
-  .map((i) => `<text x="${px(i).toFixed(1)}" y="222" font-size="8" text-anchor="middle">${Number(days[i].date.slice(-2))}</text>`)
+const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+const label = (iso) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
+};
+
+const midIdx = Math.floor((days.length - 1) / 2);
+const ticks = [
+  [0, "start"],
+  [midIdx, "middle"],
+  [days.length - 1, "end"],
+].map(([i, anchor]) => `<text x="${px(i).toFixed(1)}" y="347" font-size="13" letter-spacing="1" text-anchor="${anchor}" opacity=".75">${label(days[i].date)}</text>`)
   .join("\n    ");
 
-const grid = Array.from({ length: STEPS + 1 }, (_, i) => {
-  const v = Math.round((scale / STEPS) * i);
-  const y = py((scale / STEPS) * i).toFixed(1);
-  return `<line class="grid" x1="${L}" y1="${y}" x2="${R}" y2="${y}"/><text class="axis" x="${L - 8}" y="${(Number(y) + 3).toFixed(1)}" font-size="8" text-anchor="end">${v}</text>`;
-}).join("\n    ");
+const summary = `${days.length} DAYS &#183; ${total} CONTRIBUTIONS &#183; PEAK ${peak} ON ${label(peakDay)} &#183; AVG ${avg}/DAY`;
 
 function buildSvg(ink) {
-  return `<svg viewBox="0 0 760 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last ${days.length} days">
+  return `<svg viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last ${days.length} days">
   <style>
     :root { --ink:${ink}; }
     .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
-    .title { font-size:13px; font-weight:700; letter-spacing:2px; }
-    .axis { opacity:.6; }
-    .rule { stroke:var(--ink); stroke-width:1; }
-    .grid { stroke:var(--ink); stroke-width:1; opacity:.16; }
+    .panel,.rule { fill:none; stroke:var(--ink); stroke-width:1; }
+    .grid { stroke:var(--ink); stroke-width:1; opacity:.22; stroke-dasharray:3 6; }
     .area { fill:var(--ink); opacity:.12; }
-    .line { fill:none; stroke:var(--ink); stroke-width:1.5; stroke-linejoin:round; }
+    .line { fill:none; stroke:var(--ink); stroke-width:2.8; stroke-linejoin:round; stroke-linecap:round; }
+    .dot { fill:var(--ink); }
     .sweep { animation:sweep 1.2s cubic-bezier(.4,0,.2,1) forwards; }
     @keyframes sweep { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { .sweep { animation:none; } }
   </style>
+  <rect class="panel" x="${PANEL_X}" y="${PANEL_Y}" width="${PANEL_W}" height="${PANEL_H}" rx="3"/>
 
   <g class="mono">
-    <text class="title" x="40" y="24">${TITLE}</text>
-    <line class="rule" x1="40" y1="40" x2="740" y2="40"/>
+    <text x="72" y="82" font-size="21" font-weight="700" letter-spacing="3">CONTRIBUTION TELEMETRY</text>
+    <text x="1328" y="82" font-size="14" letter-spacing="3" text-anchor="end" opacity=".75">LAST ${days.length} DAYS</text>
+    <line class="rule" x1="72" y1="100" x2="1328" y2="100"/>
 
-    <g class="axis">
-      ${grid}
-    </g>
+    <line class="grid" x1="90" y1="${TOP}" x2="1328" y2="${TOP}"/>
+    <line class="grid" x1="90" y1="${(TOP + BOT) / 2}" x2="1328" y2="${(TOP + BOT) / 2}"/>
+    <line class="rule" x1="90" y1="${BOT}" x2="1328" y2="${BOT}"/>
+
+    <text x="80" y="${TOP + 5}" font-size="13" text-anchor="end" opacity=".75">${scale}</text>
+    <text x="80" y="${BOT + 5}" font-size="13" text-anchor="end" opacity=".75">0</text>
 
     <g class="sweep">
       <path class="area" d="${area}"/>
       <path class="line" d="${line}"/>
+      <g class="dot">${dots}</g>
     </g>
 
-    <g class="axis">
-      ${xLabels}
-    </g>
+    ${ticks}
+
+    <text x="72" y="378" font-size="14" letter-spacing="2" opacity=".75">${summary}</text>
   </g>
 </svg>
 `;
@@ -133,4 +139,4 @@ const { writeFileSync, mkdirSync } = await import("node:fs");
 mkdirSync("assets/dark", { recursive: true });
 writeFileSync("assets/activity.svg", buildSvg("#000000"));
 writeFileSync("assets/dark/activity.svg", buildSvg("#FFFFFF"));
-console.log(`wrote assets/activity.svg + assets/dark/activity.svg — ${days.length} days, peak:${peak}, y-scale:0..${scale}`);
+console.log(`wrote assets/activity.svg + assets/dark/activity.svg — ${days.length} days, total:${total} peak:${peak} on ${peakDay} avg:${avg}`);

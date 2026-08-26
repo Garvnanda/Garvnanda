@@ -1,46 +1,40 @@
-<svg viewBox="0 0 760 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last 31 days">
+<svg viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last 31 days">
   <style>
     :root { --ink:#000000; }
     .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
-    .title { font-size:13px; font-weight:700; letter-spacing:2px; }
-    .axis { opacity:.6; }
-    .rule { stroke:var(--ink); stroke-width:1; }
-    .grid { stroke:var(--ink); stroke-width:1; opacity:.16; }
+    .panel,.rule { fill:none; stroke:var(--ink); stroke-width:1; }
+    .grid { stroke:var(--ink); stroke-width:1; opacity:.22; stroke-dasharray:3 6; }
     .area { fill:var(--ink); opacity:.12; }
-    .line { fill:none; stroke:var(--ink); stroke-width:1.5; stroke-linejoin:round; }
+    .line { fill:none; stroke:var(--ink); stroke-width:2.8; stroke-linejoin:round; stroke-linecap:round; }
+    .dot { fill:var(--ink); }
     .sweep { animation:sweep 1.2s cubic-bezier(.4,0,.2,1) forwards; }
     @keyframes sweep { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { .sweep { animation:none; } }
   </style>
+  <rect class="panel" x="34" y="28" width="1332" height="364" rx="3"/>
 
   <g class="mono">
-    <text class="title" x="40" y="24">CONTRIBUTION TELEMETRY</text>
-    <line class="rule" x1="40" y1="40" x2="740" y2="40"/>
+    <text x="72" y="82" font-size="21" font-weight="700" letter-spacing="3">CONTRIBUTION TELEMETRY</text>
+    <text x="1328" y="82" font-size="14" letter-spacing="3" text-anchor="end" opacity=".75">LAST 31 DAYS</text>
+    <line class="rule" x1="72" y1="100" x2="1328" y2="100"/>
 
-    <g class="axis">
-      <line class="grid" x1="40" y1="210.0" x2="740" y2="210.0"/><text class="axis" x="32" y="213.0" font-size="8" text-anchor="end">0</text>
-    <line class="grid" x1="40" y1="167.5" x2="740" y2="167.5"/><text class="axis" x="32" y="170.5" font-size="8" text-anchor="end">16</text>
-    <line class="grid" x1="40" y1="125.0" x2="740" y2="125.0"/><text class="axis" x="32" y="128.0" font-size="8" text-anchor="end">32</text>
-    <line class="grid" x1="40" y1="82.5" x2="740" y2="82.5"/><text class="axis" x="32" y="85.5" font-size="8" text-anchor="end">47</text>
-    <line class="grid" x1="40" y1="40.0" x2="740" y2="40.0"/><text class="axis" x="32" y="43.0" font-size="8" text-anchor="end">63</text>
-    </g>
+    <line class="grid" x1="90" y1="100" x2="1328" y2="100"/>
+    <line class="grid" x1="90" y1="210" x2="1328" y2="210"/>
+    <line class="rule" x1="90" y1="320" x2="1328" y2="320"/>
+
+    <text x="80" y="105" font-size="13" text-anchor="end" opacity=".75">63</text>
+    <text x="80" y="325" font-size="13" text-anchor="end" opacity=".75">0</text>
 
     <g class="sweep">
-      <path class="area" d="M40.0,185.7 L63.3,166.8 L86.7,156.0 L110.0,40.0 L133.3,177.6 L156.7,75.1 L180.0,169.5 L203.3,172.2 L226.7,161.4 L250.0,161.4 L273.3,172.2 L296.7,153.3 L320.0,204.6 L343.3,201.9 L366.7,199.2 L390.0,199.2 L413.3,185.7 L436.7,207.3 L460.0,210.0 L483.3,204.6 L506.7,210.0 L530.0,201.9 L553.3,207.3 L576.7,204.6 L600.0,204.6 L623.3,199.2 L646.7,161.4 L670.0,191.1 L693.3,199.2 L716.7,199.2 L740.0,207.3 L740,210 L40,210 Z"/>
-      <path class="line" d="M40.0,185.7 L63.3,166.8 L86.7,156.0 L110.0,40.0 L133.3,177.6 L156.7,75.1 L180.0,169.5 L203.3,172.2 L226.7,161.4 L250.0,161.4 L273.3,172.2 L296.7,153.3 L320.0,204.6 L343.3,201.9 L366.7,199.2 L390.0,199.2 L413.3,185.7 L436.7,207.3 L460.0,210.0 L483.3,204.6 L506.7,210.0 L530.0,201.9 L553.3,207.3 L576.7,204.6 L600.0,204.6 L623.3,199.2 L646.7,161.4 L670.0,191.1 L693.3,199.2 L716.7,199.2 L740.0,207.3"/>
+      <path class="area" d="M90.0,288.6 L131.3,264.1 L172.5,250.2 L213.8,100.0 L255.1,278.1 L296.3,145.4 L337.6,267.6 L378.9,271.1 L420.1,257.1 L461.4,257.1 L502.7,271.1 L543.9,246.7 L585.2,313.0 L626.5,309.5 L667.7,306.0 L709.0,306.0 L750.3,288.6 L791.5,316.5 L832.8,320.0 L874.1,313.0 L915.3,320.0 L956.6,309.5 L997.9,316.5 L1039.1,313.0 L1080.4,313.0 L1121.7,306.0 L1162.9,257.1 L1204.2,295.6 L1245.5,306.0 L1286.7,306.0 L1328.0,316.5 L1328,320 L90,320 Z"/>
+      <path class="line" d="M90.0,288.6 L131.3,264.1 L172.5,250.2 L213.8,100.0 L255.1,278.1 L296.3,145.4 L337.6,267.6 L378.9,271.1 L420.1,257.1 L461.4,257.1 L502.7,271.1 L543.9,246.7 L585.2,313.0 L626.5,309.5 L667.7,306.0 L709.0,306.0 L750.3,288.6 L791.5,316.5 L832.8,320.0 L874.1,313.0 L915.3,320.0 L956.6,309.5 L997.9,316.5 L1039.1,313.0 L1080.4,313.0 L1121.7,306.0 L1162.9,257.1 L1204.2,295.6 L1245.5,306.0 L1286.7,306.0 L1328.0,316.5"/>
+      <g class="dot"><circle cx="90.0" cy="288.6" r="2.8"/><circle cx="131.3" cy="264.1" r="2.8"/><circle cx="172.5" cy="250.2" r="2.8"/><circle cx="213.8" cy="100.0" r="2.8"/><circle cx="255.1" cy="278.1" r="2.8"/><circle cx="296.3" cy="145.4" r="2.8"/><circle cx="337.6" cy="267.6" r="2.8"/><circle cx="378.9" cy="271.1" r="2.8"/><circle cx="420.1" cy="257.1" r="2.8"/><circle cx="461.4" cy="257.1" r="2.8"/><circle cx="502.7" cy="271.1" r="2.8"/><circle cx="543.9" cy="246.7" r="2.8"/><circle cx="585.2" cy="313.0" r="2.8"/><circle cx="626.5" cy="309.5" r="2.8"/><circle cx="667.7" cy="306.0" r="2.8"/><circle cx="709.0" cy="306.0" r="2.8"/><circle cx="750.3" cy="288.6" r="2.8"/><circle cx="791.5" cy="316.5" r="2.8"/><circle cx="832.8" cy="320.0" r="2.8"/><circle cx="874.1" cy="313.0" r="2.8"/><circle cx="915.3" cy="320.0" r="2.8"/><circle cx="956.6" cy="309.5" r="2.8"/><circle cx="997.9" cy="316.5" r="2.8"/><circle cx="1039.1" cy="313.0" r="2.8"/><circle cx="1080.4" cy="313.0" r="2.8"/><circle cx="1121.7" cy="306.0" r="2.8"/><circle cx="1162.9" cy="257.1" r="2.8"/><circle cx="1204.2" cy="295.6" r="2.8"/><circle cx="1245.5" cy="306.0" r="2.8"/><circle cx="1286.7" cy="306.0" r="2.8"/><circle cx="1328.0" cy="316.5" r="2.8"/></g>
     </g>
 
-    <g class="axis">
-      <text x="40.0" y="222" font-size="8" text-anchor="middle">27</text>
-    <text x="110.0" y="222" font-size="8" text-anchor="middle">30</text>
-    <text x="203.3" y="222" font-size="8" text-anchor="middle">3</text>
-    <text x="273.3" y="222" font-size="8" text-anchor="middle">6</text>
-    <text x="343.3" y="222" font-size="8" text-anchor="middle">9</text>
-    <text x="436.7" y="222" font-size="8" text-anchor="middle">13</text>
-    <text x="506.7" y="222" font-size="8" text-anchor="middle">16</text>
-    <text x="576.7" y="222" font-size="8" text-anchor="middle">19</text>
-    <text x="670.0" y="222" font-size="8" text-anchor="middle">23</text>
-    <text x="740.0" y="222" font-size="8" text-anchor="middle">26</text>
-    </g>
+    <text x="90.0" y="347" font-size="13" letter-spacing="1" text-anchor="start" opacity=".75">JUL 27</text>
+    <text x="709.0" y="347" font-size="13" letter-spacing="1" text-anchor="middle" opacity=".75">AUG 11</text>
+    <text x="1328.0" y="347" font-size="13" letter-spacing="1" text-anchor="end" opacity=".75">AUG 26</text>
+
+    <text x="72" y="378" font-size="14" letter-spacing="2" opacity=".75">31 DAYS &#183; 341 CONTRIBUTIONS &#183; PEAK 63 ON JUL 30 &#183; AVG 11.0/DAY</text>
   </g>
 </svg>
