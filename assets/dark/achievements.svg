@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1000 268" width="1000" height="268" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Achievements — VisionX Hackathon runner-up, Ctrl+Alt+Vibe SmoothSend track winner">
+  <style>
+    :root { --ink:#222222; --panel:#F8F9FA; --rule:#E1E4E8; --muted:#888888; }
+    @media (prefers-color-scheme:dark) { :root { --ink:#DDDDDD; --panel:#161616; --rule:#333333; --muted:#777777; } }
+    .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; }
+    .row { opacity:0; animation:reveal .5s ease forwards; }
+    @keyframes reveal { to { opacity:1; } }
+    .card { fill: var(--panel); stroke: var(--rule); stroke-width: 1.5; }
+    .award { fill:var(--ink); font-size:15px; font-weight:700; letter-spacing:.5px; }
+    .where { fill:var(--muted); font-size:10.5px; letter-spacing:2; }
+    .when { fill:var(--muted); font-size:10.5px; letter-spacing:1.5; }
+    .copy { fill:var(--ink); font-size:12px; opacity:.92; }
+    .r1{animation-delay:.05s}.r2{animation-delay:.15s}
+    @media (prefers-reduced-motion:reduce) { .row { animation:none; opacity:1; } }
+    :root { --ink: #FFFFFF; --panel: #0D1117; --rule: #FFFFFF; --muted: #FFFFFF; }
+  </style>
+
+  <g class="mono">
+    <g class="row r1" transform="translate(0 12)">
+      <rect class="card" x="48" y="8" width="904" height="112" rx="8"/>
+      <text class="award" x="72"  y="36">1st Runner-Up &#8212; VisionX Hackathon</text>
+      <text class="when"  x="928" y="36" text-anchor="end">MAR 2026</text>
+      <text class="where" x="72"  y="56">GEEKSFORGEEKS</text>
+      <text class="copy"  x="72" y="84">DevLens &#8212; an AI onboarding navigator for unfamiliar codebases. Built the complete frontend and assisted</text>
+      <text class="copy"  x="72" y="102">with the RAG-based issue-to-code mapping setup (AWS Titan v2 + ChromaDB); backend built by teammate.</text>
+    </g>
+    <g class="row r2" transform="translate(0 136)">
+      <rect class="card" x="48" y="8" width="904" height="112" rx="8"/>
+      <text class="award" x="72"  y="36">Winner, SmoothSend Sponsorship Track &#8212; Ctrl+Alt+Vibe</text>
+      <text class="when"  x="928" y="36" text-anchor="end">NOV 2025</text>
+      <text class="where" x="72"  y="56">MSIT</text>
+      <text class="copy"  x="72" y="84">BundleFlow &#8212; a Web3 reimagining of Splitwise for gasless micro-payments on Aptos. Built the user-facing</text>
+      <text class="copy"  x="72" y="102">React/TypeScript app with Petra wallet integration and gasless batch settlement via the SmoothSend SDK.</text>
+    </g>
+  </g>
+</svg>

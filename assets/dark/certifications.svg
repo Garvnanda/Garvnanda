@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1000 272" width="1000" height="272" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Certifications — Machine Learning Specialization, ML basics, AI Ethics, Django">
+  <style>
+    :root { --ink:#222222; --panel:#F8F9FA; --rule:#E1E4E8; --muted:#888888; }
+    @media (prefers-color-scheme:dark) { :root { --ink:#DDDDDD; --panel:#161616; --rule:#333333; --muted:#777777; } }
+    .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; }
+    .row { opacity:0; animation:reveal .5s ease forwards; }
+    @keyframes reveal { to { opacity:1; } }
+    .card { fill: var(--panel); stroke: var(--rule); stroke-width: 1.5; }
+    .name { fill:var(--ink); font-size:14px; font-weight:700; letter-spacing:.4px; }
+    .by { fill:var(--muted); font-size:11px; }
+    .when { fill:var(--muted); font-size:10.5px; letter-spacing:1.5; }
+    .sep { stroke:var(--rule); stroke-width:1; opacity:.6; }
+    .r1{animation-delay:.05s}.r2{animation-delay:.12s}.r3{animation-delay:.19s}.r4{animation-delay:.26s}
+    @media (prefers-reduced-motion:reduce) { .row { animation:none; opacity:1; } }
+    :root { --ink: #FFFFFF; --panel: #0D1117; --rule: #FFFFFF; --muted: #FFFFFF; }
+  </style>
+
+  <rect class="card" x="48" y="8" width="904" height="252" rx="8"/>
+
+  <g class="mono">
+    <g class="row r1">
+      <text class="name" x="72"  y="48">Machine Learning Specialization</text>
+      <text class="when" x="928" y="48" text-anchor="end">AUG 2026</text>
+      <text class="by"   x="72"  y="68">Stanford Online &amp; DeepLearning.AI &#183; Coursera</text>
+    </g>
+    <line class="sep" x1="72" y1="84" x2="928" y2="84"/>
+
+    <g class="row r2">
+      <text class="name" x="72"  y="104">Machine Learning Basics</text>
+      <text class="when" x="928" y="104" text-anchor="end">AUG 2026 / FEB&#8211;MAR 2025</text>
+      <text class="by"   x="72"  y="124">Kaggle &#8220;Intro to Machine Learning&#8221; &#183; Techgyan &#8220;Machine Learning&#8221;</text>
+    </g>
+    <line class="sep" x1="72" y1="140" x2="928" y2="140"/>
+
+    <g class="row r3">
+      <text class="name" x="72"  y="160">AI Ethics</text>
+      <text class="when" x="928" y="160" text-anchor="end">AUG 2026</text>
+      <text class="by"   x="72"  y="180">Kaggle &#8220;Intro to AI Ethics&#8221;</text>
+    </g>
+    <line class="sep" x1="72" y1="196" x2="928" y2="196"/>
+
+    <g class="row r4">
+      <text class="name" x="72"  y="216">Django</text>
+      <text class="when" x="928" y="216" text-anchor="end">FEB&#8211;MAR 2025</text>
+      <text class="by"   x="72"  y="236">Techgyan Technologies</text>
+    </g>
+  </g>
+</svg>

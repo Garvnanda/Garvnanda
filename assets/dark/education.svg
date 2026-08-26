@@ -1,0 +1,26 @@
+<svg viewBox="0 0 1000 150" width="1000" height="150" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Education — B.Tech CSE, Maharaja Agrasen Institute of Technology, CGPA 9.42">
+  <style>
+    :root { --ink:#222222; --panel:#F8F9FA; --rule:#E1E4E8; --muted:#888888; }
+    @media (prefers-color-scheme:dark) { :root { --ink:#DDDDDD; --panel:#161616; --rule:#333333; --muted:#777777; } }
+    .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; }
+    .row { opacity:0; animation:reveal .5s ease .05s forwards; }
+    @keyframes reveal { to { opacity:1; } }
+    .card { fill: var(--panel); stroke: var(--rule); stroke-width: 1.5; }
+    .org { fill:var(--ink); font-size:17px; font-weight:700; letter-spacing:.4px; }
+    .deg { fill:var(--ink); font-size:13px; opacity:.92; }
+    .meta { fill:var(--muted); font-size:11px; letter-spacing:1.5; }
+    .label { fill:var(--muted); font-size:10.5px; letter-spacing:3; }
+    .score { fill:var(--ink); font-size:34px; font-weight:700; letter-spacing:-1; }
+    @media (prefers-reduced-motion:reduce) { .row { animation:none; opacity:1; } }
+    :root { --ink: #FFFFFF; --panel: #0D1117; --rule: #FFFFFF; --muted: #FFFFFF; }
+  </style>
+
+  <g class="mono row">
+    <rect class="card" x="48" y="8" width="904" height="124" rx="8"/>
+    <text class="org"   x="72" y="46">Maharaja Agrasen Institute of Technology (GGSIPU)</text>
+    <text class="deg"   x="72" y="72">B.Tech in Computer Science &amp; Engineering</text>
+    <text class="meta"  x="72" y="102">NEW DELHI, INDIA &#183; 2024 &#8212; 2028</text>
+    <text class="label" x="928" y="46"  text-anchor="end">CGPA</text>
+    <text class="score" x="928" y="88" text-anchor="end">9.42</text>
+  </g>
+</svg>
