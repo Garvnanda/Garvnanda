@@ -8,6 +8,13 @@
 // the panel is drawn locally instead of depending on a host someone else can switch
 // off.
 //
+// Text sizing: font-size here is set relative to the viewBox width, not an absolute
+// pixel count — GitHub scales the whole SVG to fit the README column, so what actually
+// reads on screen is that ratio. This panel targets ~1.7% for body text and ~2.4% for
+// the title, above every other widget in the profile (commits.svg, the previous
+// highest, sits at ~1.6%) — deliberately, since this is the panel that kept coming
+// back illegible at the profile's usual ~1.0-1.3%.
+//
 // Source is contributionsCollection, the same query the GitHub Stats widget uses and
 // the same one GitHub's own contribution graph is drawn from, so the panels agree.
 
@@ -65,9 +72,10 @@ const peak = Math.max(...counts);
 const peakDay = days[counts.indexOf(peak)].date;
 const avg = (total / days.length).toFixed(1);
 
-// 1400x420 canvas — same layout as the original build, scaled up from its 1000x300
-// (both dimensions x1.4) so the chart is bigger without changing its proportions.
-const L = 90, R = 1328, TOP = 100, BOT = 320, PANEL_X = 34, PANEL_Y = 28, PANEL_W = 1332, PANEL_H = 364;
+// 1000x480 canvas — same viewBox width as every other widget (so file sizes stay
+// comparable across the profile), but noticeably taller, so the chart itself has real
+// vertical room instead of being squeezed into a flat banner.
+const L = 76, R = 948, TOP = 120, BOT = 380;
 const scale = Math.max(1, peak);
 const px = (i) => L + (i * (R - L)) / Math.max(1, days.length - 1);
 const py = (v) => BOT - (v / scale) * (BOT - TOP);
@@ -75,7 +83,7 @@ const py = (v) => BOT - (v / scale) * (BOT - TOP);
 const points = counts.map((v, i) => [px(i), py(v)]);
 const line = points.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
 const area = `${line} L${R},${BOT} L${L},${BOT} Z`;
-const dots = points.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.8"/>`).join("");
+const dots = points.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4"/>`).join("");
 
 const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 const label = (iso) => {
@@ -88,38 +96,38 @@ const ticks = [
   [0, "start"],
   [midIdx, "middle"],
   [days.length - 1, "end"],
-].map(([i, anchor]) => `<text x="${px(i).toFixed(1)}" y="347" font-size="13" letter-spacing="1" text-anchor="${anchor}" opacity=".75">${label(days[i].date)}</text>`)
+].map(([i, anchor]) => `<text x="${px(i).toFixed(1)}" y="404" font-size="17" letter-spacing="1" text-anchor="${anchor}" opacity=".8">${label(days[i].date)}</text>`)
   .join("\n    ");
 
 const summary = `${days.length} DAYS &#183; ${total} CONTRIBUTIONS &#183; PEAK ${peak} ON ${label(peakDay)} &#183; AVG ${avg}/DAY`;
 
 function buildSvg(ink) {
-  return `<svg viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last ${days.length} days">
+  return `<svg viewBox="0 0 1000 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last ${days.length} days">
   <style>
     :root { --ink:${ink}; }
     .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
     .panel,.rule { fill:none; stroke:var(--ink); stroke-width:1; }
     .grid { stroke:var(--ink); stroke-width:1; opacity:.22; stroke-dasharray:3 6; }
-    .area { fill:var(--ink); opacity:.12; }
-    .line { fill:none; stroke:var(--ink); stroke-width:2.8; stroke-linejoin:round; stroke-linecap:round; }
+    .area { fill:var(--ink); opacity:.13; }
+    .line { fill:none; stroke:var(--ink); stroke-width:3; stroke-linejoin:round; stroke-linecap:round; }
     .dot { fill:var(--ink); }
     .sweep { animation:sweep 1.2s cubic-bezier(.4,0,.2,1) forwards; }
     @keyframes sweep { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { .sweep { animation:none; } }
   </style>
-  <rect class="panel" x="${PANEL_X}" y="${PANEL_Y}" width="${PANEL_W}" height="${PANEL_H}" rx="3"/>
+  <rect class="panel" x="24" y="20" width="952" height="440" rx="3"/>
 
   <g class="mono">
-    <text x="72" y="82" font-size="21" font-weight="700" letter-spacing="3">CONTRIBUTION TELEMETRY</text>
-    <text x="1328" y="82" font-size="14" letter-spacing="3" text-anchor="end" opacity=".75">LAST ${days.length} DAYS</text>
-    <line class="rule" x1="72" y1="100" x2="1328" y2="100"/>
+    <text x="52" y="64" font-size="24" font-weight="700" letter-spacing="3">CONTRIBUTION TELEMETRY</text>
+    <text x="948" y="64" font-size="15" letter-spacing="2" text-anchor="end" opacity=".8">LAST ${days.length} DAYS</text>
+    <line class="rule" x1="52" y1="84" x2="948" y2="84"/>
 
-    <line class="grid" x1="90" y1="${TOP}" x2="1328" y2="${TOP}"/>
-    <line class="grid" x1="90" y1="${(TOP + BOT) / 2}" x2="1328" y2="${(TOP + BOT) / 2}"/>
-    <line class="rule" x1="90" y1="${BOT}" x2="1328" y2="${BOT}"/>
+    <line class="grid" x1="${L}" y1="${TOP}" x2="${R}" y2="${TOP}"/>
+    <line class="grid" x1="${L}" y1="${(TOP + BOT) / 2}" x2="${R}" y2="${(TOP + BOT) / 2}"/>
+    <line class="rule" x1="${L}" y1="${BOT}" x2="${R}" y2="${BOT}"/>
 
-    <text x="80" y="${TOP + 5}" font-size="13" text-anchor="end" opacity=".75">${scale}</text>
-    <text x="80" y="${BOT + 5}" font-size="13" text-anchor="end" opacity=".75">0</text>
+    <text x="66" y="${TOP + 6}" font-size="17" text-anchor="end" opacity=".8">${scale}</text>
+    <text x="66" y="${BOT + 6}" font-size="17" text-anchor="end" opacity=".8">0</text>
 
     <g class="sweep">
       <path class="area" d="${area}"/>
@@ -129,7 +137,7 @@ function buildSvg(ink) {
 
     ${ticks}
 
-    <text x="72" y="378" font-size="14" letter-spacing="2" opacity=".75">${summary}</text>
+    <text x="52" y="440" font-size="17" letter-spacing="1" opacity=".8">${summary}</text>
   </g>
 </svg>
 `;

@@ -78,7 +78,7 @@ const barRows = topLangs
   .map((l, i) => {
     const y = 108 + i * 38;
     const w = Math.max(6, Math.round((l.pct / maxPct) * 230));
-    return `<text fill="var(--bone)" x="48" y="${y - 8}">${esc(l.lang.toLowerCase())}</text>       <rect class="bar g${i + 1}" x="48" y="${y}" width="${w}" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="${48 + w + 10}" y="${y + 7}" font-size="10">${l.pct}%</text>`;
+    return `<text fill="var(--bone)" x="48" y="${y - 8}">${esc(l.lang.toLowerCase())}</text>       <rect class="bar g${i + 1}" x="48" y="${y}" width="${w}" height="6" fill="var(--accent)"/><text fill="var(--muted)" x="${48 + w + 10}" y="${y + 7}" font-size="12">${l.pct}%</text>`;
   })
   .join("\n    ");
 
@@ -124,34 +124,34 @@ function buildSvg(vars) {
   </style>
 
   <line x1="48" y1="40" x2="952" y2="40" stroke="var(--rule)"/>
-  <text fill="var(--muted)" class="mono" x="48" y="28" font-size="11" letter-spacing="3.5">TELEMETRY — WHAT THE HANDS ARE DOING</text>
-  <text fill="var(--muted)" class="mono" x="952" y="28" font-size="11" letter-spacing="3.5" text-anchor="end">FIG. 02</text>
+  <text fill="var(--muted)" class="mono" x="48" y="28" font-size="13" letter-spacing="3">TELEMETRY — WHAT THE HANDS ARE DOING</text>
+  <text fill="var(--muted)" class="mono" x="952" y="28" font-size="13" letter-spacing="3" text-anchor="end">FIG. 02</text>
   <line x1="360" y1="64" x2="360" y2="296" stroke="var(--rule)" opacity=".4"/>
   <line x1="688" y1="64" x2="688" y2="296" stroke="var(--rule)" opacity=".4"/>
 
-  <text fill="var(--dim)" class="mono" x="48" y="78" font-size="10" letter-spacing="2.5">LANGUAGE DISTRIBUTION · LIVE</text>
-  <g class="mono" font-size="11">
+  <text fill="var(--dim)" class="mono" x="48" y="78" font-size="12" letter-spacing="2">LANGUAGE DISTRIBUTION · LIVE</text>
+  <g class="mono" font-size="13">
     ${barRows}
   </g>
 
-  <text fill="var(--dim)" class="mono" x="392" y="78" font-size="10" letter-spacing="2.5">SHIPPING VELOCITY · ${years[0]} → ${years[2]}</text>
+  <text fill="var(--dim)" class="mono" x="392" y="78" font-size="12" letter-spacing="1.8">SHIPPING VELOCITY · ${years[0]} → ${years[2]}</text>
   <g>
     <line x1="392" y1="252" x2="656" y2="252" stroke="var(--rule)"/>
     <polyline class="spark" points="${polyline}" stroke="var(--accent)" stroke-width="1.5" fill="none"/>
     ${dots}
     <circle class="ping" cx="${lastPoint.x.toFixed(1)}" cy="${lastPoint.y.toFixed(1)}" r="4" stroke="var(--accent)" fill="none"/>
     <circle class="dot d2" cx="${lastPoint.x.toFixed(1)}" cy="${lastPoint.y.toFixed(1)}" r="3" fill="var(--accent)"/>
-    <text fill="var(--dim)" class="mono" x="392" y="272" font-size="9.5" letter-spacing="1.5">'${String(years[0]).slice(2)}</text>
-    <text fill="var(--dim)" class="mono" x="524" y="272" font-size="9.5" letter-spacing="1.5">'${String(years[1]).slice(2)}</text>
-    <text fill="var(--dim)" class="mono" x="640" y="272" font-size="9.5" letter-spacing="1.5">'${String(years[2]).slice(2)}</text>
-    <text fill="var(--muted)" class="mono dot d2" x="392" y="300" font-size="10" letter-spacing="1.5">trend — <tspan fill="var(--accent)">${trend}</tspan></text>
+    <text fill="var(--dim)" class="mono" x="392" y="272" font-size="11.5" letter-spacing="1.5">'${String(years[0]).slice(2)}</text>
+    <text fill="var(--dim)" class="mono" x="524" y="272" font-size="11.5" letter-spacing="1.5">'${String(years[1]).slice(2)}</text>
+    <text fill="var(--dim)" class="mono" x="640" y="272" font-size="11.5" letter-spacing="1.5">'${String(years[2]).slice(2)}</text>
+    <text fill="var(--muted)" class="mono dot d2" x="392" y="300" font-size="12" letter-spacing="1.5">trend — <tspan fill="var(--accent)">${trend}</tspan></text>
   </g>
 
   <g>
-    <g class="rise n1"><text fill="var(--bone)" class="mono" x="720" y="118" font-size="44">${totalRepos}</text><text fill="var(--muted)" class="mono" x="790" y="112" font-size="10" letter-spacing="2.5">REPOSITORIES</text></g>
-    <g class="rise n2"><text fill="var(--bone)" class="mono" x="720" y="178" font-size="44">${projectsDocumented}</text><text fill="var(--muted)" class="mono" x="790" y="172" font-size="10" letter-spacing="2.5">PROJECTS DOCUMENTED</text></g>
-    <g class="rise n3"><text fill="var(--bone)" class="mono" x="720" y="238" font-size="44">${languagesDetected}</text><text fill="var(--muted)" class="mono" x="790" y="232" font-size="10" letter-spacing="2.5">LANGUAGES DETECTED</text></g>
-    <g class="rise n4"><text fill="var(--accent)" class="mono" x="718" y="298" font-size="44">∞</text><text fill="var(--muted)" class="mono" x="790" y="292" font-size="10" letter-spacing="2.5">TERMINAL TABS OPEN RIGHT NOW</text></g>
+    <g class="rise n1"><text fill="var(--bone)" class="mono" x="720" y="118" font-size="44">${totalRepos}</text><text fill="var(--muted)" class="mono" x="790" y="112" font-size="12" letter-spacing="2">REPOSITORIES</text></g>
+    <g class="rise n2"><text fill="var(--bone)" class="mono" x="720" y="178" font-size="44">${projectsDocumented}</text><text fill="var(--muted)" class="mono" x="790" y="172" font-size="12" letter-spacing="2">PROJECTS DOCUMENTED</text></g>
+    <g class="rise n3"><text fill="var(--bone)" class="mono" x="720" y="238" font-size="44">${languagesDetected}</text><text fill="var(--muted)" class="mono" x="790" y="232" font-size="12" letter-spacing="2">LANGUAGES DETECTED</text></g>
+    <g class="rise n4"><text fill="var(--accent)" class="mono" x="718" y="298" font-size="44">∞</text><text fill="var(--muted)" class="mono" x="790" y="292" font-size="12" letter-spacing="2">TERMINAL TABS OPEN RIGHT NOW</text></g>
   </g>
 </svg>
 `;
