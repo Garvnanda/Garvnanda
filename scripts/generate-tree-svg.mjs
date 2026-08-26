@@ -50,13 +50,18 @@ const flows = NODES.map((n, i) => {
 
 const nodeBlocks = NODES.map((n, i) => {
   const repo = picked[i];
-  const title = esc((repo.name || "—").toUpperCase());
-  const meta = esc(short(repo.language ? `${repo.language} · repo` : repo.description || "repository"));
+  // Truncated (unlike the rest of the profile's static labels) because this is the
+  // one piece of node text with no length limit on its input — a live repo name — and
+  // the node box itself is a fixed 190px. Without a cap, a long name would overflow
+  // the box outright rather than just crowd it. 18 chars covers every current repo
+  // name in full; math below is what sizes it, not a hand-picked number.
+  const title = esc(short((repo.name || "—").toUpperCase(), 18));
+  const meta = esc(short(repo.language ? `${repo.language} · repo` : repo.description || "repository", 20));
   const tx = n.x + n.w / 2;
   return `<g class="pop p${i + 1}">
       <rect class="node" x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="2"/>
-      <text fill="var(--bone)" class="mono" x="${tx}" y="${n.y + 23}" font-size="12" letter-spacing="1" text-anchor="middle">${title}</text>
-      <text fill="var(--muted)" class="mono" x="${tx}" y="${n.y + 42}" font-size="9" letter-spacing="1" text-anchor="middle">${meta}</text>
+      <text fill="var(--bone)" class="mono" x="${tx}" y="${n.y + 23}" font-size="14" letter-spacing="1" text-anchor="middle">${title}</text>
+      <text fill="var(--muted)" class="mono" x="${tx}" y="${n.y + 42}" font-size="10.5" letter-spacing="1" text-anchor="middle">${meta}</text>
     </g>`;
 }).join("\n    ");
 
@@ -84,8 +89,8 @@ function buildSvg(vars) {
   </style>
 
   <line x1="48" y1="40" x2="952" y2="40" stroke="var(--rule)"/>
-  <text fill="var(--muted)" class="mono" x="48" y="28" font-size="11" letter-spacing="3.5">LIVE ECOSYSTEM TREE — 6 MOST RECENTLY SHIPPED REPOS</text>
-  <text fill="var(--muted)" class="mono" x="952" y="28" font-size="11" letter-spacing="3.5" text-anchor="end">FIG. 01</text>
+  <text fill="var(--muted)" class="mono" x="48" y="28" font-size="13" letter-spacing="3">LIVE ECOSYSTEM TREE — 6 MOST RECENTLY SHIPPED REPOS</text>
+  <text fill="var(--muted)" class="mono" x="952" y="28" font-size="13" letter-spacing="3" text-anchor="end">FIG. 01</text>
 
   <g>
     ${wires}
@@ -96,14 +101,14 @@ function buildSvg(vars) {
 
   <g class="pop p0 breathe">
     <rect class="core" x="${CENTER.x}" y="${CENTER.y}" width="${CENTER.w}" height="${CENTER.h}" rx="4"/>
-    <text fill="var(--bone)" class="mono" x="${cx}" y="${CENTER.y + 24}" font-size="14" font-weight="800" letter-spacing="2" text-anchor="middle">ME</text>
-    <text fill="var(--accent)" class="mono" x="${cx}" y="${CENTER.y + 42}" font-size="8.5" letter-spacing="1" text-anchor="middle">@${USERNAME}</text>
+    <text fill="var(--bone)" class="mono" x="${cx}" y="${CENTER.y + 24}" font-size="15" font-weight="800" letter-spacing="2" text-anchor="middle">ME</text>
+    <text fill="var(--accent)" class="mono" x="${cx}" y="${CENTER.y + 42}" font-size="10" letter-spacing="1" text-anchor="middle">@${USERNAME}</text>
   </g>
 
   ${nodeBlocks}
 
   <line x1="48" y1="590" x2="952" y2="590" stroke="var(--rule)"/>
-  <text fill="var(--dim)" class="mono" x="952" y="612" font-size="10" letter-spacing="2" text-anchor="end">DASHED LINES — DATA IN MOTION</text>
+  <text fill="var(--dim)" class="mono" x="952" y="612" font-size="12" letter-spacing="2" text-anchor="end">DASHED LINES — DATA IN MOTION</text>
 </svg>
 `;
 }

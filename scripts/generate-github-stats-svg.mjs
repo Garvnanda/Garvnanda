@@ -95,7 +95,7 @@ const [pullRequests, issues, contributionsYear, publicRepos] = await Promise.all
 const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function statRow(y, label, value) {
-  return `<text x="52" y="${y}" font-size="11" letter-spacing="1">${esc(label)}</text><text x="436" y="${y}" font-size="13" text-anchor="end">${value}</text>`;
+  return `<text x="52" y="${y}" font-size="13" letter-spacing="1">${esc(label)}</text><text x="436" y="${y}" font-size="15" text-anchor="end">${value}</text>`;
 }
 
 function langRow(i, name, count) {
@@ -103,7 +103,7 @@ function langRow(i, name, count) {
   const textY = 105 + i * 36;
   const width = Math.max(2, Math.round((count / maxLang) * 270));
   const delay = i === 0 ? "" : ` g${i + 1}`;
-  return `<text x="548" y="${textY}" font-size="10">${esc(name.toUpperCase())}</text><rect class="bar" x="660" y="${y}" width="270" height="12"/><rect class="fill grow${delay}" x="660" y="${y}" width="${width}" height="12"/>`;
+  return `<text x="548" y="${textY}" font-size="12">${esc(name.toUpperCase())}</text><rect class="bar" x="660" y="${y}" width="270" height="12"/><rect class="fill grow${delay}" x="660" y="${y}" width="${width}" height="12"/>`;
 }
 
 function buildSvg(ink) {
@@ -123,7 +123,7 @@ function buildSvg(ink) {
   <rect class="panel" x="520" y="20" width="456" height="270" rx="2"/>
 
   <g class="mono">
-    <text x="52" y="58" font-size="15" font-weight="700" letter-spacing="2">GITHUB STATS</text>
+    <text x="52" y="58" font-size="17" font-weight="700" letter-spacing="2">GITHUB STATS</text>
     <line class="rule" x1="52" y1="72" x2="452" y2="72"/>
     ${statRow(110, "TOTAL STARS", stars)}
     ${statRow(146, `${YEAR} CONTRIBUTIONS`, contributionsYear)}
@@ -131,7 +131,7 @@ function buildSvg(ink) {
     ${statRow(218, "TOTAL ISSUES", issues)}
     ${statRow(254, "PUBLIC REPOSITORIES", publicRepos)}
 
-    <text x="548" y="58" font-size="15" font-weight="700" letter-spacing="2">LANGUAGES BY REPOSITORY</text>
+    <text x="548" y="58" font-size="17" font-weight="700" letter-spacing="2">LANGUAGES BY REPOSITORY</text>
     <line class="rule" x1="548" y1="72" x2="948" y2="72"/>
     ${langRows}
   </g>

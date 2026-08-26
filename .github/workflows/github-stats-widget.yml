@@ -28,8 +28,10 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate github-stats.svg
-        run: node scripts/generate-github-stats-svg.mjs
+      - name: Generate github-stats.svg and activity.svg
+        run: |
+          node scripts/generate-github-stats-svg.mjs
+          node scripts/generate-activity-svg.mjs
         env:
           GH_USERNAME: Garvnanda
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -38,13 +40,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git add assets/github-stats.svg assets/dark/github-stats.svg
+          git add assets/github-stats.svg assets/dark/github-stats.svg assets/activity.svg assets/dark/activity.svg
           git diff --cached --quiet && exit 0
           # Bot on purpose: GitHub does not count github-actions[bot] toward the
           # contribution graph, and these ~16 commits a day are automation, not work.
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: refresh github stats widget"
+          git commit -m "chore: refresh github stats and activity widgets"
           for i in $(seq 1 10); do
             if git pull --rebase origin main && git push; then
               exit 0
