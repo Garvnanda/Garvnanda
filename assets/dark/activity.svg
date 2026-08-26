@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last 31 days">
+  <style>
+    :root { --ink:#FFFFFF; }
+    .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
+    .panel,.rule { fill:none; stroke:var(--ink); stroke-width:1; }
+    .grid { stroke:var(--ink); stroke-width:1; opacity:.22; stroke-dasharray:2 4; }
+    .area { fill:var(--ink); opacity:.12; }
+    .line { fill:none; stroke:var(--ink); stroke-width:2; stroke-linejoin:round; stroke-linecap:round; }
+    .dot { fill:var(--ink); }
+    .sweep { animation:sweep 1.2s cubic-bezier(.4,0,.2,1) forwards; }
+    @keyframes sweep { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
+    @media (prefers-reduced-motion:reduce) { .sweep { animation:none; } }
+  </style>
+  <rect class="panel" x="24" y="20" width="952" height="260" rx="2"/>
+
+  <g class="mono">
+    <text x="52" y="58" font-size="15" font-weight="700" letter-spacing="2">CONTRIBUTION TELEMETRY</text>
+    <text x="948" y="58" font-size="10" letter-spacing="2" text-anchor="end" opacity=".75">LAST 31 DAYS</text>
+    <line class="rule" x1="52" y1="72" x2="948" y2="72"/>
+
+    <line class="grid" x1="64" y1="100" x2="948" y2="100"/>
+    <line class="grid" x1="64" y1="164" x2="948" y2="164"/>
+    <line class="rule" x1="64" y1="228" x2="948" y2="228"/>
+
+    <text x="56" y="104" font-size="9.5" text-anchor="end" opacity=".75">63</text>
+    <text x="56" y="232" font-size="9.5" text-anchor="end" opacity=".75">0</text>
+
+    <g class="sweep">
+      <path class="area" d="M64.0,209.7 L93.5,195.5 L122.9,187.4 L152.4,100.0 L181.9,203.6 L211.3,126.4 L240.8,197.5 L270.3,199.6 L299.7,191.4 L329.2,191.4 L358.7,199.6 L388.1,185.3 L417.6,223.9 L447.1,221.9 L476.5,219.9 L506.0,219.9 L535.5,209.7 L564.9,226.0 L594.4,228.0 L623.9,223.9 L653.3,228.0 L682.8,221.9 L712.3,226.0 L741.7,223.9 L771.2,223.9 L800.7,219.9 L830.1,191.4 L859.6,213.8 L889.1,219.9 L918.5,219.9 L948.0,226.0 L948,228 L64,228 Z"/>
+      <path class="line" d="M64.0,209.7 L93.5,195.5 L122.9,187.4 L152.4,100.0 L181.9,203.6 L211.3,126.4 L240.8,197.5 L270.3,199.6 L299.7,191.4 L329.2,191.4 L358.7,199.6 L388.1,185.3 L417.6,223.9 L447.1,221.9 L476.5,219.9 L506.0,219.9 L535.5,209.7 L564.9,226.0 L594.4,228.0 L623.9,223.9 L653.3,228.0 L682.8,221.9 L712.3,226.0 L741.7,223.9 L771.2,223.9 L800.7,219.9 L830.1,191.4 L859.6,213.8 L889.1,219.9 L918.5,219.9 L948.0,226.0"/>
+      <g class="dot"><circle cx="64.0" cy="209.7" r="2"/><circle cx="93.5" cy="195.5" r="2"/><circle cx="122.9" cy="187.4" r="2"/><circle cx="152.4" cy="100.0" r="2"/><circle cx="181.9" cy="203.6" r="2"/><circle cx="211.3" cy="126.4" r="2"/><circle cx="240.8" cy="197.5" r="2"/><circle cx="270.3" cy="199.6" r="2"/><circle cx="299.7" cy="191.4" r="2"/><circle cx="329.2" cy="191.4" r="2"/><circle cx="358.7" cy="199.6" r="2"/><circle cx="388.1" cy="185.3" r="2"/><circle cx="417.6" cy="223.9" r="2"/><circle cx="447.1" cy="221.9" r="2"/><circle cx="476.5" cy="219.9" r="2"/><circle cx="506.0" cy="219.9" r="2"/><circle cx="535.5" cy="209.7" r="2"/><circle cx="564.9" cy="226.0" r="2"/><circle cx="594.4" cy="228.0" r="2"/><circle cx="623.9" cy="223.9" r="2"/><circle cx="653.3" cy="228.0" r="2"/><circle cx="682.8" cy="221.9" r="2"/><circle cx="712.3" cy="226.0" r="2"/><circle cx="741.7" cy="223.9" r="2"/><circle cx="771.2" cy="223.9" r="2"/><circle cx="800.7" cy="219.9" r="2"/><circle cx="830.1" cy="191.4" r="2"/><circle cx="859.6" cy="213.8" r="2"/><circle cx="889.1" cy="219.9" r="2"/><circle cx="918.5" cy="219.9" r="2"/><circle cx="948.0" cy="226.0" r="2"/></g>
+    </g>
+
+    <text x="64.0" y="248" font-size="9.5" letter-spacing="1" text-anchor="start" opacity=".75">JUL 27</text>
+    <text x="506.0" y="248" font-size="9.5" letter-spacing="1" text-anchor="middle" opacity=".75">AUG 11</text>
+    <text x="948.0" y="248" font-size="9.5" letter-spacing="1" text-anchor="end" opacity=".75">AUG 26</text>
+
+    <text x="52" y="270" font-size="10" letter-spacing="1.5" opacity=".75">31 DAYS &#183; 341 CONTRIBUTIONS &#183; PEAK 63 ON JUL 30 &#183; AVG 11.0/DAY</text>
+  </g>
+</svg>
