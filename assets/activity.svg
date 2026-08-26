@@ -1,54 +1,46 @@
-<svg viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last 31 days">
+<svg viewBox="0 0 760 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last 31 days">
   <style>
     :root { --ink:#000000; }
     .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
-    .title { font-size:26px; font-weight:700; letter-spacing:4px; }
+    .title { font-size:13px; font-weight:700; letter-spacing:2px; }
     .axis { opacity:.6; }
+    .rule { stroke:var(--ink); stroke-width:1; }
     .grid { stroke:var(--ink); stroke-width:1; opacity:.16; }
-    .base { stroke:var(--ink); stroke-width:1; opacity:.45; }
-    .area { fill:var(--ink); opacity:.18; }
-    .line { fill:none; stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round; }
-    .dot { fill:var(--ink); }
-    .sweep { animation:sweep 1.4s cubic-bezier(.4,0,.2,1) forwards; }
+    .area { fill:var(--ink); opacity:.12; }
+    .line { fill:none; stroke:var(--ink); stroke-width:1.5; stroke-linejoin:round; }
+    .sweep { animation:sweep 1.2s cubic-bezier(.4,0,.2,1) forwards; }
     @keyframes sweep { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { .sweep { animation:none; } }
   </style>
 
   <g class="mono">
-    <text class="title" x="500" y="52" text-anchor="middle">CONTRIBUTION TELEMETRY</text>
+    <text class="title" x="40" y="24">CONTRIBUTION TELEMETRY</text>
+    <line class="rule" x1="40" y1="40" x2="740" y2="40"/>
 
     <g class="axis">
-      <line class="grid" x1="80" y1="300.0" x2="960" y2="300.0"/><text class="axis" x="64" y="304.0" font-size="11" text-anchor="end">0</text>
-      <line class="grid" x1="80" y1="249.0" x2="960" y2="249.0"/><text class="axis" x="64" y="253.0" font-size="11" text-anchor="end">16</text>
-      <line class="grid" x1="80" y1="198.0" x2="960" y2="198.0"/><text class="axis" x="64" y="202.0" font-size="11" text-anchor="end">32</text>
-      <line class="grid" x1="80" y1="147.0" x2="960" y2="147.0"/><text class="axis" x="64" y="151.0" font-size="11" text-anchor="end">48</text>
-      <line class="grid" x1="80" y1="96.0" x2="960" y2="96.0"/><text class="axis" x="64" y="100.0" font-size="11" text-anchor="end">64</text>
+      <line class="grid" x1="40" y1="210.0" x2="740" y2="210.0"/><text class="axis" x="32" y="213.0" font-size="8" text-anchor="end">0</text>
+    <line class="grid" x1="40" y1="167.5" x2="740" y2="167.5"/><text class="axis" x="32" y="170.5" font-size="8" text-anchor="end">16</text>
+    <line class="grid" x1="40" y1="125.0" x2="740" y2="125.0"/><text class="axis" x="32" y="128.0" font-size="8" text-anchor="end">32</text>
+    <line class="grid" x1="40" y1="82.5" x2="740" y2="82.5"/><text class="axis" x="32" y="85.5" font-size="8" text-anchor="end">47</text>
+    <line class="grid" x1="40" y1="40.0" x2="740" y2="40.0"/><text class="axis" x="32" y="43.0" font-size="8" text-anchor="end">63</text>
     </g>
-    <line class="base" x1="80" y1="300" x2="960" y2="300"/>
 
     <g class="sweep">
-      <path class="area" d="M80.0,271.3 C84.9,267.6 99.6,254.8 109.3,249.0 C119.1,243.2 128.9,261.2 138.7,236.3 C148.4,211.3 158.2,94.9 168.0,99.2 C177.8,103.4 187.6,254.8 197.3,261.8 C207.1,268.7 216.9,142.2 226.7,140.6 C236.4,139.0 246.2,233.1 256.0,252.2 C265.8,271.3 275.6,257.0 285.3,255.4 C295.1,253.8 304.9,244.8 314.7,242.6 C324.4,240.5 334.2,240.5 344.0,242.6 C353.8,244.8 363.6,257.0 373.3,255.4 C383.1,253.8 392.9,226.7 402.7,233.1 C412.4,239.4 422.2,284.1 432.0,293.6 C441.8,303.2 451.6,291.5 461.3,290.4 C471.1,289.4 480.9,287.8 490.7,287.3 C500.4,286.7 510.2,289.9 520.0,287.3 C529.8,284.6 539.6,269.7 549.3,271.3 C559.1,272.9 568.9,292.0 578.7,296.8 C588.4,301.6 598.2,300.5 608.0,300.0 C617.8,299.5 627.6,293.6 637.3,293.6 C647.1,293.6 656.9,300.5 666.7,300.0 C676.4,299.5 686.2,291.0 696.0,290.4 C705.8,289.9 715.6,296.3 725.3,296.8 C735.1,297.3 744.9,294.2 754.7,293.6 C764.4,293.1 774.2,294.7 784.0,293.6 C793.8,292.6 803.6,295.8 813.3,287.3 C823.1,278.8 832.9,244.2 842.7,242.6 C852.4,241.0 862.2,270.3 872.0,277.7 C881.8,285.1 891.6,285.7 901.3,287.3 C911.1,288.8 920.9,285.7 930.7,287.3 C940.4,288.8 955.1,295.2 960.0,296.8 L960,300 L80,300 Z"/>
-      <path class="line" d="M80.0,271.3 C84.9,267.6 99.6,254.8 109.3,249.0 C119.1,243.2 128.9,261.2 138.7,236.3 C148.4,211.3 158.2,94.9 168.0,99.2 C177.8,103.4 187.6,254.8 197.3,261.8 C207.1,268.7 216.9,142.2 226.7,140.6 C236.4,139.0 246.2,233.1 256.0,252.2 C265.8,271.3 275.6,257.0 285.3,255.4 C295.1,253.8 304.9,244.8 314.7,242.6 C324.4,240.5 334.2,240.5 344.0,242.6 C353.8,244.8 363.6,257.0 373.3,255.4 C383.1,253.8 392.9,226.7 402.7,233.1 C412.4,239.4 422.2,284.1 432.0,293.6 C441.8,303.2 451.6,291.5 461.3,290.4 C471.1,289.4 480.9,287.8 490.7,287.3 C500.4,286.7 510.2,289.9 520.0,287.3 C529.8,284.6 539.6,269.7 549.3,271.3 C559.1,272.9 568.9,292.0 578.7,296.8 C588.4,301.6 598.2,300.5 608.0,300.0 C617.8,299.5 627.6,293.6 637.3,293.6 C647.1,293.6 656.9,300.5 666.7,300.0 C676.4,299.5 686.2,291.0 696.0,290.4 C705.8,289.9 715.6,296.3 725.3,296.8 C735.1,297.3 744.9,294.2 754.7,293.6 C764.4,293.1 774.2,294.7 784.0,293.6 C793.8,292.6 803.6,295.8 813.3,287.3 C823.1,278.8 832.9,244.2 842.7,242.6 C852.4,241.0 862.2,270.3 872.0,277.7 C881.8,285.1 891.6,285.7 901.3,287.3 C911.1,288.8 920.9,285.7 930.7,287.3 C940.4,288.8 955.1,295.2 960.0,296.8"/>
-      <g class="dot"><circle cx="80.0" cy="271.3" r="3"/><circle cx="109.3" cy="249.0" r="3"/><circle cx="138.7" cy="236.3" r="3"/><circle cx="168.0" cy="99.2" r="3"/><circle cx="197.3" cy="261.8" r="3"/><circle cx="226.7" cy="140.6" r="3"/><circle cx="256.0" cy="252.2" r="3"/><circle cx="285.3" cy="255.4" r="3"/><circle cx="314.7" cy="242.6" r="3"/><circle cx="344.0" cy="242.6" r="3"/><circle cx="373.3" cy="255.4" r="3"/><circle cx="402.7" cy="233.1" r="3"/><circle cx="432.0" cy="293.6" r="3"/><circle cx="461.3" cy="290.4" r="3"/><circle cx="490.7" cy="287.3" r="3"/><circle cx="520.0" cy="287.3" r="3"/><circle cx="549.3" cy="271.3" r="3"/><circle cx="578.7" cy="296.8" r="3"/><circle cx="608.0" cy="300.0" r="3"/><circle cx="637.3" cy="293.6" r="3"/><circle cx="666.7" cy="300.0" r="3"/><circle cx="696.0" cy="290.4" r="3"/><circle cx="725.3" cy="296.8" r="3"/><circle cx="754.7" cy="293.6" r="3"/><circle cx="784.0" cy="293.6" r="3"/><circle cx="813.3" cy="287.3" r="3"/><circle cx="842.7" cy="242.6" r="3"/><circle cx="872.0" cy="277.7" r="3"/><circle cx="901.3" cy="287.3" r="3"/><circle cx="930.7" cy="287.3" r="3"/><circle cx="960.0" cy="296.8" r="3"/></g>
+      <path class="area" d="M40.0,185.7 L63.3,166.8 L86.7,156.0 L110.0,40.0 L133.3,177.6 L156.7,75.1 L180.0,169.5 L203.3,172.2 L226.7,161.4 L250.0,161.4 L273.3,172.2 L296.7,153.3 L320.0,204.6 L343.3,201.9 L366.7,199.2 L390.0,199.2 L413.3,185.7 L436.7,207.3 L460.0,210.0 L483.3,204.6 L506.7,210.0 L530.0,201.9 L553.3,207.3 L576.7,204.6 L600.0,204.6 L623.3,199.2 L646.7,161.4 L670.0,191.1 L693.3,199.2 L716.7,199.2 L740.0,207.3 L740,210 L40,210 Z"/>
+      <path class="line" d="M40.0,185.7 L63.3,166.8 L86.7,156.0 L110.0,40.0 L133.3,177.6 L156.7,75.1 L180.0,169.5 L203.3,172.2 L226.7,161.4 L250.0,161.4 L273.3,172.2 L296.7,153.3 L320.0,204.6 L343.3,201.9 L366.7,199.2 L390.0,199.2 L413.3,185.7 L436.7,207.3 L460.0,210.0 L483.3,204.6 L506.7,210.0 L530.0,201.9 L553.3,207.3 L576.7,204.6 L600.0,204.6 L623.3,199.2 L646.7,161.4 L670.0,191.1 L693.3,199.2 L716.7,199.2 L740.0,207.3"/>
     </g>
 
     <g class="axis">
-      <text x="80.0" y="322" font-size="10" text-anchor="end" transform="rotate(-45 80.0 322)">JUL 27</text>
-      <text x="138.7" y="322" font-size="10" text-anchor="end" transform="rotate(-45 138.7 322)">JUL 29</text>
-      <text x="197.3" y="322" font-size="10" text-anchor="end" transform="rotate(-45 197.3 322)">JUL 31</text>
-      <text x="256.0" y="322" font-size="10" text-anchor="end" transform="rotate(-45 256.0 322)">AUG 2</text>
-      <text x="314.7" y="322" font-size="10" text-anchor="end" transform="rotate(-45 314.7 322)">AUG 4</text>
-      <text x="373.3" y="322" font-size="10" text-anchor="end" transform="rotate(-45 373.3 322)">AUG 6</text>
-      <text x="432.0" y="322" font-size="10" text-anchor="end" transform="rotate(-45 432.0 322)">AUG 8</text>
-      <text x="490.7" y="322" font-size="10" text-anchor="end" transform="rotate(-45 490.7 322)">AUG 10</text>
-      <text x="549.3" y="322" font-size="10" text-anchor="end" transform="rotate(-45 549.3 322)">AUG 12</text>
-      <text x="608.0" y="322" font-size="10" text-anchor="end" transform="rotate(-45 608.0 322)">AUG 14</text>
-      <text x="666.7" y="322" font-size="10" text-anchor="end" transform="rotate(-45 666.7 322)">AUG 16</text>
-      <text x="725.3" y="322" font-size="10" text-anchor="end" transform="rotate(-45 725.3 322)">AUG 18</text>
-      <text x="784.0" y="322" font-size="10" text-anchor="end" transform="rotate(-45 784.0 322)">AUG 20</text>
-      <text x="842.7" y="322" font-size="10" text-anchor="end" transform="rotate(-45 842.7 322)">AUG 22</text>
-      <text x="901.3" y="322" font-size="10" text-anchor="end" transform="rotate(-45 901.3 322)">AUG 24</text>
-      <text x="960.0" y="322" font-size="10" text-anchor="end" transform="rotate(-45 960.0 322)">AUG 26</text>
+      <text x="40.0" y="222" font-size="8" text-anchor="middle">27</text>
+    <text x="110.0" y="222" font-size="8" text-anchor="middle">30</text>
+    <text x="203.3" y="222" font-size="8" text-anchor="middle">3</text>
+    <text x="273.3" y="222" font-size="8" text-anchor="middle">6</text>
+    <text x="343.3" y="222" font-size="8" text-anchor="middle">9</text>
+    <text x="436.7" y="222" font-size="8" text-anchor="middle">13</text>
+    <text x="506.7" y="222" font-size="8" text-anchor="middle">16</text>
+    <text x="576.7" y="222" font-size="8" text-anchor="middle">19</text>
+    <text x="670.0" y="222" font-size="8" text-anchor="middle">23</text>
+    <text x="740.0" y="222" font-size="8" text-anchor="middle">26</text>
     </g>
   </g>
 </svg>

@@ -1,12 +1,13 @@
-// Regenerates assets/activity.svg — the last 31 days of contributions as a smooth
-// area chart.
+// Regenerates assets/activity.svg — the last 31 days of contributions as a line +
+// area chart with dated gridlines, in the same layout (proportions, axes, line style)
+// as haragam22/haragam22's contribution-telemetry.svg, restyled to this profile's
+// ink-only black/white theme instead of that panel's fixed dark colors.
 //
-// This is a local redraw of what github-readme-activity-graph.vercel.app used to
-// serve. That deployment answers 402 DEPLOYMENT_DISABLED for every URL including its
-// own root, so the README embed rendered as a broken image and no alternative host of
-// the project is still up. The layout here follows the settings the old embed asked
-// for — transparent background, no border, filled area, custom title — so the panel
-// reads the way it did before, without a third party who can switch it off.
+// This replaced github-readme-activity-graph.vercel.app, which the README used to
+// embed. That deployment now answers 402 DEPLOYMENT_DISABLED for every URL including
+// its own root — permanently gone, along with its two earlier free-tier mirrors — so
+// the panel is drawn locally instead of depending on a host someone else can switch
+// off.
 //
 // Source is contributionsCollection, the same query the GitHub Stats widget uses and
 // the same one GitHub's own contribution graph is drawn from, so the panels agree.
@@ -63,89 +64,61 @@ if (!days.length) throw new Error("contribution calendar came back empty");
 const counts = days.map((d) => d.contributionCount);
 const peak = Math.max(...counts);
 
-// Chart box inside a 1000x400 canvas. A flat-zero month would divide by zero, so the
-// scale floors at 1, and it rounds up to a whole number of gridline steps.
-const L = 80, R = 960, TOP = 96, BOT = 300;
+// 760x240 canvas, chart box at x=40..740 / y=40..210 — same proportions as the
+// reference panel, so the axes, tick density and line weight read the same way.
+const L = 40, R = 740, TOP = 40, BOT = 210;
 const STEPS = 4;
-const scale = Math.max(STEPS, Math.ceil(Math.max(1, peak) / STEPS) * STEPS);
+const scale = Math.max(1, peak);
 const px = (i) => L + (i * (R - L)) / Math.max(1, days.length - 1);
 const py = (v) => BOT - (v / scale) * (BOT - TOP);
 const pts = counts.map((v, i) => [px(i), py(v)]);
 
-// Catmull-Rom through every point, converted to cubic Beziers — the old graph drew a
-// curve rather than straight segments, and with 31 daily points the difference is what
-// makes it read as a trend instead of a sawtooth.
-function smoothPath(p) {
-  if (p.length < 2) return `M${p[0][0]},${p[0][1]}`;
-  let d = `M${p[0][0].toFixed(1)},${p[0][1].toFixed(1)}`;
-  for (let i = 0; i < p.length - 1; i++) {
-    const p0 = p[i - 1] || p[i];
-    const p1 = p[i];
-    const p2 = p[i + 1];
-    const p3 = p[i + 2] || p2;
-    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
-    const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
-    d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
-  }
-  return d;
-}
-
-const line = smoothPath(pts);
+const line = pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`).join(" ");
 const area = `${line} L${R},${BOT} L${L},${BOT} Z`;
-const dots = pts.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`).join("");
 
-const MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-const label = (iso) => {
-  const d = new Date(`${iso}T00:00:00Z`);
-  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
-};
-
-// Every other day, angled, the way the original laid its dates out. All 31 upright
-// would collide at this width.
-const xLabels = days
-  .map((d, i) => (i % 2 === 0 || i === days.length - 1 ? { d, i } : null))
-  .filter(Boolean)
-  .map(({ d, i }) => {
-    const x = px(i).toFixed(1);
-    return `<text x="${x}" y="322" font-size="10" text-anchor="end" transform="rotate(-45 ${x} 322)">${label(d.date)}</text>`;
-  })
-  .join("\n      ");
+// Ten evenly spaced ticks (first and last always included), showing the bare
+// day-of-month the way the reference panel does — no month name, since a 31-day
+// window only ever touches at most two months and the crossover is obvious from the
+// numbers wrapping past the end of the month.
+const TICKS = 10;
+const tickIdx = Array.from({ length: TICKS }, (_, i) => Math.round((i * (days.length - 1)) / (TICKS - 1)));
+const xLabels = [...new Set(tickIdx)]
+  .map((i) => `<text x="${px(i).toFixed(1)}" y="222" font-size="8" text-anchor="middle">${Number(days[i].date.slice(-2))}</text>`)
+  .join("\n    ");
 
 const grid = Array.from({ length: STEPS + 1 }, (_, i) => {
-  const v = (scale / STEPS) * i;
-  const y = py(v).toFixed(1);
-  return `<line class="grid" x1="${L}" y1="${y}" x2="${R}" y2="${y}"/><text class="axis" x="${L - 16}" y="${(Number(y) + 4).toFixed(1)}" font-size="11" text-anchor="end">${v}</text>`;
-}).join("\n      ");
+  const v = Math.round((scale / STEPS) * i);
+  const y = py((scale / STEPS) * i).toFixed(1);
+  return `<line class="grid" x1="${L}" y1="${y}" x2="${R}" y2="${y}"/><text class="axis" x="${L - 8}" y="${(Number(y) + 3).toFixed(1)}" font-size="8" text-anchor="end">${v}</text>`;
+}).join("\n    ");
 
 function buildSvg(ink) {
-  return `<svg viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last ${days.length} days">
+  return `<svg viewBox="0 0 760 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Contribution activity over the last ${days.length} days">
   <style>
     :root { --ink:${ink}; }
     .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; fill:var(--ink); }
-    .title { font-size:26px; font-weight:700; letter-spacing:4px; }
+    .title { font-size:13px; font-weight:700; letter-spacing:2px; }
     .axis { opacity:.6; }
+    .rule { stroke:var(--ink); stroke-width:1; }
     .grid { stroke:var(--ink); stroke-width:1; opacity:.16; }
-    .base { stroke:var(--ink); stroke-width:1; opacity:.45; }
-    .area { fill:var(--ink); opacity:.18; }
-    .line { fill:none; stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round; }
-    .dot { fill:var(--ink); }
-    .sweep { animation:sweep 1.4s cubic-bezier(.4,0,.2,1) forwards; }
+    .area { fill:var(--ink); opacity:.12; }
+    .line { fill:none; stroke:var(--ink); stroke-width:1.5; stroke-linejoin:round; }
+    .sweep { animation:sweep 1.2s cubic-bezier(.4,0,.2,1) forwards; }
     @keyframes sweep { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
     @media (prefers-reduced-motion:reduce) { .sweep { animation:none; } }
   </style>
 
   <g class="mono">
-    <text class="title" x="500" y="52" text-anchor="middle">${TITLE}</text>
+    <text class="title" x="40" y="24">${TITLE}</text>
+    <line class="rule" x1="40" y1="40" x2="740" y2="40"/>
 
     <g class="axis">
       ${grid}
     </g>
-    <line class="base" x1="${L}" y1="${BOT}" x2="${R}" y2="${BOT}"/>
 
     <g class="sweep">
       <path class="area" d="${area}"/>
       <path class="line" d="${line}"/>
-      <g class="dot">${dots}</g>
     </g>
 
     <g class="axis">
