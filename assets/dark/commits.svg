@@ -1,5 +1,5 @@
 <svg viewBox="0 0 760 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recent commits">
-  <!-- heartbeat: 2026-08-06 -->
+  <!-- heartbeat: 2026-08-26 -->
   <style>
     :root { --win: #0D1117; --bar: #161B22; --bone: #FFFFFF; --dim: #FFFFFF; --accent: #FFFFFF; --rule: #FFFFFF; }
     .mono { font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
@@ -18,10 +18,10 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #17 from Garvnanda/readme-v2</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: attribute automated widget commits to Garvnanda</tspan></text>
-  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #16 from Garvnanda/readme-v2</tspan></text>
-  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge branch 'readme-v2' of https://github.com/garvn</tspan></text>
-  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #15 from Garvnanda/readme-v2</tspan></text>
-  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge branch 'main' into readme-v2</tspan></text>
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">updateddd</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">updatedd</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fix: draw the contribution activity panel here inste</tspan></text>
+  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #22 from Garvnanda/readme-v2</tspan></text>
+  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">galla-sathi</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">fixed bugs</tspan></text>
+  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">Garvnanda</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #21 from Garvnanda/readme-v2</tspan></text>
 </svg>
