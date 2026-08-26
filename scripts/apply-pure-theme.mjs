@@ -6,6 +6,9 @@
 // Both files keep the original animated markup; only the trailing :root
 // override (appended last, so it wins over the earlier default/media rules
 // by source order) changes per variant.
+//
+// Re-running is safe: an override left by a previous run is stripped before
+// the new one goes in, so the rule never stacks up.
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -14,19 +17,27 @@ const ASSETS = join(dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za
 
 const FILES = [
   "header-v1.svg",
-  "s01.svg",
-  "s02.svg",
+  "divider.svg",
+  "s01-whoami.svg",
+  "s02-stack.svg",
   "s03-ttt.svg",
-  "s03.svg",
-  "s04.svg",
-  "s05.svg",
-  "s06.svg",
-  "s07-tree.svg",
+  "s04-experience.svg",
+  "s05-education.svg",
+  "s06-projects.svg",
+  "s07-achievements.svg",
+  "s08-certifications.svg",
+  "s09-telemetry.svg",
+  "s10-commits.svg",
+  "s11-tree.svg",
+  "s12-chess.svg",
   "whoami.svg",
   "stack.svg",
+  "experience.svg",
+  "education.svg",
   "projects.svg",
+  "achievements.svg",
+  "certifications.svg",
   "footer.svg",
-  "divider.svg",
 ];
 
 const LIGHT = { bone: "#000000", ink: "#000000", muted: "#000000", dim: "#000000", rule: "#000000", accent: "#000000", ghost: "#000000", panel: "#FFFFFF", win: "#FFFFFF", bar: "#F0F0F0", "node-bg": "#FFFFFF", "core-bg": "#FFFFFF" };
@@ -37,9 +48,16 @@ function buildOverride(varNames, map) {
   return `    :root { ${decls.join(" ")} }`;
 }
 
+// Drop the flat `:root { --x: #hex; ... }` line a previous run parked just
+// before </style>. The authored rules are indented blocks or live inside a
+// media query, so they never match this shape.
+function stripPreviousOverride(src) {
+  return src.replace(/\n[ \t]*:root \{(?: --[\w-]+: #[0-9A-Fa-f]{6};)+ \}\n([ \t]*)<\/style>/, "\n$1</style>");
+}
+
 for (const file of FILES) {
   const path = join(ASSETS, file);
-  const src = readFileSync(path, "utf8");
+  const src = stripPreviousOverride(readFileSync(path, "utf8"));
 
   const rootMatch = src.match(/:root\s*\{([^}]*)\}/);
   if (!rootMatch) {

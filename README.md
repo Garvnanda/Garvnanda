@@ -4,7 +4,7 @@
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/s01.svg" alt="01 — whoami"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01-whoami.svg"/><img src="assets/s01-whoami.svg" alt="01 — whoami"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/whoami.svg"/><img src="assets/whoami.svg" alt="About Garv"/></picture>
 
 <div align="center">
@@ -13,15 +13,15 @@
 
 <br/>
 
-<a href="https://drive.google.com/file/d/1Z_oiTt0xa8733B-JupRAk3ohW_P-XQIx/view?usp=sharing"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/RESUME-0d1117?style=flat-square&logo=adobeacrobatreader&logoColor=ffffff"/><img src="https://img.shields.io/badge/RESUME-ffffff?style=flat-square&logo=adobeacrobatreader&logoColor=000000&color=ffffff" alt="Resume"/></picture></a>
-<a href="https://www.linkedin.com/in/garv-nanda-4106b6336"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000&color=ffffff" alt="LinkedIn"/></picture></a>
-<a href="https://www.instagram.com/garvnandaa/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/INSTAGRAM-0d1117?style=flat-square&logo=instagram&logoColor=ffffff"/><img src="https://img.shields.io/badge/INSTAGRAM-ffffff?style=flat-square&logo=instagram&logoColor=000000&color=ffffff" alt="Instagram"/></picture></a>
-<a href="mailto:garvnanda326@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/EMAIL-0d1117?style=flat-square&logo=gmail&logoColor=ffffff"/><img src="https://img.shields.io/badge/EMAIL-ffffff?style=flat-square&logo=gmail&logoColor=000000&color=ffffff" alt="Email"/></picture></a>
-<a href="https://wa.me/919319148946"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/WHATSAPP-0d1117?style=flat-square&logo=whatsapp&logoColor=ffffff"/><img src="https://img.shields.io/badge/WHATSAPP-ffffff?style=flat-square&logo=whatsapp&logoColor=000000&color=ffffff" alt="WhatsApp"/></picture></a>
+<a href="https://drive.google.com/uc?export=download&id=1vyuDpQH3PtbbgRL570gAArXHOVNJyK7e"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/RESUME-0d1117?style=flat-square&logo=adobeacrobatreader&logoColor=ffffff"/><img src="https://img.shields.io/badge/RESUME-ffffff?style=flat-square&logo=adobeacrobatreader&logoColor=000000&color=ffffff" alt="RESUME"/></picture></a>
+<a href="https://www.linkedin.com/in/garv-nanda-4106b6336"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LINKEDIN-0d1117?style=flat-square&logo=linkedin&logoColor=ffffff"/><img src="https://img.shields.io/badge/LINKEDIN-ffffff?style=flat-square&logo=linkedin&logoColor=000000&color=ffffff" alt="LINKEDIN"/></picture></a>
+<a href="https://www.instagram.com/garvnandaa/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/INSTAGRAM-0d1117?style=flat-square&logo=instagram&logoColor=ffffff"/><img src="https://img.shields.io/badge/INSTAGRAM-ffffff?style=flat-square&logo=instagram&logoColor=000000&color=ffffff" alt="INSTAGRAM"/></picture></a>
+<a href="mailto:garvnanda326@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/EMAIL-0d1117?style=flat-square&logo=gmail&logoColor=ffffff"/><img src="https://img.shields.io/badge/EMAIL-ffffff?style=flat-square&logo=gmail&logoColor=000000&color=ffffff" alt="EMAIL"/></picture></a>
+<a href="https://wa.me/919319148946"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/WHATSAPP-0d1117?style=flat-square&logo=whatsapp&logoColor=ffffff"/><img src="https://img.shields.io/badge/WHATSAPP-ffffff?style=flat-square&logo=whatsapp&logoColor=000000&color=ffffff" alt="WHATSAPP"/></picture></a>
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/s02.svg" alt="02 — stack"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02-stack.svg"/><img src="assets/s02-stack.svg" alt="02 — stack"/></picture>
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/stack.svg"/><img src="assets/stack.svg" alt="Technical stack"/></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03-ttt.svg"/><img src="assets/s03-ttt.svg" alt="03 — tic-tac-toe"/></picture>
@@ -36,22 +36,61 @@
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/s03.svg" alt="04 — projects"/></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="6 projects"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04-experience.svg"/><img src="assets/s04-experience.svg" alt="04 — experience"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/experience.svg"/><img src="assets/experience.svg" alt="Experience — SSPL DRDO, Enterminal Market"/></picture>
 
 <div align="center">
 
-<a href="https://github.com/Garvnanda/devlens"><img src="https://img.shields.io/badge/DEVLENS-AI%20Onboarding%20Tool-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DevLens"/></a>
-<a href="https://github.com/Garvnanda/DATATHON-2026"><img src="https://img.shields.io/badge/DATATHON--2026-Crime%20QA%20AI-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DATATHON-2026"/></a>
-<a href="https://github.com/Garvnanda/galla-sathi"><img src="https://img.shields.io/badge/GALLA--SAATHI-Voice%20AI%20Copilot-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="Galla-Saathi"/></a>
-<br/><br/>
-<a href="https://github.com/Garvnanda/debatemind"><img src="https://img.shields.io/badge/DEBATEMIND-Multi--Agent%20RL-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DebateMind"/></a>
-<a href="https://github.com/Garvnanda/SANN"><img src="https://img.shields.io/badge/SANN-Self--Auditing%20NN-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="SANN"/></a>
-<a href="https://github.com/Garvnanda/CREATOR_X"><img src="https://img.shields.io/badge/CREATOR__X-SocialFi%20Web3-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="CREATOR_X"/></a>
+<a href="https://drive.google.com/file/d/1PVzRoaMNZ1RE-ZVqbVvqtW7cynaX317w/view?usp=sharing"><img src="https://img.shields.io/badge/SSPL%2C%20DRDO-Internship%20Certificate-0d1117?style=for-the-badge&logo=googledrive&logoColor=white" alt="DRDO internship certificate"/></a>
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/><img src="assets/s04.svg" alt="05 — telemetry"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05-education.svg"/><img src="assets/s05-education.svg" alt="05 — education"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/education.svg"/><img src="assets/education.svg" alt="Education — B.Tech CSE, MAIT, CGPA 9.42"/></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06-projects.svg"/><img src="assets/s06-projects.svg" alt="06 — projects"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/projects.svg" alt="8 projects"/></picture>
+
+<div align="center">
+
+<a href="https://github.com/Garvnanda/automate-india"><img src="https://img.shields.io/badge/PROMOTIONGUARD-Agent%20Governance-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="PromotionGuard"/></a>
+<a href="https://github.com/Garvnanda/SANN"><img src="https://img.shields.io/badge/SANN-Self--Auditing%20NN-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="SANN"/></a>
+<a href="https://github.com/Garvnanda/ksp-crime-intelligence"><img src="https://img.shields.io/badge/KSP%20CRIME%20INTELLIGENCE-Crime%20QA%20AI-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="KSP Crime Intelligence"/></a>
+<br/><br/>
+<a href="https://github.com/Garvnanda/galla-sathi"><img src="https://img.shields.io/badge/GALLASAATHI-Voice%20AI%20Copilot-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GallaSaathi"/></a>
+<a href="https://github.com/Garvnanda/devlens"><img src="https://img.shields.io/badge/DEVLENS-AI%20Onboarding%20Navigator-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DevLens"/></a>
+<a href="https://github.com/Garvnanda/BUNDLEFLOW"><img src="https://img.shields.io/badge/BUNDLEFLOW-Gasless%20Web3%20Payments-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="BundleFlow"/></a>
+<br/><br/>
+<a href="https://github.com/Garvnanda/CREATOR_X"><img src="https://img.shields.io/badge/CREATOR__X-SocialFi%20Marketplace-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="CREATOR_X"/></a>
+<a href="https://github.com/Garvnanda/debatemind"><img src="https://img.shields.io/badge/DEBATEMIND-Multi--Agent%20RL-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="DebateMind"/></a>
+
+</div>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07-achievements.svg"/><img src="assets/s07-achievements.svg" alt="07 — achievements"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/achievements.svg"/><img src="assets/achievements.svg" alt="Achievements — VisionX runner-up, Ctrl+Alt+Vibe track winner"/></picture>
+
+<div align="center">
+
+<a href="https://github.com/Garvnanda/devlens"><img src="https://img.shields.io/badge/VISIONX%20HACKATHON-1st%20Runner--Up-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="VisionX Hackathon, 1st Runner-Up"/></a>
+<a href="https://github.com/Garvnanda/BUNDLEFLOW"><img src="https://img.shields.io/badge/CTRL%2BALT%2BVIBE-SmoothSend%20Track%20Winner-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="Ctrl+Alt+Vibe, SmoothSend Track Winner"/></a>
+
+</div>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s08-certifications.svg"/><img src="assets/s08-certifications.svg" alt="08 — certifications"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/certifications.svg"/><img src="assets/certifications.svg" alt="Certifications"/></picture>
+
+<div align="center">
+
+<a href="https://coursera.org/verify/specialization/6VWSMMHW0RAX"><img src="https://img.shields.io/badge/ML%20SPECIALIZATION-Verify-0d1117?style=for-the-badge&logo=coursera&logoColor=white" alt="Machine Learning Specialization, Coursera"/></a>
+<a href="https://drive.google.com/file/d/1puYsj4t9aTOvyWCowhuRxHka_rNAUGly/view?usp=sharing"><img src="https://img.shields.io/badge/KAGGLE-Intro%20to%20Machine%20Learning-0d1117?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Intro to Machine Learning"/></a>
+<a href="https://drive.google.com/file/d/1v_qd_oQNSLjeAcJAaEtRK_vTTQqaYdDJ/view?usp=sharing"><img src="https://img.shields.io/badge/TECHGYAN-Machine%20Learning-0d1117?style=for-the-badge&logo=googledrive&logoColor=white" alt="Techgyan Machine Learning"/></a>
+<br/><br/>
+<a href="https://drive.google.com/file/d/1T4u2ro0j0Dc0ACShhjbIyU7G3b-HAsaG/view?usp=sharing"><img src="https://img.shields.io/badge/KAGGLE-Intro%20to%20AI%20Ethics-0d1117?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Intro to AI Ethics"/></a>
+<a href="https://drive.google.com/file/d/16meWi96jCz_Nm0JMfS6HSMqhqj3OM0qE/view?usp=sharing"><img src="https://img.shields.io/badge/TECHGYAN-Django-0d1117?style=for-the-badge&logo=django&logoColor=white" alt="Techgyan Django"/></a>
+
+</div>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s09-telemetry.svg"/><img src="assets/s09-telemetry.svg" alt="09 — telemetry"/></picture>
 
 <p align="center">
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/telemetry.svg"/><img src="assets/telemetry.svg" alt="Live development telemetry" width="900"/></picture>
@@ -73,21 +112,21 @@
 
 </div>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s05.svg"/><img src="assets/s05.svg" alt="06 — recent commits"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s10-commits.svg"/><img src="assets/s10-commits.svg" alt="10 — recent commits"/></picture>
 
 <p align="center">
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/commits.svg"/><img src="assets/commits.svg" alt="Recent commits" width="760"/></picture>
 </p>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s07-tree.svg"/><img src="assets/s07-tree.svg" alt="07 — ecosystem tree"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s11-tree.svg"/><img src="assets/s11-tree.svg" alt="11 — ecosystem tree"/></picture>
 
 <p align="center">
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/tree.svg"/><img src="assets/tree.svg" alt="Live ecosystem tree" width="900"/></picture>
 </p>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/divider.svg"/><img src="assets/divider.svg" width="700" alt=""/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/divider.svg"/><img src="assets/divider.svg" alt="" width="700"/></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s06.svg"/><img src="assets/s06.svg" alt="08 — chess"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s12-chess.svg"/><img src="assets/s12-chess.svg" alt="12 — chess arena"/></picture>
 
 <div align="center">
 
@@ -118,7 +157,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/footer.svg"/><img src="assets/footer.svg" alt="Current status"/></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/divider.svg"/><img src="assets/divider.svg" width="700" alt=""/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/divider.svg"/><img src="assets/divider.svg" alt="" width="700"/></picture>
 
 <div align="center">
 

@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1000 334" width="1000" height="334" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Experience — SSPL DRDO, Enterminal Market">
+  <style>
+    :root { --ink:#222222; --panel:#F8F9FA; --rule:#E1E4E8; --muted:#888888; }
+    @media (prefers-color-scheme:dark) { :root { --ink:#DDDDDD; --panel:#161616; --rule:#333333; --muted:#777777; } }
+    .mono { font-family:ui-monospace,"SFMono-Regular","SF Mono",Menlo,Consolas,"Liberation Mono",monospace; }
+    .row { opacity:0; animation:reveal .5s ease forwards; }
+    @keyframes reveal { to { opacity:1; } }
+    .card { fill: var(--panel); stroke: var(--rule); stroke-width: 1.5; }
+    .org { fill:var(--ink); font-size:16px; font-weight:700; letter-spacing:.6px; }
+    .role { fill:var(--muted); font-size:10.5px; letter-spacing:2; }
+    .when { fill:var(--muted); font-size:10.5px; letter-spacing:1.5; }
+    .copy { fill:var(--ink); font-size:12px; opacity:.92; }
+    .r1{animation-delay:.05s}.r2{animation-delay:.15s}
+    @media (prefers-reduced-motion:reduce) { .row { animation:none; opacity:1; } }
+    :root { --ink: #FFFFFF; --panel: #0D1117; --rule: #FFFFFF; --muted: #FFFFFF; }
+  </style>
+
+  <g class="mono">
+    <g class="row r1" transform="translate(0 12)">
+      <rect class="card" x="48" y="8" width="904" height="182" rx="8"/>
+      <text class="org"  x="72"  y="36">SSPL, DRDO</text>
+      <text class="when" x="928" y="36" text-anchor="end">JUN 2026 &#8212; JUL 2026</text>
+      <text class="role" x="72"  y="56">AI &amp; ML INTERN</text>
+      <text class="copy" x="72" y="84">Benchmarked five denoising filters (15 configurations) and five enhancement techniques (21 configurations)</text>
+      <text class="copy" x="72" y="102">across 100 FLIR ADAS thermal images &#8212; establishing Tenengrad (not the standard Variance-of-Laplacian,</text>
+      <text class="copy" x="72" y="120">found unreliable on thermal data) as the project&#8217;s edge-quality metric, then selecting the optimal</text>
+      <text class="copy" x="72" y="138">two-stage classical pipeline (NLM &#8594; Unsharp Masking) feeding the team&#8217;s CNN enhancement model &#8212;</text>
+      <text class="copy" x="72" y="156">discovering a non-obvious ordering effect that improved SSIM by 7.4% and Tenengrad by 12.4% over the reverse.</text>
+      <text class="copy" x="72" y="174">Final SSIM 0.959 &#183; Tenengrad 5011 vs. 3880 baseline.</text>
+    </g>
+    <g class="row r2" transform="translate(0 202)">
+      <rect class="card" x="48" y="8" width="904" height="112" rx="8"/>
+      <text class="org"  x="72"  y="36">Enterminal Market Pvt Ltd</text>
+      <text class="when" x="928" y="36" text-anchor="end">OCT 2024 &#8212; MAR 2026</text>
+      <text class="role" x="72"  y="56">TECHNICAL ANALYST</text>
+      <text class="copy" x="72" y="84">Configured and tested internal tools, ran adoption training sessions, and served as primary technical point</text>
+      <text class="copy" x="72" y="102">of contact for troubleshooting, account access, and system monitoring.</text>
+    </g>
+  </g>
+</svg>
