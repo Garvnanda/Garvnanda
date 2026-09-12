@@ -18,10 +18,10 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">HORIZON</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #3 from haragam22/main</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">frontend version 2 completed</tspan></text>
-  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #1 from piyush28verma/frontend</tspan></text>
-  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">HORIZON</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #1 from haragam22/main</tspan></text>
-  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">done with YOLO training</tspan></text>
-  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">docs added</tspan></text>
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">orchestrate-sept</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">done till step 21</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">orchestrate-sept</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">done till step 8</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">orchestrate-sept</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">done till step 7</tspan></text>
+  <text class="mono row" style="animation-delay:0.24s" x="24" y="164" font-size="13"><tspan fill="var(--accent)">HORIZON</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #3 from haragam22/main</tspan></text>
+  <text class="mono row" style="animation-delay:0.32s" x="24" y="188" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">frontend version 2 completed</tspan></text>
+  <text class="mono row" style="animation-delay:0.40s" x="24" y="212" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #1 from piyush28verma/frontend</tspan></text>
 </svg>
