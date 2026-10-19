@@ -144,7 +144,7 @@
 <a href="https://garvnanda-profile.garvnanda.workers.dev/chess/move?uci=d1d3"><img src="https://img.shields.io/badge/PLAY-d1--d3-0d1117?style=for-the-badge&logo=github&logoColor=39D353" alt="Play Qxd3"/></a><br/><br/><a href="https://garvnanda-profile.garvnanda.workers.dev/chess/move?uci=d1e2"><img src="https://img.shields.io/badge/PLAY-d1--e2-0d1117?style=for-the-badge&logo=github&logoColor=39D353" alt="Play Qe2"/></a><br/><br/><a href="https://garvnanda-profile.garvnanda.workers.dev/chess/move?uci=f1f2"><img src="https://img.shields.io/badge/PLAY-f1--f2-0d1117?style=for-the-badge&logo=github&logoColor=39D353" alt="Play Kf2"/></a>
 </td>
 <td align="center" valign="middle" width="560">
-<img src="https://garvnanda-profile.garvnanda.workers.dev/chess/board.svg?v=1792438061216" alt="GitHub Profile Chess Game" width="480"/>
+<img src="https://garvnanda-profile.garvnanda.workers.dev/chess/board.svg?v=1792450781869" alt="GitHub Profile Chess Game" width="480"/>
 </td>
 <td align="center" valign="middle">
 <a href="https://garvnanda-profile.garvnanda.workers.dev/chess/move?uci=f1g2"><img src="https://img.shields.io/badge/PLAY-f1--g2-0d1117?style=for-the-badge&logo=github&logoColor=39D353" alt="Play Kg2"/></a><br/><br/><a href="https://garvnanda-profile.garvnanda.workers.dev/chess/move?uci=f1e1"><img src="https://img.shields.io/badge/PLAY-f1--e1-0d1117?style=for-the-badge&logo=github&logoColor=39D353" alt="Play Ke1"/></a><br/><br/><a href="https://garvnanda-profile.garvnanda.workers.dev/chess/move?uci=g1e2"><img src="https://img.shields.io/badge/PLAY-g1--e2-0d1117?style=for-the-badge&logo=github&logoColor=39D353" alt="Play Ne2"/></a>
