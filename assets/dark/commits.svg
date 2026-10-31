@@ -18,9 +18,9 @@
 
   <text class="mono" x="24" y="60" font-size="13" fill="var(--accent)">garv@github <tspan fill="var(--dim)">~</tspan> % <tspan fill="var(--bone)">git log --oneline -6</tspan></text>
 
-  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">HORIZON</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #4 from haragam22/main</tspan></text>
-  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">readme updated</tspan></text>
-  
+  <text class="mono row" style="animation-delay:0.00s" x="24" y="92" font-size="13"><tspan fill="var(--accent)">anchor</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">resolved kaggle conflict</tspan></text>
+  <text class="mono row" style="animation-delay:0.08s" x="24" y="116" font-size="13"><tspan fill="var(--accent)">HORIZON</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">Merge pull request #4 from haragam22/main</tspan></text>
+  <text class="mono row" style="animation-delay:0.16s" x="24" y="140" font-size="13"><tspan fill="var(--accent)">DEEPSIGHT</tspan><tspan fill="var(--dim)"> — </tspan><tspan fill="var(--bone)">readme updated</tspan></text>
   
   
   
